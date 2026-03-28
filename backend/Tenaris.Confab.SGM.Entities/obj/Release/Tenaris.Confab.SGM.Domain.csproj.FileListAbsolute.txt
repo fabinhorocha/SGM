@@ -1,0 +1,5 @@
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.Entities\bin\Release\Tenaris.Confab.SGM.Domain.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.Entities\bin\Release\Tenaris.Confab.SGM.Domain.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.Entities\obj\Release\Tenaris.Confab.SGM.Domain.csprojResolveAssemblyReference.cache
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.Entities\obj\Release\Tenaris.Confab.SGM.Domain.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.Entities\obj\Release\Tenaris.Confab.SGM.Domain.pdb

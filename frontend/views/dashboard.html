@@ -1,0 +1,32 @@
+<div class="row">
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-6 text-align-left"> 
+            <h1 class="page-title txt-color-blueDark"><i class="fa-fw fa fa-home"></i>                                 
+                Dashboard 
+                <span>>
+                Índice de Preventivas Executadas
+                </span>
+            </h1>    
+                                                     
+        </div> 
+        
+      
+                
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-6 text-align-right"  ng-include src="'views/filterIndicators.html'">
+               
+        </div>
+                
+  
+        
+</div>
+
+
+
+<!-- widget grid -->
+<section id="widget-grid-indicator"  ng-repeat="row in locationsData" ng-widget-grid class="">
+    <!-- row -->    
+    <div class="row" ng-include src="'views/contentIndicators.html'" ng-if = "(Type == 'Exec' && row.data.length > 0 && (selLocation == -1 || selLocation == row.idLocation)) || (Type == 'NExec' && row.dataNExec.length > 0 && (selLocation == -1 || selLocation == row.idLocation))">
+       
+    </div>  
+    <!-- end row -->
+</section>
+<!-- end widget grid -->

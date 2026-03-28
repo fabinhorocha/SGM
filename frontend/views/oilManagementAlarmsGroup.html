@@ -1,0 +1,328 @@
+<script type="text/ng-template" id="alarmGroupContent.html">
+    <form name="frm" class="smart-form" ng-submit="$ctrl.save()">
+            <header>
+                <button type="button" class="close" ng-click="$ctrl.cancel()" aria-hidden="true">
+                                &times;
+                </button>                
+                <h4 class="modal-title txt-color-blueDark">
+                        <i ng-class = "{
+                                'fa-fw fa fa-pencil-square-o': $ctrl.item.action == 'Edit',
+                                'fa-fw fa fa-plus-square': $ctrl.item.action == 'Insert'}">
+                        </i> 
+                        {{$ctrl.item.title}}
+                        <span>
+                </h4>
+            </header>
+            <fieldset>
+                <section style="width: 80% !important;">
+                    <label class="label">Nome</label>
+                            <label class="input">
+                            <input name="txtName" maxlength="50" 
+                            type="text" 
+                            class="form-control"  
+                            required
+                            ng-change="$ctrl.checkChange(null)"
+                            ng-model="$ctrl.item.model.Name" capitalize/>
+                    </label>
+                </section>
+                <div class="row">
+                    <section class="col col-5">
+                        <label class="label">Usuários Disponíveis</label>
+                        <!-- <select multiple ng-model="xss" >
+                            <option ng-selected="u.selected" ng-repeat="u in xs" value="{{u.value}}">
+                                {{u.value}}
+                            </option>
+                        </select>
+                        {{xss | json}} -->
+                        <select multiple ng-model="$ctrl.UsersAllSelected" style="min-height: 300px !important; width: 100% !important;">
+                            <option ng-selected="u.selected" ng-repeat="u in $ctrl.item.model.UsersAll" value="{{u.idUser}}">
+                                {{u.Name}}
+                            </option>
+                        </select>
+                    </section>
+                    <section class="col col-1">
+                        <div style="margin-top: 80px !important;">
+                            <input type="button" class="btn btn-default" style="width: 50px !important;" ng-click="$ctrl.transferToRightAllItems()" value=">>" />
+                        </div>
+                        <div style="margin-top: 10px !important;">
+                            <input type="button" class="btn btn-default" style="width: 50px !important;" ng-click="$ctrl.transferToRightSelectedItems()" value=">" />
+                        </div>
+                        <div style="margin-top: 10px !important;">
+                            <input type="button" class="btn btn-default" style="width: 50px !important;" ng-click="$ctrl.transferToLeftSelectedItems()" value="<" />
+                        </div>
+                        <div style="margin-top: 10px !important;">
+                            <input type="button" class="btn btn-default" style="width: 50px !important;" ng-click="$ctrl.transferToLeftAllItems()" value="<<" />
+                        </div>
+                    </section>
+                    <section class="col col-5">
+                        <label class="label">Usuários no Grupo</label>
+                        <select multiple ng-model="$ctrl.UsersSelected" style="min-height: 300px !important; width: 100% !important;">
+                                <option ng-selected="u.selected" ng-repeat="u in $ctrl.item.model.Users" value="{{u.idUser}}">
+                                    {{u.Name}}
+                                </option>
+                            </select>
+                        </section>
+                </div>
+            </fieldset>
+            <footer>
+                    <button type="submit" class="btn btn-primary" ng-disabled="$ctrl.saveDisabled">
+                    Salvar
+                    </button>
+
+                    <button type="button" class="btn btn-default" ng-click="$ctrl.cancel()" >
+                    Cancelar
+                    </button>
+            </footer>
+    </form>
+            
+</script>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-12">
+        <h1 class="page-title txt-color-blueDark" style="margin: 5px !important;">
+            <i class="fa-fw fa fa-table"></i> 
+            Administração de Óleo Industrial
+            <span>>
+            Grupos
+            </span>                
+        </h1>    
+    </div>
+</div>
+<!-- <div class="row">
+    <section class="col col-lg-3">
+        <select id="selectedFactory" name="selectedFactory"
+        ng-model="oilFactory" 
+        chosen
+        options="oilFactories" 
+        ng-options="f.Name for f in oilFactories" 
+        style="width: 240px !important;"
+        ng-change="selectedLevelMenuChange(1)"
+        data-placeholder="SELECIONE">
+        </select>    
+    </section>
+    <section class="col col-lg-3">
+        <select id="selectedArea" name="selectedArea"
+        ng-model="oilArea" 
+        chosen
+        options="oilAreas" 
+        ng-options="a.Name for a in oilAreas" 
+        style="width: 240px !important;"
+        ng-change="selectedLevelMenuChange(2)"
+        data-placeholder="SELECIONE">
+        </select>    
+    </section>
+    <section class="col col-lg-3">
+        <select id="selectedEquipment" name="selectedEquipment"
+        ng-model="oilEquipment" 
+        chosen
+        options="oilEquipments" 
+        ng-options="e.Name for e in oilEquipments" 
+        style="width: 240px !important;"
+        ng-change="selectedLevelMenuChange(3)"
+        data-placeholder="SELECIONE">
+        </select>    
+    </section>
+    <section class="col col-lg-3">
+        <select id="selectedComponent" name="selectedComponent" class="form-control"
+        ng-model="oilComponent" 
+        chosen
+        options="oilComponents" 
+        ng-options="c.Name for c in oilComponents" 
+        style="width: 240px !important;"
+        ng-change="selectedLevelMenuChange(4)"
+        data-placeholder="SELECIONE">
+        </select>    
+    </section>
+</div> -->
+<div class="col-lg-12 text-right" style="margin-bottom: 5px; margin-top: 5px;">
+    <button class="btn btn-default" style="font: 300 15px/29px 'Open Sans', Helvetica, Arial, sans-serif !important; padding-bottom: 0px !important; padding-top: 0px !important;" 
+        ng-disabled="stillHiddenAlarmGroupEdit" 
+        ng-click="editAlarmGroup()">
+        <i class="fa fa-edit"></i> <span class="hidden-mobile">Editar Grupo</span>
+    </button>
+    <button class="btn btn-default" style="font: 300 15px/29px 'Open Sans', Helvetica, Arial, sans-serif !important; padding-bottom: 0px !important; padding-top: 0px !important;" 
+        ng-click="newAlarmGroup()">
+        <i class="fa fa-plus"></i> <span class="hidden-mobile">Criar Grupo</span>
+    </button>
+</div>
+<section id="widget-grid-2" ng-widget-grid class="">            
+    <!-- row -->
+    <div class="row">
+                               
+        <!-- NEW WIDGET START -->
+        <article class="col-sm-12 col-md-12 col-lg-12">
+
+            <!-- Widget ID (each widget will need unique ID)-->
+            <div class="jarviswidget jarviswidget-sortable" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-colorbutton="false" data-widget-collapsed="false" data-widget-togglebutton="false">
+                 
+                <!-- widget div-->
+                <div>
+
+                    <!-- widget edit box -->
+                    <div class="jarviswidget-editbox">
+                        <!-- This area used as dropdown edit box -->
+
+                    </div>
+                    <!-- end widget edit box -->
+
+                    <!-- widget content -->
+                    <div class="widget-body" ng-hide="!viewLoaded" >
+                                                                                               
+                        <ul id="oilTabPanel" class="nav nav-tabs bordered">
+
+                            <li ng-repeat="t in tabsRequestView" ng-class="{'active': selTab == t.id}" ng-hide="t.hide">
+                                <a href="#t{{t.id}}" target="_self" data-toggle="tab" ng-click= "LoadTabInfo(t.id)" ><i class={{t.class}}></i>{{t.name}}</a>
+                            </li>
+                            
+                        </ul>
+
+                        <div id="requestsTabContent" class="tab-content padding-10">
+                            <!-- Alarm Tab -->
+                            <div ng-class="{'tab-pane fade in active': selTab == 1, 'tab-pane fade': selTab != 1}" id="t1" >                                    
+                                <section ng-widget-grid id="GridAlarm" class="">
+                                    <!-- row -->
+                                    <div class="row">
+                                
+                                        <!-- NEW WIDGET START -->
+                                        <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        
+                                            <!-- Widget ID (each widget will need unique ID)-->
+                                            <!-- <div class="jarviswidget jarviswidget-color-darken"  data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-collapsed="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false" data-widget-colorbutton="false"> -->
+                                                <div class="jarviswidget jarviswidget-color-greenDark"  data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-collapsed="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false" data-widget-colorbutton="false">
+                                            
+                                                    <header>
+                                                        <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                                                        <h2></h2>
+                                    
+                                                    </header>
+                                    
+                                                    <!-- widget div-->
+                                                    <div>
+                                    
+                                                        <!-- widget edit box -->
+                                                        <div class="jarviswidget-editbox">
+                                                            <!-- This area used as dropdown edit box -->
+                                    
+                                                        </div>
+                                                        <!-- end widget edit box -->
+                                    
+                                                        <!-- widget content -->
+                                                        <div class="widget-body no-padding">
+                                                                <!-- <div class="widget-body-toolbar"> -->
+                                                                <div class="widget-body-toolbar">
+                                                                        <div class="widget-toolbar smart-form">
+                                                                                <a class="btn btn-primary" ng-click="LoadTabInfo(selTab)"><i class="fa fa-refresh"></i></a>
+                                                                        </div>
+                                                                        <!-- <div class="widget-toolbar smart-form">
+                                                                                <label class="input"> <i class="icon-append fa fa-calendar"></i>
+                                                                                    <input style="width: 120px" type="text" name="txtDateEnd" ng-model="endDate"  placeholder="Data Final" ng-date-picker  data-dateformat="dd/mm/yy" id="dp112">
+                                                                                </label>
+                                                                        </div>
+                                                                        <div class="widget-toolbar smart-form">                                                        
+                                                                                <label class="input"> <i class="icon-append fa fa-calendar"></i>
+                                                                                    <input style="width: 120px" type="text" name="txtDateStart" ng-model="startDate" placeholder="Data inicial"   ng-date-picker  data-dateformat="dd/mm/yy" id="dp111">                                
+                                                                                </label>
+                                                                        </div> -->
+                                                                        <!-- <div class="widget-toolbar smart-form">
+                                                                                <span><i class="fa fa-filter"></i> Filtrar:</span>
+                                                                        </div> -->
+                                                                        <div excel-export export-data="exportData" style="float: right !important;" file-name="{{fileName}}"></div>
+                                                                        <div class="widget-toolbar smart-form" style="float: left !important;">
+                                                                            <span>
+                                                                                <!-- <i class="fa fa-edit"></i>  -->
+                                                                                Registros por Página:</span>
+                                                                        </div>
+                                                                        <div class="widget-toolbar smart-form" style="float: left !important; border-left: none !important; padding-right: 8px !important; padding-left: 0px !important;">
+                                                                                <label class="select" style="width:60px">
+                                                                                        <select size="1" ng-model="viewbyTab" ng-change="setItemsPerPageTab(viewbyTab)" name="dt_basic_length" aria-controls="dt_basic">
+                                                                                            <option value="5">5</option>
+                                                                                            <option value="10">10</option>
+                                                                                            <option value="25">25</option>
+                                                                                            <option value="50">50</option>
+                                                                                            <option value="100">100</option>
+                                                                                        </select><i></i>
+                                                                                </label>
+                                                                        </div>
+                                                                        <div class="widget-toolbar smart-form" style="float: left !important; border-right: 1px solid rgba(0, 0, 0, 0.09) !important;">
+                                                                            <span ng-click="clearAll();"><i class="fa fa-undo"></i>Limpar Filtros</span>
+                                                                        </div>                                                                        
+                                                                </div>                                                                    
+                                                                <div class="dataTables_wrapper form-inline" role="grid">
+                                                                    <div style="min-height: 300px !important; height: auto !important; overflow: auto;" class="dt-wrapper" style="overflow: auto;" >
+                                                                        <table class="table table-bordered table-hover" data="{{TryXLfiltrate()}}">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th ng-repeat="col in alarmGroupsReport.cols" ng-show="col.id != 'idAlarmGroup'" ng-style="{'min-width': col.css.min_width }">
+                                                                                        <a>
+                                                                                            <span>
+                                                                                                {{col.name}}
+                                                                                            </span>                                                                                                
+                                                                                        </a>
+                                                                                        <div ng-if="col.haveFilterFunctionality" class="dropdown" style="float: right">
+                                                                                                <button class="dropdown-toggle filterdropdown" ng-class="{active:XLfilters.dict[col.id].isActive}" type="button" data-toggle="dropdown"><span class="glyphicon glyphicon-filter"></span></button>
+                                                                                                <div class="dropdown-menu prop" aria-labelledby="btnSearchBatch" style="width: 250px; padding: 15px;">
+                                                                                                  <div class="text-right">
+                                                                                                    <a href="javascript:void(0);" class="filterlink" ng-click="clearFilter(col.id)">Limpar Filtro</a> | <a "javascript:void(0);" class="filterlink" data-dismiss="modal">Fechar(X)</a>
+                                                                                                  </div>
+                                                                                                  <form>
+                                                                                                    <input type="text" class="form-control input-sm" ng-model="XLfilters.dict[col.id].searchText" placeholder="Filtrar" />
+                                                                                                    <div>
+                                                                                                      <a href="javascript:void(0);" class="filterlink" ng-click="markAll(col.id,true)">Selecionar Todos</a> | <a "javascript:void(0);" class="filterlink" ng-click="markAll(col.id,false)">Deselecionar Todos</a>
+                                                                                                    </div>
+                                                                                                    <div class="options">
+                                                                                                            <ul style="list-style-type: none; padding: 0">
+                                                                                                              <li ng-repeat="item in XLfilters.dict[col.id].options">
+                                                                                                                <input id="{{col.id}}Option{{$index}}" type="checkbox" ng-model="XLfilters.dict[col.id].dict[item.title].checked" />&nbsp;<label for="{{col.id}}Option{{$index}}">{{item.title}}</label>
+                                                                                                              </li>
+                                                                                                            </ul>
+                                                                                                          </div>
+                                                                                                  </form>
+                                                                                                </div>
+                                                                                              </div>
+                                                                                    </th>                                                                                        
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                    <tr ng-repeat="row in XLfilters.results.slice(((currentPageTab-1)*itemsPerPageTab), ((currentPageTab)*itemsPerPageTab))" ng-click="setSelectedRow(row.idAlarmGroup)" ng-class="{customSelected: row.idAlarmGroup === idSelectedRow}">
+                                                                                            <td ng-repeat="columnName in row.Columns" ng-show="columnName != 'idAlarmGroup'">
+                                                                                                    {{row[columnName]}}    
+                                                                                            </td>
+                                                                                    </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                    <div class="dt-row dt-bottom-row">
+                                                                        <div class="row">
+                                                                            <div class="col-sm-6">
+                                                                                <div class="dataTables_info">Mostrando de {{itemPageStartTab}} até {{itemPageEndTab}} de {{totalItemsTab}} registros</div>
+                                                                            </div>
+                                                                            <div class="col-sm-6 text-right">
+                                                                                <div class="dataTables_paginate paging_bootstrap_full">
+                                                                                    <ul uib-pagination total-items="totalItemsTab" ng-model="currentPageTab" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPageTab"></ul>
+                                                                                </div> 
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>                                                               
+                                                        </div>                                                      
+                                                        <!-- end widget content -->
+                                                    </div>                                                    
+                                                    <!-- end widget div -->
+                                            </div>
+                                            <!-- end widget -->
+                                        </article>
+                                        <!-- WIDGET END -->
+                                    </div>        
+                                </section>                                                             
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end widget content -->
+                </div>
+                <!-- end widget div -->
+            </div>
+            <!-- end widget -->                                  
+        </article>
+        <!-- WIDGET END -->
+    </div>
+ </section>

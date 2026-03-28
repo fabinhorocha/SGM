@@ -1,0 +1,131 @@
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.InterfaceService.exe.config
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.InterfaceService.exe.manifest
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.InterfaceService.application
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.InterfaceService.exe
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.InterfaceService.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\ConfabEmail.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\log4net.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\System.Net.Http.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\System.Net.Http.WebRequest.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\log4net.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\System.Net.Http.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\System.Net.Http.WebRequest.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\obj\Debug\Tenaris.Confab.SGM.InterfaceService.exe.manifest
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\obj\Debug\Tenaris.Confab.SGM.InterfaceService.application
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\obj\Debug\Tenaris.Confab.SGM.InterfaceService.exe
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\obj\Debug\Tenaris.Confab.SGM.InterfaceService.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\obj\Debug\Tenaris.Confab.SGM.InterfaceService.csprojResolveAssemblyReference.cache
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Ninject.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.Domain.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.Services.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.Repositories.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SAP.Connector.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Dapper.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\sapnco.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\sapnco_utils.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.Domain.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.Services.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Ninject.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.Repositories.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SAP.Connector.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Dapper.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.InterfaceService.exe.config
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.InterfaceService.exe
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.InterfaceService.pdb
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\bin\Debug\ConfabEmail.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\bin\Debug\log4net.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Newtonsoft.Json.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\bin\Debug\System.Net.Http.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\bin\Debug\System.Net.Http.Extensions.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\bin\Debug\System.Net.Http.Formatting.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\bin\Debug\System.Net.Http.Primitives.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\bin\Debug\System.Net.Http.WebRequest.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SAP.Connector.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.Domain.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.Services.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\bin\Debug\sapnco.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.Repositories.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Ninject.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\bin\Debug\sapnco_utils.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Dapper.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SAP.Connector.pdb
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.Domain.pdb
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.Services.pdb
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\bin\Debug\log4net.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\bin\Debug\System.Net.Http.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\bin\Debug\System.Net.Http.WebRequest.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.Repositories.pdb
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Ninject.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Dapper.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\obj\Debug\Tenaris.Confab.SGM.InterfaceService.csprojResolveAssemblyReference.cache
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\obj\Debug\Tenaris.Confab.SGM.InterfaceService.exe
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.InterfaceService\obj\Debug\Tenaris.Confab.SGM.InterfaceService.pdb
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.InterfaceService.exe.config
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.InterfaceService.exe
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.InterfaceService.pdb
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\ConfabEmail.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\log4net.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SAP.Connector.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.Domain.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.Services.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\sapnco.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.Repositories.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Ninject.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\sapnco_utils.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Dapper.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SAP.Connector.pdb
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.Domain.pdb
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.Services.pdb
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\log4net.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.Repositories.pdb
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Ninject.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Dapper.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\obj\Debug\Tenaris.Confab.SGM.InterfaceService.exe
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\obj\Debug\Tenaris.Confab.SGM.InterfaceService.pdb
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Newtonsoft.Json.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.InterfaceService.exe.config
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.InterfaceService.exe
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.InterfaceService.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\ConfabEmail.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\log4net.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\System.Net.Http.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\System.Net.Http.WebRequest.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SAP.Connector.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.Domain.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.Services.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\sapnco.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.Repositories.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Ninject.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\sapnco_utils.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Dapper.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SAP.Connector.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.Domain.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.Services.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\log4net.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\System.Net.Http.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\System.Net.Http.WebRequest.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Tenaris.Confab.SGM.Repositories.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Ninject.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\Dapper.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\obj\Debug\Tenaris.Confab.SGM.InterfaceService.csprojResolveAssemblyReference.cache
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\obj\Debug\Tenaris.Confab.SGM.InterfaceService.exe
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.InterfaceService\obj\Debug\Tenaris.Confab.SGM.InterfaceService.pdb
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\System.Net.Http.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\System.Net.Http.WebRequest.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\System.Net.Http.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\bin\Debug\System.Net.Http.WebRequest.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.InterfaceService\obj\Debug\Tenaris.Confab.SGM.InterfaceService.csprojResolveAssemblyReference.cache

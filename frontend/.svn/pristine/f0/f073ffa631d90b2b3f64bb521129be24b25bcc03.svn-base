@@ -1,0 +1,327 @@
+
+<!-- NEW WIDGET START -->
+ <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        
+        <!-- Widget ID (each widget will need unique ID)-->
+        <div class="jarviswidget" data-widget-editbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false">
+            <!-- widget options:
+            usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+            data-widget-colorbutton="false"
+            data-widget-editbutton="false"
+            data-widget-togglebutton="false"
+            data-widget-deletebutton="false"
+            data-widget-fullscreenbutton="false"
+            data-widget-custombutton="false"
+            data-widget-collapsed="true"
+            data-widget-sortable="false"
+
+            -->
+            <header>
+                <span class="widget-icon"> <i class="fa fa-bar-chart-o"></i> </span>
+                <h2>Falhas M2 - FA</h2>
+                <div class="widget-toolbar">
+                        <button class="btn btn-default" style="font: 300 15px/29px 'Open Sans', Helvetica, Arial, sans-serif !important; padding-bottom: 0px !important; padding-top: 0px !important;" 
+                    ng-click="clearFilters(this)">
+                    <i class="fa fa-undo"></i> <span class="hidden-mobile">Limpar Filtros Selecionados</span>
+                    </button>
+                </div>
+                <div class="widget-toolbar">
+                        <a class="btn btn-primary" ng-click="fillChart(this)"><i class="fa fa-refresh"></i></a>
+                </div> 
+                
+                <div class="widget-toolbar smart-form">                                                                                                                                                  
+                        <label class="input"> <i class="icon-append fa fa-calendar"></i>
+                            <input style="width: 120px" type="text" name="txtDateEnd" ng-model="endDate"  placeholder="Data Final" ng-date-picker  data-dateformat="dd/mm/yy" id="dp112">
+                        </label>                                                                                                                                                                                                                                                                                                                                                                                              
+                </div>   
+                <div class="widget-toolbar smart-form">                                                        
+                            <label class="input"> <i class="icon-append fa fa-calendar"></i>
+                                <input style="width: 120px" type="text" name="txtDateStart" ng-model="startDate" placeholder="Data inicial"   ng-date-picker  data-dateformat="dd/mm/yy" id="dp111">                                
+                            </label>                                                                                                                                                                                                                                                                                                
+                </div>  
+                <div class="widget-toolbar">
+                        <span><i class="fa fa-filter"></i> Filtrar:</span>
+                </div> 
+
+            </header>
+
+            <!-- widget div-->
+            <div>
+
+                <!-- widget edit box -->
+                <div class="jarviswidget-editbox">
+                    <!-- This area used as dropdown edit box -->
+
+                </div>
+                <!-- end widget edit box -->
+
+                <!-- widget content -->
+                <div class="widget-body">
+                        <div class="panel-group" id="accordion">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" style="padding: 3px 15px !important;">                
+                                        <h4 class="panel-title">
+                                                <span class="widget-icon"> <i class="fa fa-filter"></i> </span> 
+                                            <a href="javascript:;" style="font-size: 10pt;" data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne">
+                                            Filtros:
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse">
+                                        <div class="panel-body" style="padding: 3px !important;">
+                                           
+                                            <div class="widget-toolbar smart-form" style="width: 37%">
+                                                <label class="select">
+                                                   
+                                                    <select id="selectedArea" name="selectedArea"
+                                                    ng-model="failureArea" 
+                                                    class="form-control"
+                                                    options="failureAreas" 
+                                                    ng-options="a.Name for a in failureAreas" 
+                                                    style="width: 100% !important;"
+                                                    ng-change="selectedLevelMenuChange(2, this)"
+                                                    data-placeholder="SELECIONE">
+                                                    </select>    
+                                                    <i></i> 
+                                                </label>
+                                            </div>
+                                            <div class="widget-toolbar smart-form" style="width: 14%; text-align: left">
+                                                <span>Área:</span>
+                                            </div>
+                                            <div class="widget-toolbar smart-form" style="width: 39%">
+                                                <label class="select">
+                                                    <select id="selectedFactory" name="selectedFactory"
+                                                        ng-model="failureFactory" 
+                                                        class="form-control" 
+                                                        options="failureFactories" 
+                                                        ng-options="f.Name for f in failureFactories" 
+                                                        style="width: 100% !important;"
+                                                        ng-change="this.selectedLevelMenuChange(1, this)"
+                                                        data-placeholder="SELECIONE">
+                                                    </select>    
+                                                    <i></i> 
+                                                </label>
+                                            </div>
+                                            <div class="widget-toolbar smart-form" style="width: 10%;text-align: left">
+                                                <span>Planta:</span>
+                                            </div>
+                                        </div>
+                                        <div class="panel-body" style="padding: 3px !important;">
+                                                <div class="widget-toolbar smart-form" style="width: 37%">
+                                                        <label class="select">
+                                                            
+                                                                <select id="selectedWorkCenter" name="selectedWorkCenter" class="form-control"
+                                                                ng-model="failureWorkCenter" 
+                                                               
+                                                                options="failureWorkCenters" 
+                                                                ng-options="w.Name for w in failureWorkCenters" 
+                                                                style="width: 100% !important;" 
+                                                                ng-change="this.selectedLevelMenuChange(4, this)"       
+                                                                data-placeholder="SELECIONE">
+                                                                </select> 
+                                                            <i></i> 
+                                                        </label>
+                                                    </div>
+                                                    <div class="widget-toolbar smart-form" style="width: 14%;text-align: left">
+                                                        <span>Centro de Trabalho:</span>
+                                                    </div>
+                                                <div class="widget-toolbar smart-form" style="width: 39%">
+                                                    <label class="select">
+                                                        
+                                                            
+                                                            <select id="selectedEquipment" name="selectedEquipment"
+                                                            ng-model="failureEquipment" 
+                                                            class="form-control" 
+                                                            options="failureEquipments" 
+                                                            ng-options="e.Name for e in failureEquipments" 
+                                                            style="width: 100% !important;"
+                                                            ng-change="selectedLevelMenuChange(3, this)"
+                                                            data-placeholder="SELECIONE">
+                                                            </select>    
+                                                        <i></i> 
+                                                    </label>
+                                                </div>
+                                                <div class="widget-toolbar smart-form" style="width: 10%;text-align: left">
+                                                    <span>Equipamento:</span>
+                                                </div>
+                                                
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                    <ul id="myTabFailureAnalyzed" class="nav nav-tabs bordered">
+
+                        <li class="active">
+                            <a href="#tChartFailureAnalyzed"  target="_self" data-toggle="tab">Geral</a>                                                                    
+                        </li>                       
+                        <li>                                    
+                            <a  href="#tTableFailureAnalyzed"   target="_self" data-toggle="tab"> Dados</a>                                                              
+                        </li>  
+                                                             
+                    </ul>
+                    <div id="myTabLancContent1" class="tab-content padding-10">
+                        <div class="tab-pane fade in active" id="tChartFailureAnalyzed">
+                            
+                            <section>                                    
+                                    <div>
+                                          
+                                          <!-- <canvas id="chartFailure" name="chartFailure" height="200" class="chart-bar" chart-data="failureAnalyzedData.data"
+                                          chart-labels="failureAnalyzedData.labels" chart-options="options"
+                                          chart-dataset-override="failureAnalyzedData.datasetOverride" >
+                                        </canvas> -->
+
+                                        <canvas id="canvas" name="canvas" ng-chart-js chart-options = "optionsTest" chart-data = "dataTest"  ></canvas>
+                                          <!-- <canvas id="line" class="chart-bar" chart-data="data"
+                                            chart-labels="labels" chart-series="series" chart-options="options"
+                                            chart-dataset-override="datasetOverride" >
+                                          </canvas> -->
+                                    </div>
+                            </section>
+                                                                                                            
+                        </div>
+                           
+                        
+                        <div class="tab-pane" id="tTableFailureAnalyzed" >
+                                	<!-- start row -->
+                                <section>                                                                                                                            
+                                               
+                                        
+                                                    <!-- Widget ID (each widget will need unique ID)-->
+                                                    <div class="jarviswidget well transparent" id="wid-id-901" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
+                                                        <!-- widget options:
+                                                        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+                                        
+                                                        data-widget-colorbutton="false"
+                                                        data-widget-editbutton="false"
+                                                        data-widget-togglebutton="false"
+                                                        data-widget-deletebutton="false"
+                                                        data-widget-fullscreenbutton="false"
+                                                        data-widget-custombutton="false"
+                                                        data-widget-collapsed="true"
+                                                        data-widget-sortable="false"
+                                        
+                                                        -->
+                                                        <header>
+                                                            <span class="widget-icon"> <i class="fa fa-comments"></i> </span>
+                                                            <h2>Accordions </h2>
+                                        
+                                                        </header>
+                                        
+                                                        <!-- widget div-->
+                                                        <div>
+                                        
+                                                            <!-- widget edit box -->
+                                                            <div class="jarviswidget-editbox">
+                                                                <!-- This area used as dropdown edit box -->
+                                        
+                                                            </div>
+                                                            <!-- end widget edit box -->
+                                        
+                                                            <!-- widget content -->
+                                                            <div class="widget-body">
+                                        
+                                                                <div class="panel-group smart-accordion-default" id="accordionFailureAnalyzed">
+                                                                    <div class="panel panel-darken">
+                                                                        <div class="panel-heading">
+                                                                            <h4 class="panel-title"><a data-toggle="collapse" target="_self" data-parent="#accordionFailureAnalyzed" href="#collapseOneFailureAnalyzed" class="collapsed" > <i class="fa fa-lg fa-angle-down pull-right"></i> <i class="fa fa-lg fa-angle-up pull-right"></i> Notas M2 </a></h4>
+                                                                        </div>
+                                                                        <div id="collapseOneFailureAnalyzed" class="panel-collapse collapse in">
+                                                                            <div class="panel-body no-padding">
+                                                                                    <div class="jarviswidget jarviswidget-color-darken" 
+                                                                                        data-widget-editbutton="false" 
+                                                                                        data-widget-colorbutton="false" 
+                                                                                        data-widget-editbutton="false" 
+                                                                                        data-widget-togglebutton="false"
+                                                                                        data-widget-deletebutton="false"
+                                                                                        data-widget-fullscreenbutton="false"
+                                                                                        data-widget-custombutton="true"
+                                                                                        data-widget-collapsed="false"
+                                                                                        data-widget-sortable="false">
+                                                                                            
+                                                                                            <header>
+                                                                                                <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                                                                                                <h2></h2>
+                                                                            
+                                                                                            </header>
+                                                                            
+                                                                                            <!-- widget div-->
+                                                                                            <div>
+                                                                            
+                                                                                                <!-- widget edit box -->
+                                                                                                <div class="jarviswidget-editbox">
+                                                                                                    <!-- This area used as dropdown edit box -->
+                                                                            
+                                                                                                </div>
+                                                                                                <!-- end widget edit box -->
+                                                                            
+                                                                                                <!-- widget content -->
+                                                                                                <div class="widget-body no-padding">
+                                                                                                    <div class="widget-body-toolbar">
+                                                                            
+                                                                                                    </div>
+                                                                                                    <table ng-table-details="overrideOptions" id="tbFailureAnalyzed" name="tbFailureAnalyzed"
+                                                                                                        aa-data="failureAnalyzedData.detailsDataAnalyzed"
+                                                                                                        ao-column-defs="columnDefsNotes"
+                                                                                                        class="table table-striped table-hover">
+                                                                                                            <thead>
+                                                                                                                <tr>
+                                                                                                                    <th>Nota M2</th>
+                                                                                                                    <th>Nota FA</th>
+                                                                                                                    <th>Local</th>
+                                                                                                                    <th>Descrição</th>
+                                                                                                                    <th>Data Inicial</th>                                                                                                                                                                                                            
+                                                                                                                    <th>Data Final</th>
+                                                                                                                    <th>Data Ref.</th>
+                                                                                                                    <th>Data de Criação</th>
+                                                                                                                    <th>C. Trabalho</th>
+                                                                                                                    <th>Tipo</th>                                                                                                                       
+                                                                                                                    <th>Status M2</th>  
+                                                                                                                    <th>Status FA</th>                                                                                                                                                                                            
+                                                                                                                </tr>
+                                                                                                            </thead>
+                                                                                                            
+                                                                                                    </table> 
+                                                                                                </div>
+                                                                                                <!-- end widget content -->
+                                                                            
+                                                                                            </div>
+                                                                                            <!-- end widget div -->
+                                                                            
+                                                                                    </div>
+                                                                                                                                                                                
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                   
+                                                                    
+                                                                </div>
+                                        
+                                                            </div>
+                                                            <!-- end widget content -->
+                                        
+                                                        </div>
+                                                        <!-- end widget div -->
+                                        
+                                                    </div>
+                                                    <!-- end widget -->
+                                        
+                                                                                                                                                                            
+                                </section>                        
+                                  
+                        </div>             
+
+                    
+                    </div>
+                </div>
+                <!-- end widget content -->
+
+            </div>                               
+            <!-- end widget div -->
+
+
+        </div>
+        <!-- end widget -->
+                                                                                                             
+</article>
+<!-- WIDGET END -->

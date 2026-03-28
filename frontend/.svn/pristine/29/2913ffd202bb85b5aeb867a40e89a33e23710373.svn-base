@@ -1,0 +1,395 @@
+<form id="reportForm"  name="reportForm" class="smart-form"  ng-submit="Action == 'Insert' ? saveReport(Report) : updateReport(Report)">                                                      
+    
+    <header ng-if="Action == 'Edit'">
+        
+        <button type="button" class="close" ng-click="cancel()" aria-hidden="true">
+                        &times;
+        </button>                
+        <h4 class="modal-title txt-color-blueDark">
+                <i class = "fa-fw fa fa-pencil-square-o">
+                       
+                </i> 
+                {{Title}}
+                <span>
+        </h4>
+
+    </header>
+    <fieldset>
+    <ul id="myTabLanc" class="nav nav-tabs bordered">            
+
+            <li ng-repeat="t in tabsLanc" ng-class="{'active': selTabLanc == t.id}" ng-hide="t.hide">
+                    <a href="#tLanc{{t.id}}"  target="_self" data-toggle="tab" ng-click= "setTabLanc(t.id)"><i class={{t.class}}></i>{{t.name}}<span ng-if="t.id == 3 && !Report.noteSAP.cdStatus" class="badge bg-color-red" title="Problemas de Interface com o SAP !"><i class="fa fa-exclamation"></i> </span></a>                                   
+            </li>
+            
+    </ul>
+    <div id="myTabLancContent1" class="tab-content padding-10">
+            <div  ng-class="{'tab-pane fade in active': selTabLanc == 1, 'tab-pane fade': selTabLanc != 1}" id="tLanc1">
+                
+                            <div class="row">
+                                    <section class="col col-4">
+                                            
+                                            <label class="label">Data de Lançamento</label>
+                                            <label class="input"> <i class="icon-append fa fa-calendar"></i>
+                                                <input type="text" name="txtDateInput" ng-model="Report.dateInput"  ng-date-picker  data-dateformat="dd/mm/yy" id="dp1" required ng-disabled="Disabled">
+                                            </label>
+                                                
+                                    </section>
+                                    <section class="col col-4">
+                                            
+                                                <label class="label">Estado</label>
+                                                <label class="select">
+                                                        <select name="status" class="form-control" ng-model="Report.cdStatus" options="reportsStatus" ng-options="item.idStatus as item.Name for item in reportsStatus"  required ng-disabled="Disabled">
+                                                        </select>                                                                                      
+                                                        <i></i> 
+                                                </label>
+                                            
+                                    </section>
+                                        
+                            </div>    
+                            <div class="row">
+                                <section class="col col-8">                                                                    
+                                    
+                                    <label class="label">Técnica</label>
+                                    <label class="select">
+                                            <select name="technics" class="form-control" ng-model="Report.cdType" options="reportsTypes" ng-options="item.idType as item.Name for item in reportsTypes"  required ng-disabled="Disabled"  ng-click="setType(Report.cdType)">
+                                            </select>
+                                                                                                                                
+                                            <i></i> 
+                                    </label>
+                                    
+                                </section>
+                                <!--<section class="col col-4" ng-switch on="Report.cdType">
+                                         <div class="row" class="animate-switch" ng-switch-when="2">
+                                                <section class="col col-6">    
+                                                    <label class="label">RMS Velocidade (mm/s)</label>
+                                                    <label class="input">										                        
+                                                        <input type="number"  min="0" value="0" step="0.01" name="txtVelocity" ng-model="Report.vlVelocity" required ng-disabled="Disabled"/>
+                                                    </label>
+                                                </section>
+                                                <section class="col col-6">
+                                                    <label class="label">RMS Aceleração (g)</label>
+                                                    <label class="input">										                        
+                                                        <input type="number"  min="0" value="0" step="0.01" name="txtAcceleration" ng-model="Report.vlAcceleration" required ng-disabled="Disabled"/>
+                                                    </label>
+                                                </section>
+                                        </div> 
+                                        <div class="animate-switch" ng-switch-when="3">
+                                                <label class="label">Temperatura Max.</label>
+                                                <label class="input">										                        
+                                                    <input type="number" min="0" value="0" step="0.01" name="txtTemperature" ng-model="Report.vlTemperature" required ng-disabled="Disabled"/>
+                                                </label>
+                                        </div>
+                                        <div class="animate-switch" ng-switch-default></div>
+                                </section>-->
+                            </div>
+                            <section ng-switch on="Report.cdType">
+                                    <div class="animate-switch" ng-switch-when="1">
+                                        <label class="label">Análises de Partículas (ISO 4406):</label>
+                                        <table class="table table-bordered">
+                                            <thead> 
+                                                <tr>
+                                                    <th style="text-align: center; vertical-align: middle" colspan="3">ISO</th>
+                                                    <th style="text-align: center; vertical-align: middle" colspan="3">Mícrons</th>
+                                                    <th style="text-align: center; vertical-align: middle">Água Karl Fischer</th>
+                                                    <th style="text-align: center; vertical-align: middle" colspan="2">Viscosidades</th>
+                                                    <th style="text-align: center; vertical-align: middle">TAN</th>
+                                                </tr>                     
+                                                <tr>
+                                                    <th style="text-align: center; vertical-align: middle">Máximo</th>
+                                                    <th style="text-align: center; vertical-align: middle">Alarme</th>
+                                                    <th style="text-align: center; vertical-align: middle">Código</th>
+                                                    <th style="text-align: center">> 4 <br>(part/ml)</th>
+                                                    <th style="text-align: center">> 6 <br>(part/ml)</th>
+                                                    <th style="text-align: center">> 14 <br>(part/ml)</th>
+                                                    <th style="text-align: center">(ppm)</th>
+                                                    <th style="text-align: center">40oC<br>(cst)</th>
+                                                    <th style="text-align: center">100oC<br>(cst)</th>
+                                                    <th style="text-align: center">(mg KOH/ml)</th>
+                                                    
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <label class="input">										                        
+                                                            <input  type="text"   name="txtVlISOMax" ng-model="Report.vlISOMax" ng-disabled="Disabled"/>
+                                                        </label>       
+                                                    </td>
+                                                    <td>
+                                                        <label class="input">										                        
+                                                            <input  type="text"  name="txtVlISOAlarm" ng-model="Report.vlISOAlarm" ng-disabled="Disabled"/>
+                                                        </label>      
+                                                    </td>
+                                                    <td>
+                                                        <label class="input">										                        
+                                                            <input  type="text"  name="txtVlISO" ng-model="Report.vlISO" ng-disabled="Disabled"/>
+                                                        </label>   
+                                                    </td>
+                                                    <td> 
+                                                        <label class="input">										                        
+                                                            <input  type="number" min="0" value="0" step="0.01" name="txtVlMore4Micron" ng-model="Report.vlMore4Micron" ng-disabled="Disabled"/>
+                                                        </label>  
+                                                    </td>
+                                                    <td>
+                                                            <label class="input">										                        
+                                                                    <input type="number" min="0" value="0" step="0.01" name="txtVlMore6Micron" ng-model="Report.vlMore6Micron" ng-disabled="Disabled"/>
+                                                                </label>     
+                                                    </td>
+                                                    <td>
+                                                            <label class="input">										                        
+                                                                    <input type="number"  min="0" value="0" step="0.01" name="txtVlMore14Micron" ng-model="Report.vlMore14Micron" ng-disabled="Disabled"/>
+                                                                </label>
+                                                    </td>
+                                                    <td>
+                                                            <label class="input">										                        
+                                                                    <input type="number"  min="0" value="0" step="0.01" name="txtVlWaterKarlFischer" ng-model="Report.vlWaterKarlFischer" ng-disabled="Disabled"/>
+                                                                </label>
+                                                    </td>
+                                                    <td>
+                                                            <label class="input">										                        
+                                                                    <input type="number"  min="0" value="0" step="0.01" name="txtVlViscosity40" ng-model="Report.vlViscosity40" ng-disabled="Disabled"/>
+                                                                </label>
+                                                    </td>
+                                                    <td>
+                                                            <label class="input">										                        
+                                                                    <input type="number"  min="0" value="0" step="0.01" name="txtVlViscosity100" ng-model="Report.vlViscosity100" ng-disabled="Disabled"/>
+                                                                </label>
+                                                    </td>
+                                                    <td>
+                                                            <label class="input">										                        
+                                                                    <input type="number"  min="0" value="0" step="0.001" name="txtVlTAN" ng-model="Report.vlTAN" ng-disabled="Disabled"/>
+                                                                </label>
+                                                    </td>
+                                                </tr>
+                                            
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                     <div class="animate-switch" ng-switch-when="2">
+                                                <label class="label">Análises:</label>
+                                                    <table  class="table table-bordered">
+                                                        <thead>                                                                     
+                                                            <tr>
+                                                                <th style="text-align: center; vertical-align: middle">RMS Velocidade <br> (mm/s) </th>
+                                                                <th style="text-align: center; vertical-align: middle">RMS Aceleração <br> (g) </th>
+                                                                <th style="text-align: center; vertical-align: middle">Rotação <br> (rpm)</th>                                                                                                                               
+                                                                <th style="text-align: center; vertical-align: middle">Pressão <br> (bar)</th>  
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <label class="input">										                        
+                                                                        <input  type="number" min="0" value="0" step="0.01"   name="txtVelocity" ng-model="Report.vlVelocity" ng-disabled="Disabled"/>
+                                                                    </label>       
+                                                                </td>
+                                                                <td>
+                                                                    <label class="input">										                        
+                                                                        <input   type="number" min="0" value="0" step="0.01"  name="txtAcceleration" ng-model="Report.vlAcceleration" ng-disabled="Disabled"/>
+                                                                    </label>      
+                                                                </td>
+                                                                <td>
+                                                                    <label class="input">										                        
+                                                                        <input type="number" min="0" value="0" step="0.01"  name="txtRotation" ng-model="Report.vlRotation" ng-disabled="Disabled"/>
+                                                                    </label>   
+                                                                </td>
+                                                                <td> 
+                                                                    <label class="input">										                        
+                                                                        <input  type="number" min="0" value="0" step="0.01" name="txtPressure" ng-model="Report.vlPressure" ng-disabled="Disabled"/>
+                                                                    </label>  
+                                                                </td>
+                                                              
+                                                            </tr>
+                                                        
+                                                        </tbody>
+                                                    </table>
+                                                
+                                    </div> 
+                                    <div class="animate-switch" ng-switch-when="3">
+                                            <label class="label">Análises:</label>
+                                                <table  class="table table-bordered">
+                                                    <thead>                                                                     
+                                                        <tr>
+                                                            <th style="text-align: center; vertical-align: middle">Temperatura<br> Máxima </th>
+                                                            <th style="text-align: center; vertical-align: middle">Temperatura <br> Ambiente </th>
+                                                            <th style="text-align: center; vertical-align: middle">Emissividade</th>                                                                                                                                                                                           
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <label class="input">										                        
+                                                                    <input  type="number" min="0" value="0" step="0.01"   name="txtTempMax" ng-model="Report.vlTempMax" required ng-disabled="Disabled"/>
+                                                                </label>       
+                                                            </td>
+                                                            <td>
+                                                                <label class="input">										                        
+                                                                    <input   type="number" min="0" value="0" step="0.01"  name="txtTempEnvironment" ng-model="Report.vlTempEnvironment" required ng-disabled="Disabled"/>
+                                                                </label>      
+                                                            </td>
+                                                            <td>
+                                                                    <label class="input">										                        
+                                                                        <input   type="number" min="0" value="0" step="0.01"  name="txtEmissivity" ng-model="Report.vlEmissivity" required ng-disabled="Disabled"/>
+                                                                    </label>      
+                                                                </td>
+                                                          
+                                                        </tr>
+                                                    
+                                                    </tbody>
+                                                </table>
+                                            
+                                    </div>
+                                                             
+                            </section>     
+                            <div class="row">
+                                <section class="col col-8">
+                                        
+                                        <label class="label">Título</label>
+                                        <label class="input"> <i class="icon-append fa fa-tag"></i> 										                        
+                                            <input type="text" name="txtTitle" ng-model="Report.Title" required ng-disabled="Disabled"/>
+                                        </label>
+                                        
+                                            
+                                </section>
+                                <section class="col col-4">
+                                        
+                                    <label class="label">Prioridade</label>
+                                    <label class="select">
+                                        <select name="priorities" class="form-control" ng-model="Report.cdPriority" options="priorities" ng-options="item.idPriority as item.Name for item in priorities"  required ng-disabled="Disabled">
+                                        </select>
+                                                                                                                            
+                                        <i></i> 
+                                    </label>
+                                        
+                                </section>                
+                            </div>           
+                            <div class="row">
+                                    <section class="col col-4">
+                                        
+                                        <label class="label">Data do Informe</label>
+                                        <label class="input"> <i class="icon-append fa fa-calendar"></i>
+                                            <input type="text" name="txtDateInfo" ng-model="Report.dateInfo" ng-date-picker  data-dateformat="dd/mm/yy" id="dp2" ng-disabled="Disabled">
+                                        </label>
+                                            
+                                    </section>
+                                    <section class="col col-4">
+                                        
+                                            <label class="label">Data da Medição</label>
+                                            <label class="input"> <i class="icon-append fa fa-calendar"></i>
+                                                <input type="text" name="txtDateMeasure" ng-date-picker  required ng-model="Report.dateMeasure"  data-dateformat="dd/mm/yy" id="dp3" ng-disabled="Disabled">
+                                            </label>
+                                            
+                                    </section>        
+                                    
+                                        
+                            </div>
+                                                                                                                                                                                                                                                                                
+                            <section>                                                                
+                                    <label class="label">Diagnóstico</label>
+                                    <label class="textarea"> <i class="icon-append fa fa-comment"></i> 										
+                                        <textarea rows="3" name="txtDiagnostic" ng-model="Report.Diagnostic" required ng-disabled="Disabled"></textarea> 
+                                    </label>
+                                    
+                            </section>
+                            <div class="row">
+                                    <section class="col col-4">
+                                            <div class="form-group">                                                                 
+                                                    <label class="toggle">
+                                                            <input type="checkbox" name="checkbox-toggle" checked="checked" ng-model="Report.cdRecurrent" ng-disabled="Disabled">
+                                                            <i data-swchon-text="SIM" data-swchoff-text="NÃO"></i>Laudo Recorrente
+                                                    </label>  
+                                            </div>          
+                                    </section>   
+                                    <section class="col col-4" ng-if="Report.cdRecurrent">
+                                            <div class="form-group">                                                                 
+                                                    <label class="toggle">
+                                                            <input type="checkbox" name="checkbox-toggle" checked="checked" ng-model="Report.cdOTExecuted" ng-disabled="Disabled">
+                                                            <i data-swchon-text="SIM" data-swchoff-text="NÃO"></i>OT Gerada e Executada
+                                                    </label>  
+                                            </div>          
+                                    </section>   
+                            </div>                  
+            </div>
+            <div ng-class="{'tab-pane fade in active': selTabLanc == 2, 'tab-pane fade': selTabLanc != 2}" id="tLanc2">
+                    <section>
+                            
+                            <label class="label">Arquivos de Laudo</label>
+                                            
+                            <ng-dropzone class="dropzone" options="dzOptions" callbacks="dzCallbacks" methods="dzMethods" ng-hide="Disabled">
+                                
+                            </ng-dropzone>
+            
+                            <table class="table table-bordered" ng-hide="!Disabled">
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Tamanho</th>     
+                                        <th>Tipo</th>                                
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="file in Report.Files">
+                                        <td> <a class="btn" ng-click="openFile(file)">{{file.Name}}</a></td>
+                                        <td>{{file.Size}}</td>
+                                        <td>{{file.Type}}</td>                          
+                                    </tr>                        
+                                 
+                                </tbody>
+                            </table>
+                            
+                        </section>        
+            </div>
+            <div ng-class="{'tab-pane fade in active': selTabLanc == 3, 'tab-pane fade': selTabLanc != 3}" id="tLanc3">
+                    
+                    <div class="row">                        
+                        <section class="col col-4">
+                                <label class="label">Nº Aviso</label>
+                                <label class="input">										                        
+                                    <input type="text" name="txtCdSAP" ng-model="Report.noteSAP.cdSAP" ng-disabled="true"/>
+                                </label>
+                        </section>
+                    </div>
+                    <section>                                                                
+                            <label class="label">Mensagem</label>
+                            <label class="textarea"> <i class="icon-append fa fa-comment"></i> 										
+                                <textarea rows="13" name="txtMessage" ng-model="Report.noteSAP.statusMessage" ng-disabled="true"></textarea> 
+                            </label>
+                            
+                    </section>
+            </div>
+            <div ng-class="{'tab-pane fade in active': selTabLanc == 4, 'tab-pane fade': selTabLanc != 4}" id="tLanc4">
+                                       
+                <section ng-repeat="row in Charts"> 
+                        <div>
+                        <canvas height={{row.height}} class="chart chart-line" chart-data="row.data" chart-labels="row.labels" chart-colors = "row.colors"
+                        chart-options="options" chart-series="row.series"></canvas>
+                    </div>
+                </section>
+                          
+                            
+                    
+            </div>
+    </div>
+</fieldset>
+                                
+    <footer>
+
+        <button type="submit" class="btn btn-primary" ng-hide="Disabled">
+            Salvar
+        </button>
+        
+        <button type="button" class="btn btn-primary" ng-click="editReport()" ng-hide="!Disabled || user.ReadOnly">
+            Editar
+        </button>
+
+        <button type="button" class="btn btn-primary" ng-click="confirmDelete(Report)" ng-hide="Action == 'Insert' || !Disabled || user.ReadOnly || (Report.noteSAP != null && Report.noteSAP.cdStatus)">
+            Excluir
+        </button>
+
+        <button type="button" class="btn btn-primary" ng-click="confirmCreateNoteSAP(Report)" ng-hide="Action == 'Insert' || !Disabled || user.ReadOnly || Report.cdStatus == 1 || (Report.noteSAP != null && Report.noteSAP.cdStatus) || !Report.Equip.cdIntegrate">
+                Enviar SAP
+        </button>
+
+
+    </footer>
+</form>

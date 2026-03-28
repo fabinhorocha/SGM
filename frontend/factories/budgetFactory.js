@@ -1,0 +1,97 @@
+app.factory('budgetFactory',['$http','consts', function($http, consts){
+
+    var obj = {};
+
+
+    obj.GetBudget= function(idBudget){
+        
+        return $http({
+            url: consts.apiUrl+"Budget/GetBudget",
+            dataType: 'json',
+            method: 'GET',
+            data: '', 
+            params: { id: idBudget},                   
+            headers: {"Content-Type": "application/json" }
+        })
+        
+    } 
+
+    obj.GetBudgetsActive= function(){
+        
+        return $http({
+            url: consts.apiUrl+"Budget/GetBudgetsActive",
+            dataType: 'json',
+            method: 'GET',
+            data: '', 
+            params:'',                   
+            headers: {"Content-Type": "application/json" }
+        })
+        
+    } 
+
+    obj.GetActualBudget= function(){
+        
+        return $http({
+            url: consts.apiUrl+"Budget/GetActualBudget",
+            dataType: 'json',
+            method: 'GET',
+            data: '', 
+            params: {},                   
+            headers: {"Content-Type": "application/json" }
+        })
+        
+    } 
+
+    obj.GetBudgets = function(active){
+        
+        return $http({
+            url: consts.apiUrl+"Budget/GetBudgets",
+            dataType: 'json',
+            method: 'GET',
+            data: '', 
+            params: {active: active},                   
+            headers: {"Content-Type": "application/json" }
+        })
+        
+    } 
+
+      
+    obj.InsertBudget = function (budget) {
+        return $http({
+            url: consts.apiUrl+"Budget/InsertBudget",
+            dataType: 'json',
+            method: 'POST',
+            data:  budget,
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8'
+            }
+        })
+    }
+
+    obj.UpdateBudget = function (budget) {
+        return $http({
+            url: consts.apiUrl+"Budget/UpdateBudget",
+            dataType: 'json',
+            method: 'POST',
+            data:  budget,
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8'
+            }
+        })
+    }
+
+    obj.UpdateBudgetStatus = function (budget) {
+        return $http({
+            url: consts.apiUrl+"Budget/UpdateBudgetStatus",
+            dataType: 'json',
+            method: 'POST',
+            data:  budget,
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8'
+            }
+        })
+    }
+   
+    return obj;
+
+}]);

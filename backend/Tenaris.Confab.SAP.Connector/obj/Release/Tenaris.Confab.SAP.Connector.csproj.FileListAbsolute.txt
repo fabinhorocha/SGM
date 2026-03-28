@@ -1,0 +1,8 @@
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SAP.Connector\bin\Release\Tenaris.Confab.SAP.Connector.dll.config
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SAP.Connector\bin\Release\Tenaris.Confab.SAP.Connector.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SAP.Connector\bin\Release\Tenaris.Confab.SAP.Connector.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SAP.Connector\bin\Release\sapnco.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SAP.Connector\bin\Release\sapnco_utils.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SAP.Connector\obj\Release\Tenaris.Confab.SAP.Connector.csprojResolveAssemblyReference.cache
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SAP.Connector\obj\Release\Tenaris.Confab.SAP.Connector.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SAP.Connector\obj\Release\Tenaris.Confab.SAP.Connector.pdb

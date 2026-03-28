@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Tenaris.Confab.SGM.OilMgmtService.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ProcessIntervalShort" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">60000</Value>
+    </Setting>
+    <Setting Name="AdminEmailsFrom" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">sgm@tenarisconfab.com.br</Value>
+    </Setting>
+    <Setting Name="AdminEmailsTo" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">PINDA_NIVEL2@techint.ot</Value>
+    </Setting>
+    <Setting Name="IsProduction" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,1 @@
+var app = angular.module('appSGM', ['ngRoute', 'ngSanitize','ngAnimate','ui.bootstrap','ui.tree','angular-loading-bar','localytics.directives','ngMessages','ui.tree-filter', 'ui.highlight','thatisuday.dropzone','chart.js']);

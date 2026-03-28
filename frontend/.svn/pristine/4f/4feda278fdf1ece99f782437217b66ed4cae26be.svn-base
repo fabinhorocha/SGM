@@ -1,0 +1,19 @@
+<h1>
+        <div class="btn-group"> 
+                <a class="btn btn-default" href="javascript:void(0);" ng-click="fillBudget(selectedBudget)"><i class="fa fa-refresh"></i>  Budget</a>
+                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);"><span class="caret"></span></a>
+                <ul class="dropdown-menu pull-left js-status-update" ng-model="selectedBudget">
+                        <li ng-repeat="item in budgets">
+                                <a href="javascript:void(0);" ng-click="setBudget(item)"><i ng-class="item.cls"></i> {{item.dateStart | date:'dd/MM/yyyy' }} - {{item.dateEnd | date:'dd/MM/yyyy' }}</a>
+                        </li>                                                                
+                </ul>   
+                
+                <label class="select">
+                        <select name="selLocation" class="form-control" ng-model="selLocation" ng-click="setLocation(selLocation)" options="locations" ng-options="item.idLocation as item.Name for item in locations">
+                        </select>
+                                                                                                            
+                        <i></i> 
+                </label>
+                                                                                                
+        </div>                                                   
+</h1>  

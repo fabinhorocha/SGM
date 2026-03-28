@@ -1,0 +1,21 @@
+**** Trace file opened at 2019-06-29 21:36:03-03:00 (Hora oficial do Brasil)
+	SAP .NET Connector: 3, 0, 1, 0, Working directory: C:\Users\fabin\Documents\Projetos\SGM\Services\UnitTestProject1\bin\Debug, Program: C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\COMMONEXTENSIONS\MICROSOFT\TESTWINDOW\vstest.executionengine.x86.exe
+	Hardware: PC with Windows NT, Processor: 4x Intel 80686 (Mod 69 Step 1), Operating system: Microsoft Windows NT 6.3.9600.0, .NET CLR version: 4.0.30319.42000
+ 	SAP release: 720, Kernel release: 720, Kernel patch level: 78
+	Hostname: DESKTOP-TIB238A, IP address: 10.100.178.167, IP_v6 address: 
+
+	Default trace level: None
+
+>> Error entry 2019-06-29 21:36:03.298
+SAP.Middleware.Connector.RfcCommunicationException: Invalid value in OPTION field of value table for I
+   em SAP.Middleware.Connector.CpicConnection.ThrowCpicErrorMsg(Int32 length, Int32 dataReceived)
+   em SAP.Middleware.Connector.CpicConnection.CpicReceive(Int32 timeout)
+   em SAP.Middleware.Connector.CpicConnection.Read(Byte* buffer, Int32 offset, Int32 count)
+   em SAP.Middleware.Connector.RfcConnection.ReadBytes(Byte* buffer, Int32 count)
+   em SAP.Middleware.Connector.RfcConnection.ReadRfcIDBegin(Int32& length)
+   em SAP.Middleware.Connector.RfcConnection.ReadUpTo(RFCGET readState, RfcFunction function, RFCID toRid)
+   em SAP.Middleware.Connector.RfcConnection.RfcReceive(RfcFunction function)
+   em SAP.Middleware.Connector.RfcFunction.RfcDeserialize(RfcConnection conn, IRfcIOStream stream)
+   em SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn, IRfcIOStream stream, RFCID rid)
+   em SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn)
+   em SAP.Middleware.Connector.RfcFunction.Invoke(RfcDestination destination)

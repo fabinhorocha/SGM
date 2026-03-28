@@ -1,0 +1,647 @@
+
+app.controller('indicatorFailureAnalyzedController', function ($scope, $rootScope, $routeParams, $location, $filter, $timeout, $window,  $uibModal, consts, commonService, indicatorFailureAnalyzedFactory, budgetFactory, equipmentPlantGroupFactory) {
+
+   
+    $scope.startDate = $filter('date')(new Date().setYear(new Date().getFullYear() - 1), 'dd/MM/yyyy');
+    $scope.endDate = $filter('date')(new Date(),'dd/MM/yyyy');
+    $scope.Title = "Análise de Falhas"      
+    $scope.idIndicator = 4;      
+    $scope.failureFactories = []
+    $scope.failureFactory = null;
+    $scope.failureAreas = [];
+    $scope.failureEquipments = [];
+    $scope.failureWorkCenters = [];
+
+    //Set options Chart
+    $scope.options = {
+        //responsive: true,
+        //aspectRatio: 2,
+       // maintainAspectRatio: false,
+
+        scales: {
+            yAxes: [{
+                stacked: true,
+                ticks: {
+                    beginAtZero: true,
+                },
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Quantidade'
+                },
+                ticks: {
+                    callback: function (label, index, labels) {
+                            return label;
+                    }
+                },
+            }],
+            xAxes: [{
+                
+                barThickness: 30,
+                stacked: true,
+                ticks: {
+                    autoSkip: false
+                },
+            }
+            ]
+        },
+
+
+
+        legend: {
+            display: true,
+            position: 'bottom',
+            labels: {
+                generateLabels: function (chart) {
+                    var result = [{ text: "Tipo 1", fillStyle: "rgb(0, 0, 153)" }, { text: "Tipo 2", fillStyle: "rgb(204, 0, 102)" }, { text: "Tipo 3", fillStyle: "rgb(0,153,0)" }, { text: "Tipo 4", fillStyle: "rgb(255,0,0)" }]
+                    return result;
+                }
+            }
+
+        },
+
+        elements: {
+            line: {
+                tension: 0 // disables bezier curves                       
+            },
+            point: {
+                pointStyle: 'circle'
+            }
+        },
+
+        tooltips: {
+
+            filter: function (tooltipItem, data) {
+
+                if (tooltipItem.y)
+                    return !data.datasets[tooltipItem.datasetIndex].tooltipHidden; // custom added prop to dataset
+                else
+                    return data.datasets[tooltipItem.datasetIndex].tooltipHidden;
+            }
+        },
+
+    };
+
+    GetEquipmentsPlantGroup(2, null);
+
+    $scope.selectedLevelMenuChange = function (level, scope) {
+        switch(level){
+            case 1:
+                GetEquipmentsPlantGroup(3, scope.failureFactory.Sheet);
+            break;
+            case 2:
+                GetEquipmentsPlantGroup(4, scope.failureArea.Sheet);
+            break;
+            
+            break;
+        }
+    }
+
+    $scope.overrideOptions = {
+        "bStateSave": true,
+        "iCookieDuration": 2419200, /* 1 month */
+        "bJQueryUI": true,
+        "bPaginate": true,
+        "bLengthChange": false,
+        "bFilter": true,
+        "bInfo": true,
+        "bDestroy": true                
+    };
+
+    $scope.columnDefsNotes = [                 
+                { "mDataProp": "Nota M2", "aTargets":[0] },
+                { "mDataProp": "Nota FA", "aTargets":[1] },
+                { "mDataProp": "Local", "aTargets":[2] },
+                { "mDataProp": "Descrição", "aTargets":[3] },
+                { "mDataProp": "Data Inicial", "aTargets":[4] },
+                { "mDataProp": "Data Final", "aTargets":[5] },
+                { "mDataProp": "Data Ref.", "aTargets":[6] },
+                { "mDataProp": "Data de Criação", "aTargets":[7] },
+                { "mDataProp": "Centro de Trabalho", "aTargets":[8] },                
+                { "mDataProp": "Consequência", "aTargets":[9] }, 
+                { "mDataProp": "Pendente", "aTargets":[10] },  
+                { "mDataProp": "Aberta", "aTargets":[11] },  
+                { "mDataProp": "Analizada", "aTargets":[12] },      
+                { "mDataProp": "Concluída não Finalizada", "aTargets":[13] }, 
+                { "mDataProp": "Concluída no Prazo", "aTargets":[14] },
+                { "mDataProp": "Concluída Fora do Prazo", "aTargets":[15] }                         
+    ]; 
+    
+    $scope.failureData = [];
+
+    GetBudgets(true);   
+    
+    $scope.setLocation = function(id){
+        
+        $scope.selLocation = id;
+    };
+
+    $scope.setBudget = function (model){
+        
+         angular.forEach($scope.budgets, function(obj, key){
+             obj.cls = "";
+         });
+        
+        model.cls = "fa fa-check";
+        $scope.selectedBudget = model;
+    };
+    
+    $scope.fillBudget = function (model){              
+            GetFailureDataNote($scope.idIndicator,model.idBudget);
+    };
+
+    $scope.fillChart = function (scope){        
+        
+        var workCenter = scope.failureWorkCenter == null ? null : scope.failureWorkCenter.Sheet;
+        if(scope.failureEquipment != null)
+            GetNotesFailure(scope.startDate, scope.endDate, scope.failureEquipment.Sheet, workCenter);
+        else
+            if(scope.failureArea != null)
+                GetNotesFailure(scope.startDate, scope.endDate, scope.failureArea.Sheet, workCenter);
+            else
+                if(scope.failureFactory != null)
+                    GetNotesFailure(scope.startDate, scope.endDate, scope.failureFactory.Sheet, workCenter);
+ 
+       
+    };
+    
+    function GetFailureDataNote(idIndicator, idBudget){
+        
+        indicatorFailureAnalyzedFactory.GetFailureDataNote(idIndicator, idBudget).success(function (response){    
+
+            $scope.failuresData = [];
+            $scope.locations = [];
+
+            $scope.locations.push({idLocation: -1, Name: "TODAS PLANTAS"});
+
+            $scope.selLocation =  $scope.locations[0].idLocation;
+            
+            if(response.length > 0){        
+                                
+            
+                angular.forEach(response, function(objPlant, keyPlant){ 
+                    
+                    var failureData = {
+                        idPlant: objPlant.idPlant,
+                        plant: objPlant.Plant,                    
+                        table: [],
+                        labels: [],                    
+                        series: [],
+                        data: [],                    
+                        colors: [],
+                        datasetOverride:[],   
+                        tableNotesPendingFA: [],                                                                     
+                        tableNotesAnalyzedFA: [],
+                        tableNotesClosedMeasuresFA: [],
+                       
+                    };    
+
+                    $scope.locations.push({idLocation: objPlant.idPlant, Name: objPlant.Plant});
+                                
+                    angular.forEach(objPlant.tableNotesAnalyzedFA, function(objDetail, keyDetail){
+                        
+                        var val = [
+                                    $filter('date')(objDetail.InsDateTime,'dd/MM/yyyy') ,                                     
+                                    objDetail.idNote, 
+                                    objDetail.idOrder, 
+                                    objDetail.cdPriority, 
+                                    objDetail.Description, 
+                                    objDetail.Location, 
+                                    objDetail.cdUser, 
+                                    objDetail.PlantGroup, 
+                                    objDetail.Type, 
+                                    objDetail.Status,                                     
+                                    objDetail.CenterCost                            
+                                ]; 
+
+                                failureData.tableNotesAnalyzedFA.push(val);
+                    });
+
+                    angular.forEach(objPlant.tableNotesClosedMeasuresFA, function(objDetail, keyDetail){
+                        
+                        var val = [
+                                    $filter('date')(objDetail.InsDateTime,'dd/MM/yyyy') , 
+                                    objDetail.idNote, 
+                                    objDetail.idOrder, 
+                                    objDetail.cdPriority, 
+                                    objDetail.Description, 
+                                    objDetail.Location, 
+                                    objDetail.cdUser, 
+                                    objDetail.PlantGroup, 
+                                    objDetail.Type, 
+                                    objDetail.Status,                                     
+                                    objDetail.CenterCost                            
+                                ]; 
+
+                                failureData.tableNotesClosedMeasuresFA.push(val);
+                    });
+
+                    angular.forEach(objPlant.tableNotesPendingFA, function(objDetail, keyDetail){
+                        
+                        var val = [
+                                    $filter('date')(objDetail.InsDateTime,'dd/MM/yyyy') , 
+                                    objDetail.idNote, 
+                                    objDetail.idOrder, 
+                                    objDetail.cdPriority, 
+                                    objDetail.Description, 
+                                    objDetail.Location, 
+                                    objDetail.cdUser, 
+                                    objDetail.PlantGroup, 
+                                    objDetail.Type, 
+                                    objDetail.Status,                                     
+                                    objDetail.CenterCost                            
+                                ]; 
+
+                                failureData.tableNotesPendingFA.push(val);
+                    });
+                    
+                   
+                                     
+                    
+                    failureData.colors.push("rgb(192,0,0)");
+                    failureData.colors.push("#cc0066");
+                    failureData.colors.push("#009900");  
+                    failureData.colors.push("rgb(0,0,153)");
+                     
+                   
+                                                       
+                
+
+
+                    failureData.datasetOverride = [                                                                                                                                                                                                 
+                        {                        
+                            label: "FA Abertas",
+                            type: 'line',
+                            pointStyle: 'rectRot',
+                            pointRadius: 7, 
+                            fill: false                              
+                        },   
+                        {
+                            label: "FA Pendentes",
+                            type: 'bar',
+                                  
+                        },
+                        {                    
+                            label: "FA Analisada",
+                            type: 'bar',
+                          
+                        },
+                        {                        
+                            label: "FA Todas as Medidas Encerradas",
+                            type: 'bar',
+                                                    
+                        },  
+                                               
+                    ];
+
+
+                                                        
+                  
+                    var valuesPendingFA= [];  
+                    var valuesAnalyzedFA = [];
+                    var valuesClosedMeasuresFA = [];
+                    var valuesOpenFA = [];
+                                                                                                                                 
+                
+                    angular.forEach(objPlant.data, function(objData, keyData){ 
+                                        
+                        failureData.labels.push(objData.monthYear);
+                                                
+                        valuesPendingFA.push(objData.vlPendingFA);
+
+                        valuesAnalyzedFA.push(objData.vlAnalyzedFA);
+                        
+                        valuesClosedMeasuresFA.push(objData.vlClosedMeasuresFA);
+                        
+                        valuesOpenFA.push(objData.vlPendingFA + objData.vlAnalyzedFA + objData.vlClosedMeasuresFA)
+                                                                                                                
+                        
+                    });
+                                                                                                               
+                    failureData.data.push(valuesOpenFA);
+                    failureData.data.push(valuesPendingFA);
+                    failureData.data.push(valuesAnalyzedFA);
+                    failureData.data.push(valuesClosedMeasuresFA);
+                                          
+                                            
+                    $scope.failuresData.push(failureData);
+                });
+
+
+
+                //Set options Chart
+                $scope.options = {
+                    responsive: true,
+                    
+                
+                    scales: {
+                        yAxes: [{
+                         stacked: true,
+                            ticks: {
+                                beginAtZero:true,                         
+                            },
+                        }],
+                        xAxes: [{
+                                stacked: true,                                                       
+                            }                                                                                                     
+                        ]
+                    },
+                
+                    
+                    legend: {
+                        display: true,
+                        position: 'bottom',
+                        labels: {
+                            generateLabels: function(chart) {
+                                var result = [ {text: "FA Pendentes", fillStyle:"#cc0066" }, {text: "FA Analisadas", fillStyle:"#009900" }, {text: "FA Todas as Medidas Encerradas", fillStyle: "rgb(0,0,153)"}, {text: "FA Abertas", fillStyle: "rgb(192,0,0)"}]                                
+                                return result;                                
+                            }
+                        }
+                        
+                    },
+
+                    elements: {
+                        line: {
+                            tension: 0 // disables bezier curves                       
+                        },
+                        
+                        point:{
+                            pointStyle: 'circle'
+                        }
+                    },
+
+                    tooltips: {
+                        
+                        filter: function(tooltipItem, data) {
+                            if(tooltipItem.y)
+                                return !data.datasets[tooltipItem.datasetIndex].tooltipHidden; // custom added prop to dataset
+                            else
+                                return data.datasets[tooltipItem.datasetIndex].tooltipHidden;
+                        }
+                    }
+                    
+                };
+
+            }
+                   
+        }).error(function(error){
+
+            $.bigBox({
+            title : "Erro!",
+            content : error ? error.Message : "Falha de comunicação com o servidor.",            
+            color : "#C46A69",              
+            icon : "fa fa-warning swing animated",              
+            timeout : 6000 });
+
+        });    
+    };
+
+    function GetNotesFailure(dateStart, dateEnd, location, centerCost){
+        
+        indicatorFailureAnalyzedFactory.GetNotesFailure(dateStart, dateEnd, location, centerCost).success(function (response){                
+            
+            $scope.FailureAnalyzedDataAll = response;
+
+            FillChart();
+
+            $scope.FailureAnalyzedData = {
+                Labels: [],
+                Series: [{id: 1},{id: 2},{id: 3},{id: 4}],
+                Data: [],
+                Details: []
+            };
+
+            if(response.length > 0){                                        
+            
+                
+                
+               
+            }
+                   
+        }).error(function(error){
+
+            $.bigBox({
+            title : "Erro!",
+            content : error ? error.Message : "Falha de comunicação com o servidor.",            
+            color : "#C46A69",              
+            icon : "fa fa-warning swing animated",              
+            timeout : 6000 });
+
+        });    
+    };
+
+    function FillChart(){
+        
+        var failureAnalyzedData = angular.copy($scope.FailureAnalyzedDataAll);        
+
+        //Series
+        var series = [{ id: 1, name: 'Tipo 1' }, { id: 2, name: 'Tipo 2' }, { id: 3, name: 'Tipo 3' }, { id: 4, name: 'Tipo 4' }];
+
+        //DataSetOverride
+        var blueColor = 'rgb(0, 0, 153)';
+        var pinkColor = 'rgb(204, 0, 102)';
+        var greenColor = 'rgb(0, 153, 0)';
+        var redColor = 'rgb(255, 0, 0)';
+
+        var datasetOverride = [ 
+            { label: 'Tipo 1', fill: true, backgroundColor: blueColor, borderColor: blueColor, pointBackgroundColor: blueColor, pointBorderColor: '#fff', pointHoverBackgroundColor: blueColor, pointHoverBorderColor: blueColor },
+            { label: 'Tipo 2', fill: true, backgroundColor: pinkColor, borderColor: pinkColor, pointBackgroundColor: pinkColor, pointBorderColor: '#fff', pointHoverBackgroundColor: pinkColor, pointHoverBorderColor: pinkColor },
+            { label: 'Tipo 3', fill: true, backgroundColor: greenColor, borderColor: greenColor, pointBackgroundColor: greenColor, pointBorderColor: '#fff', pointHoverBackgroundColor: greenColor, pointHoverBorderColor: greenColor },
+            { label: 'Tipo 4', fill: true, backgroundColor: redColor, borderColor: redColor, pointBackgroundColor: redColor, pointBorderColor: '#fff', pointHoverBackgroundColor: redColor, pointHoverBorderColor: redColor },
+        ];
+
+        //Fill Labels
+        var labels = FillLabels(failureAnalyzedData);
+
+        //Fill Data
+        var chartAnalyzed = FillData(failureAnalyzedData, series, labels);
+
+         //Render Chart
+        RenderChart(chartAnalyzed, series, datasetOverride, labels);
+    }
+
+    function FillLabels(failureAnalyzedData) {
+
+        var labels = [];
+                
+        angular.forEach(failureAnalyzedData, function(obj, key){                                         
+
+            if(obj.dateRef){
+                var label = $filter('date')(obj.dateRef,'MM/yyyy');
+                var labelExist = labels.filter(function(e){ return e ===  label;});
+                if(labelExist.length == 0)                    
+                    labels.push(label);
+            }
+
+        });
+               
+        return labels;
+    }
+
+    function FillData(failureAnalyzedData, series, labels){
+
+        var chartAnalyzed = [];
+        //Data
+        angular.forEach(series, function (serie, index) {
+
+            var values = [];
+            angular.forEach(labels, function (label, index) {          
+
+                var failureAnalyzedDataByType = FilterFailureAnalyzedDataByType(failureAnalyzedData, serie.id, label);
+
+                if (failureAnalyzedDataByType.length > 0)
+                    angular.forEach(failureAnalyzedDataByType, function (item, index) {
+                                      
+                        var label = $filter('date')(item.dateRef,'MM/yyyy');;
+                        var valuesByLabel = values.filter(function (e) { return e.Label === label })[0];
+                            if (valuesByLabel) {
+                                valuesByLabel.Qty += 1;                                
+                                valuesByLabel.Details.push(item);
+                            }
+                            else
+                                values.push({ Label: label, Qty: 1, Details: [item] })
+                    });
+                else
+                    values.push({ Label: label, Qty: 0, Seconds: 0, Details: [] })
+            });
+
+            chartAnalyzed.push({ serie: serie.name, values: values});
+        });
+
+        return chartAnalyzed;
+    }
+
+    function FilterFailureAnalyzedDataByType(failureAnalyzedData, serie, label){
+
+        var filterFailure = [];
+
+        filterFailure = failureAnalyzedData.filter(function (e) { return e.cdTypeOperation === serie && $filter('date')(e.dateRef,'MM/yyyy') === label });
+
+        return filterFailure;
+    }
+
+    function RenderChart(chartAnalyzed, series, datasetOverride, labels){
+        var data = [];
+        var detailsAnalyzed = [];
+
+        angular.forEach(chartAnalyzed, function (serie, index) {
+
+            var values = [];
+            var details = [];                      
+
+            angular.forEach(serie.values, function (value, indexValue) {
+                                           
+                values.push(value.Qty);
+               
+                if (value.Qty > 0) {                    
+                    angular.forEach(value.Details, function (detail, indexValue) {                        
+                        details.push(detail);                           
+                    });                                       
+                }
+            });            
+
+            data.push(values);
+            detailsAnalyzed.push({ title: serie.name, details: details });
+        });
+
+
+        $scope.failureAnalyzedData = {
+            series: series,
+            datasetOverride: datasetOverride,
+            labels: labels,
+            data: data,
+            detailsAnalyzed: detailsAnalyzed,            
+        }
+    }
+
+    function GetEquipmentsPlantGroup(index, sheedMan){
+        
+       
+        equipmentPlantGroupFactory.GetEquipmentsPlantGroup(index, sheedMan).success(function (response){                
+            
+            if(response.length > 0)  {
+
+                switch(index){                    
+                    case 2 :
+                        $scope.failureFactories = response;
+                        $scope.failureAreas = [];
+                        $scope.failureEquipments = [];
+                    break;
+                    case 3 :
+                        $scope.failureAreas = response;
+                        $scope.failureEquipments= [];
+                    break;
+                    case 4 :
+                        $scope.failureEquipments = response;
+                    break;
+                }
+
+            }                                                 
+                            
+                               
+        }).error(function(error){
+
+            $.bigBox({
+            title : "Erro!",
+            content : error ? error.Message : "Falha de comunicação com o servidor.",            
+            color : "#C46A69",              
+            icon : "fa fa-warning swing animated",              
+            timeout : 6000 });
+          
+        });    
+
+
+        
+    };
+             
+    function GetBudgets(active){
+        
+        budgetFactory.GetBudgets(active).success(function (response){    
+
+        if(response.length > 0){        
+            $scope.budgets = response;   
+            
+            GetActualBudget();
+        }
+
+        }).error(function(error){
+
+            $.bigBox({
+            title : "Erro!",
+            content : error ? error.Message : "Falha de comunicação com o servidor.",            
+            color : "#C46A69",              
+            icon : "fa fa-warning swing animated",              
+            timeout : 6000 });
+
+        });    
+    };
+
+    function GetActualBudget(){
+        
+        budgetFactory.GetActualBudget().success(function (response){    
+
+            if(response){        
+                $scope.selectedBudget = response;    
+                $scope.selectedBudget.cls = "fa fa-check";    
+
+                $scope.budgets.filter(function(f) { return f.idBudget === $scope.selectedBudget.idBudget})[0].cls = "fa fa-check";
+              
+               // GetFailureDataNote($scope.idIndicator,$scope.selectedBudget.idBudget);
+            }
+
+        }).error(function(error){
+
+            $.bigBox({
+            title : "Erro!",
+            content : error ? error.Message : "Falha de comunicação com o servidor.",            
+            color : "#C46A69",              
+            icon : "fa fa-warning swing animated",              
+            timeout : 6000 });
+
+        });    
+    };    
+          
+});    
+
+
+
+

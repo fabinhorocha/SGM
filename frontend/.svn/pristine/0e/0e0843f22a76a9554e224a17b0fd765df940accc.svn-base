@@ -1,0 +1,143 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-12">
+        <h1 class="page-title txt-color-blueDark"><i class="fa-fw fa fa-home"></i> Dashboard <span></span></h1>
+    </div>
+    
+</div>
+<!-- widget grid -->
+<section  class="">
+    <!-- row -->
+    <div class="row">
+        <article class="col-sm-12">
+            <!-- new widget -->
+            <div class="jarviswidget" id="wid-id-0" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false">
+                
+                <header>
+                    <span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>                    
+                    <ul class="nav nav-tabs pull-right in" id="myTab">
+                        <li class="active">
+                            <a data-toggle="tab" href="#s1"><i class="fa fa-clock-o"></i> <span class="hidden-mobile hidden-tablet">Status Atual</span></a>
+                        </li>                        
+                    </ul>
+                </header>
+
+                <!-- widget div-->
+                <div class="no-padding">
+                    <!-- widget edit box -->
+                    <div class="jarviswidget-editbox">
+
+                        test
+                    </div>
+                    <!-- end widget edit box -->
+
+                    <div class="widget-body">
+                        <!-- content -->
+                        <div id="myTabContent" class="tab-content">
+                            <div class="tab-pane fade active in padding-10 no-padding-bottom" id="s1">
+                                <div class="row no-space">
+                                    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                                        <span class="gmp-liveupdate-1"> <span class="onoffswitch-title">Online</span> <span class="onoffswitch">
+                                                <input type="checkbox" name="start_interval" class="onoffswitch-checkbox" id="start_interval">
+                                                <label class="onoffswitch-label" for="start_interval"> 
+                                                    <span class="onoffswitch-inner" data-swchon-text="ON" data-swchoff-text="OFF"></span> 
+                                                    <span class="onoffswitch-switch"></span> </label> </span> </span>
+                                        <div id="updating-chart" ng-updating-chart class="chart-large txt-color-blue"></div>
+
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 show-stats">
+
+                                        <div class="row">
+                                            <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12"> <span class="text"> Atividades Pendentes<span class="pull-right">130/200</span> </span>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-color-blueDark" style="width: 65%;"></div>
+                                                </div> </div>
+                                            <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12"> <span class="text"> Atividades Pendentes <span class="pull-right">440 GB</span> </span>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-color-blue" style="width: 34%;"></div>
+                                                </div> </div>
+                                            
+
+                                            <span class="show-stat-buttons"> <span class="col-xs-12 col-sm-6 col-md-6 col-lg-6"> <a href="javascript:void(0);" class="btn btn-default btn-block hidden-xs">Gerar PDF</a> </span> <span class="col-xs-12 col-sm-6 col-md-6 col-lg-6"> <a href="javascript:void(0);" class="btn btn-default btn-block hidden-xs">Reportar bug</a> </span> </span>
+
+                                        </div>
+
+                                    </div>
+                                </div>												
+                            </div>
+                            <!-- end s1 tab pane -->											
+                        </div>
+                        <!-- end content -->
+                    </div>
+                </div>
+                <!-- end widget div -->
+            </div>
+            <!-- end widget -->
+        </article>
+    </div>
+
+    <!-- end row -->
+
+    <!-- row -->
+
+    <div class="row">
+        <article class="col-sm-12 col-md-12 col-lg-12">							
+            <!-- new widget -->
+            <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-colorbutton="false">								
+                <header>
+                    <span class="widget-icon"> <i class="fa fa-calendar"></i> </span>
+                    <h2> Eventos </h2>
+                    <div class="widget-toolbar">
+                        <!-- add: non-hidden - to disable auto hide -->
+                        <div class="btn-group">
+                            <button class="btn dropdown-toggle btn-xs btn-default" data-toggle="dropdown">
+                                Opções <i class="fa fa-caret-down"></i>
+                            </button>
+                            <ul class="dropdown-menu js-status-update pull-right">
+                                <li>
+                                    <a href="javascript:void(0);" id="mt">Mensal</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" id="ag">Agenda</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" id="td">Atual</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- widget div-->
+                <div>
+                    <!-- widget edit box -->
+                    <div class="jarviswidget-editbox">
+
+                        <input class="form-control" type="text">
+
+                    </div>
+                    <!-- end widget edit box -->
+
+                    <div class="widget-body no-padding">
+                        <!-- content goes here -->
+                        <div class="widget-body-toolbar">
+
+                            <div id="calendar-buttons">
+
+                                <div class="btn-group">
+                                    <a href="javascript:void(0)" class="btn btn-default btn-xs" id="btn-prev"><i class="fa fa-chevron-left"></i></a>
+                                    <a href="javascript:void(0)" class="btn btn-default btn-xs" id="btn-next"><i class="fa fa-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="calendar" ng-calendar></div>
+                        <!-- end content -->
+                    </div>
+                </div>
+                <!-- end widget div -->
+            </div>
+            <!-- end widget -->
+        </article>					
+    </div>
+    <!-- end row -->
+</section>
+<!-- end widget grid -->

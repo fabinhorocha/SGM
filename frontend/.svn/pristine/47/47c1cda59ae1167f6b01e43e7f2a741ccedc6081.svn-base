@@ -1,0 +1,991 @@
+
+app.controller('indicatorFailureAnalyzedController', function ($scope, $rootScope, $routeParams, $location, $filter, $timeout, $window,  $uibModal, consts, commonService, indicatorFailureAnalyzedFactory, budgetFactory, equipmentPlantGroupFactory) {
+
+   
+    $scope.startDate = $filter('date')(new Date().setYear(new Date().getFullYear() - 1), 'dd/MM/yyyy');
+    $scope.endDate = $filter('date')(new Date(),'dd/MM/yyyy');
+    $scope.Title = "Análise de Falhas"      
+    $scope.idIndicator = 4;      
+    $scope.failureFactories = []    
+    $scope.failureAreas = [];
+    $scope.failureEquipments = [];
+    $scope.failureWorkCenters = [];
+    $scope.lastMonthYear = "";
+
+    GetNotesFailure($scope, null);
+
+
+    //Set options Chart
+    $scope.optionsOld = {
+        responsive: true,
+        scales: {
+            yAxes: [{
+                stacked: true,
+                ticks: {
+                    beginAtZero: true,
+                },
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Quantidade'
+                },
+                ticks: {
+                    callback: function (label, index, labels) {
+                            return label;
+                    }
+                },
+            }],
+            xAxes: [{
+                
+                //barThickness: 30,
+                stacked: true,
+                ticks: {
+                    autoSkip: false
+                },
+            }
+            ]
+        },
+
+
+
+        legend: {
+            display: true,
+            position: 'right',            
+            //labels: {
+               // generateLabels: function (chart) {
+                    // var result = [
+                    //                 [{ text: "Tipo 1", fillStyle: "rgb(0, 0, 153)" }, { text: "Tipo 2", fillStyle: "rgb(204, 0, 102)" }, { text: "Tipo 3", fillStyle: "rgb(0,153,0)" }, { text: "Tipo 4", fillStyle: "rgb(255,0,0)" }],
+                    //                 [{ text: "Tipo 1", fillStyle: "rgb(0, 0, 153)" }, { text: "Tipo 2", fillStyle: "rgb(204, 0, 102)" }, { text: "Tipo 3", fillStyle: "rgb(0,153,0)" }, { text: "Tipo 4", fillStyle: "rgb(255,0,0)" }]
+                    //             ]
+                    // return result;
+                 //   chart.generateLabels();
+                    
+                //}
+           // }
+           
+            
+
+       },        
+        
+        // elements: {
+        //     line: {
+        //         tension: 0 // disables bezier curves                       
+        //     },
+        //     point: {
+        //         pointStyle: 'circle'
+        //     }
+        // },
+
+        tooltips: {
+
+            filter: function (tooltipItem, data) {
+
+                if (tooltipItem.y)
+                    return !data.datasets[tooltipItem.datasetIndex].tooltipHidden; // custom added prop to dataset
+                else
+                    return data.datasets[tooltipItem.datasetIndex].tooltipHidden;
+            }
+        },
+
+    };
+
+
+    $scope.options = {
+        responsive: true,
+        scales: {
+            yAxes: [{
+                stacked: true,
+                ticks: {
+                    beginAtZero: true,
+                },
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Quantidade'
+                },
+                ticks: {
+                    callback: function (label, index, labels) {
+                            return label;
+                    }
+                },
+            }],
+            xAxes: [{
+                id:'xAxis1',
+                type:'category',
+                display: true,   
+                position: 'top',
+                gridLines:{
+                    drawOnChartArea: true,
+                },               
+                //barThickness: 30,
+                stacked: true,
+                ticks: {
+                    callback:function(label){
+                        var sheet = label.split(";")[0];
+                        var monthYear = label.split(";")[1];
+                        
+                        if(sheet.split('-').length == 2)
+                                return $scope.failureFactories.filter(function(e){ return e.Sheet ===  sheet})[0].Name + " - "+monthYear;
+                            else
+                                if(sheet.split('-').length == 3)
+                                    return $scope.failureAreas.filter(function(e){ return e.Sheet ===  sheet})[0].Name+ " - "+monthYear;
+                                        else                                
+                                            return $scope.failureEquipments.filter(function(e){ return e.Sheet ===  sheet})[0].Name+ " - "+monthYear;                        
+                        
+                     
+                    }
+                },
+            },
+            {
+                id:'xAxis2',
+                type:'category',
+                gridLines:{
+                    drawOnChartArea: false,
+                },             
+                stacked: true,
+                ticks: {
+                    callback:function(label,e,arr){
+                        var sheet = label.split(";")[0];
+                        var monthYear = label.split(";")[1];
+
+                        var listLabels = arr.filter(function(e){ return  e.split(";")[1] === monthYear ;});
+                        
+                        if(sheet.split('-').length == 2){
+                            var position = ($scope.failureFactories.length/2)|0;
+                            
+                            if(listLabels.indexOf(label) == position-1)
+                                return monthYear;                                                        
+
+                        }
+
+
+                        return "";
+                        // if($scope.lastMonthYear == monthYear)
+                        //     return "";
+                        // else{
+                        //     $scope.lastMonthYear = monthYear;
+                        //     return monthYear;
+                        // }
+                        // if(month === "07")
+                        //     return year;
+                        // else    
+                        //     return "";
+                    }
+                },
+            }
+            ]
+        },
+
+        // plugins:{
+        //     datalabels:{
+        //         align: 'start',
+        //         formatter: function(value, context){
+        //             if(value == 0)
+        //                 return "";
+        //             else
+        //                 return context.chart.data.labels[context.dataIndex];
+        //         }
+        //     }
+        // },
+
+        legend: {
+            display: false,
+            position: 'right',            
+            //labels: {
+               // generateLabels: function (chart) {
+                    // var result = [
+                    //                 [{ text: "Tipo 1", fillStyle: "rgb(0, 0, 153)" }, { text: "Tipo 2", fillStyle: "rgb(204, 0, 102)" }, { text: "Tipo 3", fillStyle: "rgb(0,153,0)" }, { text: "Tipo 4", fillStyle: "rgb(255,0,0)" }],
+                    //                 [{ text: "Tipo 1", fillStyle: "rgb(0, 0, 153)" }, { text: "Tipo 2", fillStyle: "rgb(204, 0, 102)" }, { text: "Tipo 3", fillStyle: "rgb(0,153,0)" }, { text: "Tipo 4", fillStyle: "rgb(255,0,0)" }]
+                    //             ]
+                    // return result;
+                 //   chart.generateLabels();
+                    
+                //}
+           // }
+           
+            
+
+       },        
+        
+        // elements: {
+        //     line: {
+        //         tension: 0 // disables bezier curves                       
+        //     },
+        //     point: {
+        //         pointStyle: 'circle'
+        //     }
+        // },
+
+        tooltips: {
+
+            filter: function (tooltipItem, data) {
+
+                if (tooltipItem.y)
+                    return !data.datasets[tooltipItem.datasetIndex].tooltipHidden; // custom added prop to dataset
+                else
+                    return data.datasets[tooltipItem.datasetIndex].tooltipHidden;
+            }
+        },
+
+    };
+
+    GetEquipmentsPlantGroup($scope, 2, null, null);
+
+    $scope.selectedLevelMenuChange = function (level, scope) {
+        var workCenter = scope.failureWorkCenter == null || scope.failureWorkCenter.Name == "TODOS" ? null : scope.failureWorkCenter.Name;
+        $scope.lastMonthYear = "";
+        switch(level){
+            case 1:
+                if( scope.failureFactory.Sheet)
+                    GetEquipmentsPlantGroup(scope, 3, scope.failureFactory.Sheet, workCenter);
+                else{
+                    $scope.failureAreas = [];
+                    $scope.failureEquipments = [];
+                }
+                
+            break;
+            case 2:
+                if(scope.failureArea){
+                    if( scope.failureArea.Sheet){
+                        GetEquipmentsPlantGroup(scope, 4, scope.failureArea.Sheet, workCenter);
+                       // FillChart(scope, scope.failureArea.Sheet, workCenter);
+                    }
+                    else {                   
+                        $scope.failureEquipments = [];
+                        FillChart(scope, scope.failureFactory.Sheet, workCenter);
+                    }
+                                        
+                }
+                
+            break;
+            case 3:       
+                
+                if(scope.failureEquipment){
+                    if( scope.failureEquipment.Sheet)                       
+                        FillChart(scope, scope.failureEquipment.Sheet, workCenter);                    
+                    else                                            
+                        FillChart(scope, scope.failureArea.Sheet, workCenter);                                                            
+                }
+                
+            break;
+            case 4:
+                if(scope.failureEquipment && scope.failureEquipment.Sheet)               
+                    FillChart(scope, scope.failureEquipment.Sheet, workCenter);
+                else
+                    if(scope.failureArea && scope.failureArea.Sheet)               
+                        FillChart(scope, scope.failureArea.Sheet, workCenter);
+                    else
+                        if(scope.failureFactory && scope.failureFactory.Sheet)               
+                            FillChart(scope, scope.failureFactory.Sheet, workCenter);
+                        else
+                            FillChart(scope, null, workCenter);
+            break;
+        break;
+            
+            break;
+        }
+    }
+
+    $scope.overrideOptions = {
+        "bStateSave": true,
+        "iCookieDuration": 2419200, /* 1 month */
+        "bJQueryUI": true,
+        "bPaginate": true,
+        "bLengthChange": false,
+        "bFilter": true,
+        "bInfo": true,
+        "bDestroy": true                
+    };
+
+   
+    $scope.columnDefsNotes = [                 
+        { "mDataProp": "idNoteM2", "aTargets":[0] },
+        { "mDataProp": "idNoteFa", "aTargets":[1] },
+        { "mDataProp": "SheetEquip", "aTargets":[2] },
+        { "mDataProp": "NameEquip", "aTargets":[3] },
+        { "mDataProp": "dateStart", "aTargets":[4] },
+        { "mDataProp": "dateEnd", "aTargets":[5] },
+        { "mDataProp": "dateRef", "aTargets":[6] },
+        { "mDataProp": "InsDateTime", "aTargets":[7] },
+        { "mDataProp": "CenterCost", "aTargets":[8] },                
+        { "mDataProp": "cdTypeOperation", "aTargets":[9] }, 
+        { "mDataProp": "statusM2", "aTargets":[10] },  
+        { "mDataProp": "statusFA", "aTargets":[11] }
+                           
+]; 
+    
+
+    $scope.fillChart = function (scope){        
+        
+        $scope.lastMonthYear = "";
+
+        if(scope.failureEquipment != null && scope.failureEquipment.Sheet != null)
+            GetNotesFailure(scope, scope.failureEquipment.Sheet);
+        else
+            if(scope.failureArea != null && scope.failureArea.Sheet != null)
+                GetNotesFailure(scope, scope.failureArea.Sheet);
+            else
+                if(scope.failureFactory != null && scope.failureFactory.Sheet != null)
+                    GetNotesFailure(scope, scope.failureFactory.Sheet);
+                else
+                    GetNotesFailure(scope, null);
+       
+    };
+    
+    $scope.clearFilters = function(scope){
+
+        
+        $scope.failureAreas = [];
+        $scope.failureArea = null;
+        $scope.failureEquipments = [];
+        $scope.failureEquipment = null;
+        if($scope.failureFactories.length > 0)
+            scope.failureFactory = $scope.failureFactories.filter(function(e){ return  e.Sheet === null; })[0];
+        scope.failureWorkCenter = null;
+
+        GetNotesFailure(scope, null);
+    }
+ 
+    function GetNotesFailure(scope, location){
+
+        var workCenter = scope.failureWorkCenter == null || scope.failureWorkCenter.Name == "TODOS" ? null : scope.failureWorkCenter.Name;
+
+        var startDate = $filter('date')(new Date(commonService.TryGetDateFromValue(scope.startDate, 2, 1, 0, '/')));
+        var endDate = $filter('date')(new Date(commonService.TryGetDateFromValue(scope.endDate, 2, 1, 0, '/')));
+
+        indicatorFailureAnalyzedFactory.GetNotesFailure(startDate, endDate, location).success(function (response){                
+            
+            $scope.FailureAnalyzedDataAll = response;
+
+            
+
+            if(response.length > 0) {
+                FillWorkCenter($scope.FailureAnalyzedDataAll);
+                FillChart(scope,null, workCenter);
+
+                if(workCenter){                   
+                    scope.failureWorkCenter = $scope.failureWorkCenters.filter(function(e){return e.Name === workCenter;})[0];
+                }
+            }
+
+                              
+        }).error(function(error){
+
+            $.bigBox({
+            title : "Erro!",
+            content : error ? error.Message : "Falha de comunicação com o servidor.",            
+            color : "#C46A69",              
+            icon : "fa fa-warning swing animated",              
+            timeout : 6000 });
+
+        });    
+    };
+
+    function FillChart(scope, sheet, workCenter){
+        
+        var failureAnalyzedDataAll = angular.copy($scope.FailureAnalyzedDataAll);
+        var failureAnalyzedData = [];        
+
+         if(sheet || workCenter)  
+            failureAnalyzedData = FilterFailureAnalyzedDataByLocation(failureAnalyzedDataAll, sheet, workCenter);
+         else
+            failureAnalyzedData = failureAnalyzedDataAll;
+
+        //Series
+        var series = [
+            { id: 1, name: 'M2 Tipo 1' }, 
+            { id: 2, name: 'M2 Tipo 2' },
+            { id: 3, name: 'M2 Tipo 3' }, 
+            { id: 4, name: 'M2 Tipo 4' },
+            { id: 5, name: 'FA Pendente' }, 
+            { id: 6, name: 'FA Aberta' },
+            { id: 7, name: 'FA Analizada' }, 
+            { id: 8, name: 'FA Concluída não Finalizada' },
+            { id: 9, name: 'FA Concluída no Prazo' },
+            { id: 10, name: 'FA Concluída Fora do Prazo' }
+        ];
+
+        //DataSetOverride
+        var type1Color = 'rgb(231, 230, 230)';
+        var type2Color = 'rgb(175, 171, 171)';
+        var type3Color = 'rgb(59, 56, 56)';
+        var type4Color = 'rgb(69, 85, 107)';
+
+        var type5Color = 'rgb(192, 0, 0)';
+        var type6Color = 'rgb(255, 255, 0)';
+        var type7Color = 'rgb(189, 215, 238)';
+        var type8Color = 'rgb(132, 151, 176)';
+        var type9Color = 'rgb(167, 205, 149)';
+        var type10Color = 'rgb(101, 111, 89)';
+        
+
+        var datasetOverride = [ 
+            { stack: 1, label: 'M2 Tipo 1', fill: true, backgroundColor: type1Color, borderColor: type1Color, pointBackgroundColor: type1Color, pointBorderColor: '#fff', pointHoverBackgroundColor: type1Color, pointHoverBorderColor: type1Color },
+            { stack: 1, label: 'M2 Tipo 2', fill: true, backgroundColor: type2Color, borderColor: type2Color, pointBackgroundColor: type2Color, pointBorderColor: '#fff', pointHoverBackgroundColor: type2Color, pointHoverBorderColor: type2Color, },
+            { stack: 1, label: 'M2 Tipo 3', fill: true, backgroundColor: type3Color, borderColor: type3Color, pointBackgroundColor: type3Color, pointBorderColor: '#fff', pointHoverBackgroundColor: type3Color, pointHoverBorderColor: type3Color},
+            { stack: 1, label: 'M2 Tipo 4', fill: true, backgroundColor: type4Color, borderColor: type4Color, pointBackgroundColor: type4Color, pointBorderColor: '#fff', pointHoverBackgroundColor: type4Color, pointHoverBorderColor: type4Color },
+            { stack: 2, label: 'FA Pendente', fill: true, backgroundColor: type5Color, borderColor: type5Color, pointBackgroundColor: type5Color, pointBorderColor: '#fff', pointHoverBackgroundColor: type5Color, pointHoverBorderColor: type5Color },
+            { stack: 2, label: 'FA Aberta', fill: true, backgroundColor: type6Color, borderColor: type6Color, pointBackgroundColor: type6Color, pointBorderColor: '#fff', pointHoverBackgroundColor: type6Color, pointHoverBorderColor: type6Color, },
+            { stack: 2, label: 'FA Analizada', fill: true, backgroundColor: type7Color, borderColor: type7Color, pointBackgroundColor: type7Color, pointBorderColor: '#fff', pointHoverBackgroundColor: type7Color, pointHoverBorderColor: type7Color},
+            { stack: 2, label: 'FA Concluída não Finalizada', fill: true, backgroundColor: type8Color, borderColor: type8Color, pointBackgroundColor: type8Color, pointBorderColor: '#fff', pointHoverBackgroundColor: type8Color, pointHoverBorderColor: type8Color },
+            { stack: 2, label: 'FA Concluída no Prazo', fill: true, backgroundColor: type9Color, borderColor: type9Color, pointBackgroundColor: type9Color, pointBorderColor: '#fff', pointHoverBackgroundColor: type9Color, pointHoverBorderColor: type9Color},
+            { stack: 2, label: 'FA Concluída Fora do Prazo', fill: true, backgroundColor: type10Color, borderColor: type10Color, pointBackgroundColor: type10Color, pointBorderColor: '#fff', pointHoverBackgroundColor: type10Color, pointHoverBorderColor: type10Color }
+
+        ];
+
+        //Fill Labels
+        var labels = FillLabels(scope,failureAnalyzedData);
+
+        //Fill Data
+        var chartAnalyzed = FillData(scope, failureAnalyzedData, series, labels);
+
+         //Render Chart
+        RenderChart(chartAnalyzed, failureAnalyzedData, series, datasetOverride, labels);
+    }
+
+    function FillLabels(scope, failureAnalyzedData) {
+
+        var labels = [];
+
+        var failureFactories = angular.copy($scope.failureFactories);
+                        
+        angular.forEach(failureAnalyzedData, function(obj, key){                                         
+
+            if(obj.dateRef){
+
+                var locations = [];
+                // var Sheet ='';
+                // if(scope.failureFactory == null || scope.failureFactory.Sheet == null)
+                //     Sheet = obj.SheetFactory;
+                //     else
+                //         if(scope.failureArea == null || scope.failureArea.Sheet == null)
+                //             Sheet = obj.SheetArea;
+                //             else                                
+                //                 Sheet = obj.SheetEquip;
+
+              
+                // var label = Sheet + ';' + $filter('date')(obj.dateRef,'MM/yyyy');
+                // var labelExist = labels.filter(function(e){ return e ===  label;});
+                // if(labelExist.length == 0)                    
+                //     labels.push(label);
+
+                 if(scope.failureFactory == null || scope.failureFactory.Sheet == null)
+                    locations = angular.copy($scope.failureFactories);
+                    else
+                        if(scope.failureArea == null || scope.failureArea.Sheet == null)
+                            locations = angular.copy($scope.failureAreas);
+                            else                                
+                                locations = angular.copy($scope.failureEquipments);
+
+
+                angular.forEach(locations.filter(function(e){ return e.Sheet != null ;}),function(item,index){
+                    var label = item.Sheet + ';' + $filter('date')(obj.dateRef,'MM/yyyy');
+                    var labelExist = labels.filter(function(e){ return e ===  label;});
+                    if(labelExist.length == 0)                    
+                        labels.push(label);
+                });
+                 
+              
+            }
+
+        });
+               
+        return labels;
+    }
+
+    function FillData(scope, failureAnalyzedData, series, labels){
+
+        var chartAnalyzed = [];
+        //Data
+        angular.forEach(series, function (serie, index) {
+
+            var values = [];
+            angular.forEach(labels, function (label, index) {          
+
+                var failureAnalyzedDataByType = FilterFailureAnalyzedDataByType(scope, failureAnalyzedData, serie.id, label);
+
+                if (failureAnalyzedDataByType.length > 0){
+                    angular.forEach(failureAnalyzedDataByType, function (item, index) {
+                        
+                        var Sheet ='';
+                        if(scope.failureFactory == null || scope.failureFactory.Sheet == null)
+                            Sheet = item.SheetFactory;
+                            else
+                                if(scope.failureArea == null || scope.failureArea.Sheet == null)
+                                    Sheet = item.SheetArea;
+                                    else                                
+                                        Sheet = item.SheetEquip;
+
+                        var labelAux = Sheet +';'+$filter('date')(item.dateRef,'MM/yyyy') ;
+                        var valuesByLabel = values.filter(function (e) { return e.Label === labelAux })[0];
+                            if (valuesByLabel) 
+                                valuesByLabel.Qty += 1;                                                            
+                            else
+                                values.push({ Label: label, Qty: 1})
+                    });
+                    }
+                else
+                    values.push({ Label: label, Qty: 0})
+            });
+
+            chartAnalyzed.push({ serie: serie.name, values: values});
+        });
+
+        return chartAnalyzed;
+    }
+
+    function FilterFailureAnalyzedDataByType(scope, failureAnalyzedData, serie, label){
+        
+        var location = null;  
+        var sheet = label.split(';')[0];      
+        var monthYear = label.split(';')[1];
+
+        var failureFactories = angular.copy($scope.failureFactories);
+
+        var filterFailure = [];
+        if(serie <= 4)
+            filterFailure = failureAnalyzedData.filter(function (e) {         
+                
+                if(scope.failureFactory == null || scope.failureFactory.Sheet == null)                    
+                    return e.cdTypeOperation === serie && e.SheetFactory === sheet && $filter('date')(e.dateRef,'MM/yyyy') === monthYear; 
+                    else
+                        if(scope.failureArea == null || scope.failureArea.Sheet == null) 
+                            return e.cdTypeOperation === serie && e.SheetArea === sheet && $filter('date')(e.dateRef,'MM/yyyy') === monthYear; 
+                            else
+                                return e.cdTypeOperation === serie && e.SheetEquip === sheet && $filter('date')(e.dateRef,'MM/yyyy') === monthYear; 
+            });
+        else{
+            switch(serie){
+
+                case 5: 
+                    filterFailure = failureAnalyzedData.filter(function (e) { 
+                        if(scope.failureFactory == null || scope.failureFactory.Sheet == null)                    
+                        return  e.cdPendingFA === 1 && e.SheetFactory === sheet && $filter('date')(e.dateRef,'MM/yyyy') === monthYear; 
+                        else
+                            if(scope.failureArea == null || scope.failureArea.Sheet == null) 
+                                return  e.cdPendingFA === 1 && e.SheetArea === sheet && $filter('date')(e.dateRef,'MM/yyyy') === monthYear; 
+                                else
+                                    return  e.cdPendingFA === 1 && e.SheetEquip === sheet && $filter('date')(e.dateRef,'MM/yyyy') === monthYear;                             
+                    });
+                    break;
+                case 6: 
+                    filterFailure = failureAnalyzedData.filter(function (e) { 
+                        if(scope.failureFactory == null || scope.failureFactory.Sheet == null)                    
+                        return  e.cdOpenFA === 1 && e.SheetFactory === sheet && $filter('date')(e.dateRef,'MM/yyyy') === monthYear; 
+                        else
+                            if(scope.failureArea == null || scope.failureArea.Sheet == null) 
+                                return  e.cdOpenFA === 1 && e.SheetArea === sheet && $filter('date')(e.dateRef,'MM/yyyy') === monthYear; 
+                                else
+                                    return  e.cdOpenFA === 1 && e.SheetEquip === sheet && $filter('date')(e.dateRef,'MM/yyyy') === monthYear;                             
+                        
+                    });
+                    break;
+                case 7: 
+                    filterFailure = failureAnalyzedData.filter(function (e) { 
+                        if(scope.failureFactory == null || scope.failureFactory.Sheet == null)                    
+                        return  e.cdAnalyzedFA === 1 && e.SheetFactory === sheet && $filter('date')(e.dateRef,'MM/yyyy') === monthYear; 
+                        else
+                            if(scope.failureArea == null || scope.failureArea.Sheet == null) 
+                                return  e.cdAnalyzedFA === 1 && e.SheetArea === sheet && $filter('date')(e.dateRef,'MM/yyyy') === monthYear; 
+                                else
+                                    return  e.cdAnalyzedFA === 1 && e.SheetEquip === sheet && $filter('date')(e.dateRef,'MM/yyyy') === monthYear;                                                   
+                    });
+                    break;
+                case 8: 
+                    filterFailure = failureAnalyzedData.filter(function (e) { 
+                        if(scope.failureFactory == null || scope.failureFactory.Sheet == null)                    
+                        return  e.cdClosedNotEndFA === 1 && e.SheetFactory === sheet && $filter('date')(e.dateRef,'MM/yyyy') === monthYear; 
+                        else
+                            if(scope.failureArea == null || scope.failureArea.Sheet == null) 
+                                return  e.cdClosedNotEndFA === 1 && e.SheetArea === sheet && $filter('date')(e.dateRef,'MM/yyyy') === monthYear; 
+                                else
+                                    return  e.cdClosedNotEndFA === 1 && e.SheetEquip === sheet && $filter('date')(e.dateRef,'MM/yyyy') === monthYear;                                                                           
+                     });
+                    break;
+                case 9: 
+                    filterFailure = failureAnalyzedData.filter(function (e) { 
+                        if(scope.failureFactory == null || scope.failureFactory.Sheet == null)                    
+                        return  e.cdClosedOnTimeFA === 1 && e.SheetFactory === sheet && $filter('date')(e.dateRef,'MM/yyyy') === monthYear; 
+                        else
+                            if(scope.failureArea == null || scope.failureArea.Sheet == null) 
+                                return  e.cdClosedOnTimeFA === 1 && e.SheetArea === sheet && $filter('date')(e.dateRef,'MM/yyyy') === monthYear 
+                                else
+                                    return  e.cdClosedOnTimeFA === 1 && e.SheetEquip === sheet && $filter('date')(e.dateRef,'MM/yyyy') === monthYear;                                                                                                   
+                    });
+                    break;
+                case 10: 
+                    filterFailure = failureAnalyzedData.filter(function (e) { 
+                        if(scope.failureFactory == null || scope.failureFactory.Sheet == null)                    
+                        return  e.cdClosedDelayFA === 1 && e.SheetFactory === sheet && $filter('date')(e.dateRef,'MM/yyyy') === monthYear; 
+                        else
+                            if(scope.failureArea == null || scope.failureArea.Sheet == null) 
+                                return  e.cdClosedDelayFA === 1 && e.SheetArea === sheet && $filter('date')(e.dateRef,'MM/yyyy') === monthYear; 
+                                else
+                                    return  e.cdClosedDelayFA === 1 && e.SheetEquip === sheet && $filter('date')(e.dateRef,'MM/yyyy') === monthYear;                                                                                                                           
+                    });
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        return filterFailure;
+    }
+
+    function FilterFailureAnalyzedDataByLocation(failureAnalyzedData, sheet, workCenter){
+        
+        var failureAnalyzedDataFilter = [];
+
+        if(sheet && workCenter)
+            failureAnalyzedDataFilter =  failureAnalyzedData.filter(function(e){ return e.SheetEquip.indexOf(sheet) >= 0 && e.CenterCost === workCenter;  })
+        else
+            if(sheet && !workCenter)
+                failureAnalyzedDataFilter = failureAnalyzedData.filter(function(e){ return e.SheetEquip.indexOf(sheet) >= 0;  })
+            else
+                if(!sheet && workCenter)
+                    failureAnalyzedDataFilter =  failureAnalyzedData.filter(function(e){ return e.CenterCost === workCenter;  })
+        
+        return failureAnalyzedDataFilter;
+    }
+
+    function FillWorkCenter(failureAnalyzedData){
+        
+        $scope.failureWorkCenters = [];
+
+        $scope.failureWorkCenters.push({Name: "TODOS"});
+        angular.forEach(failureAnalyzedData,function(obj,index){
+
+            var workCenter = $scope.failureWorkCenters.filter(function(e){return e.Name === obj.CenterCost; });
+
+            if(workCenter.length == 0)
+                $scope.failureWorkCenters.push({Name: obj.CenterCost});
+
+        });                       
+    }
+
+
+    function RenderChart(chartAnalyzed, detailsDataAnalyzed, series, datasetOverride, labels){
+        var data = [];
+        var detailsAnalyzed = [];
+
+        angular.forEach(chartAnalyzed, function (serie, index) {
+
+            var values = [];
+            var details = [];                      
+
+            angular.forEach(serie.values, function (value, indexValue) {
+                                           
+                values.push(value.Qty);
+               
+                if (value.Qty > 0) {                    
+                    angular.forEach(value.Details, function (detail, indexValue) {                        
+                        details.push(detail);                           
+                    });                                       
+                }
+            });            
+
+            data.push(values);
+            detailsAnalyzed.push({ title: serie.serie, details: details });
+
+         
+        });
+
+        var detailsData = [];
+
+        angular.forEach(detailsDataAnalyzed,function(obj,index){
+           
+                detailsData.push([
+                    obj.idNoteM2,
+                    obj.idNoteFa,
+                    obj.SheetEquip,
+                    obj.NameEquip,
+                    $filter('date')(obj.dateStart,'dd/MM/yyyy'),
+                    $filter('date')(obj.dateEnd,'dd/MM/yyyy'),
+                    $filter('date')(obj.dateRef,'dd/MM/yyyy'),
+                    $filter('date')(obj.InsDateTime,'dd/MM/yyyy'),
+                    obj.CenterCost,
+                    obj.cdTypeOperation,
+                    obj.statusM2,
+                    obj.statusFA                  
+                ]);
+            
+        });
+
+        $scope.failureAnalyzedData = {
+            series: series,
+            datasetOverride: datasetOverride,
+            labels: labels,
+            data: data,
+            detailsDataAnalyzed: detailsData          
+        }
+
+       
+    }
+
+    function GetEquipmentsPlantGroup(scope, index, sheedMan, workCenter){
+        
+       
+        equipmentPlantGroupFactory.GetEquipmentsPlantGroup(index, sheedMan).success(function (response){                
+            
+            if(response.length > 0)  {
+
+                switch(index){                    
+                    case 2 :
+                        $scope.failureFactories = response;
+                        $scope.failureAreas = [];
+                        $scope.failureEquipments = [];
+                        scope.failureFactory = $scope.failureFactories.filter(function(e){ return  e.Sheet === null; })[0];
+                    break;
+                    case 3 :
+                        $scope.failureAreas = response;
+                        $scope.failureEquipments= [];
+                        scope.failureArea = $scope.failureAreas.filter(function(e){ return  e.Sheet === null; })[0];
+                        FillChart(scope, sheedMan, workCenter);
+                    break;
+                    case 4 :
+                        $scope.failureEquipments = response;
+                        scope.failureEquipment = $scope.failureEquipments.filter(function(e){ return  e.Sheet === null; })[0];
+                        FillChart(scope, sheedMan, workCenter);
+                    break;
+                }
+
+            }                                                 
+                            
+                               
+        }).error(function(error){
+
+            $.bigBox({
+            title : "Erro!",
+            content : error ? error.Message : "Falha de comunicação com o servidor.",            
+            color : "#C46A69",              
+            icon : "fa fa-warning swing animated",              
+            timeout : 6000 });
+          
+        });    
+
+
+        
+    };
+         
+    
+    $scope.dataTest = {
+        // define label tree
+        labels: [
+          
+          {            
+            label: '01/2018',
+            
+            // children: ['PLANTA SAW', 'PLANTA ERW', 'OFICINA DE VEICULOS', 'PLANTA FABRICAÇÃO DE CONECTORES']
+            children: [{ label: 'PLANTA SAW'}, { label: 'PLANTA ERW'}, { label: 'OFICINA DE VEICULOS'}, { label: 'PLANTA FABRICAÇÃO DE CONECTORES'}]
+          },
+          {
+            label: '02/2018',
+            
+            children: ['PLANTA SAW', 'PLANTA ERW', 'OFICINA DE VEICULOS', 'PLANTA FABRICAÇÃO DE CONECTORES']
+          },
+          {
+            label: '03/2018',
+            
+            children: ['PLANTA SAW', 'PLANTA ERW', 'OFICINA DE VEICULOS', 'PLANTA FABRICAÇÃO DE CONECTORES']
+          },
+          {
+            label: '04/2018',
+            
+            children: ['PLANTA SAW', 'PLANTA ERW', 'OFICINA DE VEICULOS', 'PLANTA FABRICAÇÃO DE CONECTORES']
+          },
+          {
+            label: '05/2018',
+            
+            children: ['PLANTA SAW', 'PLANTA ERW', 'OFICINA DE VEICULOS', 'PLANTA FABRICAÇÃO DE CONECTORES']
+          },
+        ],
+        datasets: [{
+          label: 'M2 TIPO 1',
+          backgroundColor: 'rgb(231, 230, 230)',
+          stack: 'Stack 0',
+          // store as the tree attribute for reference, the data attribute will be automatically managed
+          tree: [
+            
+            {
+              value: 50,
+             
+              children: [15, 5, 6, 10, 14]
+            },
+            {
+                value: 40,
+                children: [10, 5, 6, 5, 14]
+              },
+              {
+                value: 70,
+                children: [20, 7, 9, 15, 19]
+              },
+              {
+                value: 65,
+                children: [20, 10, 6, 10, 19]
+              },
+              {
+                value: 25,
+                children: [6, 4, 5, 5, 5]
+              },
+            
+          ]
+        },
+        {
+            label: 'M2 Tipo 2',
+            backgroundColor: 'rgb(175, 171, 171)',
+            stack: 'Stack 0',
+          
+            tree: [
+                {
+                    value: 25,
+                    children: [6, 4, 5, 5, 5]
+                },
+                {
+                    value: 70,
+                    children: [20, 7, 9, 15, 19]
+                },
+                {
+                    value: 50,
+                    children: [15, 5, 6, 10, 14]
+                },
+                {
+                    value: 40,
+                    children: [10, 5, 6, 5, 14]
+                },
+               
+                {
+                    value: 65,
+                    children: [20, 10, 6, 10, 19]
+                },
+               
+                  
+            ]
+          },
+          {
+            label: 'FA Aberta',
+            backgroundColor: 'rgb(175, 16, 171)',
+            stack: 'Stack 1',
+            // store as the tree attribute for reference, the data attribute will be automatically managed
+            tree: [
+                {
+                    value: 25,
+                    children: [6, 4, 5, 5, 5]
+                },
+                {
+                    value: 70,
+                    children: [20, 7, 9, 15, 19]
+                },
+                {
+                    value: 50,
+                    children: [15, 5, 6, 10, 14]
+                },
+                {
+                    value: 40,
+                    children: [10, 5, 6, 5, 14]
+                },
+               
+                {
+                    value: 65,
+                    children: [20, 10, 6, 10, 19]
+                },
+               
+            ]
+          }
+        ]
+      };
+
+    $scope.optionsTest = {
+        responsive: true,
+        title: {
+            display: false,
+            text: "Dados"
+        },
+        layout: {
+            padding: {            
+            bottom: 45
+            }
+        },
+        scales: {
+            xAxes: [{
+            type: 'hierarchical',            
+            offset: true,
+            stacked: true,    
+            display: true,
+            gridLines: {
+                offsetGridLines: true
+            },
+            hierarchySpanWidth: 1,                   
+            ticks: {
+                userCallback: function(item, index) {
+                    if (!(index % 4)) return item;
+                 },
+            }
+            
+            
+            },
+        
+        ],
+            yAxes: [{
+                stacked: true,
+            ticks: {
+                beginAtZero: true
+            }
+            }]
+        },
+        plugins: {
+            datalabels: {
+                // formatter: function(value, context) {
+
+                //     var label = context.chart.data.labels[context.dataIndex];
+
+                //     if(context.datasetIndex == 1){
+                //         if(label.level == 0)
+                //             return "";
+                //         else
+                //             return label.label;
+                //     }
+                //     else 
+                //         return "";
+
+                //     //return context.chart.data.labels[context.dataIndex];
+                // },
+                
+                // rotation: function(context) {
+
+                //     var label = context.chart.data.labels[context.dataIndex];
+
+                //     if(context.datasetIndex == 1){
+                //         if(label.level == 0)
+                //             return 0;
+                //         else
+                //             return -45;
+                //     }
+                //     else 
+                //         return 0;
+
+                //     //return context.chart.data.labels[context.dataIndex];
+                // },
+                // align : function(context) {
+
+                //     var label = context.chart.data.labels[context.dataIndex];
+
+                //     if(context.datasetIndex == 1){
+                //         if(label.level == 0)
+                //             return 'center';
+                //         else
+                //             return 'end';
+                //     }
+                //     else 
+                //         return 'center';
+                // },
+            
+                
+            }
+        }
+    };
+
+
+      
+});    
+
+
+
+

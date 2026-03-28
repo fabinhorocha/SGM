@@ -1,0 +1,77 @@
+<div class="row">
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-6 text-align-left"> 
+            <h1 class="page-title txt-color-blueDark"><i class="fa-fw fa fa-bar-chart-o"></i>                                 
+                Indicadores 
+                <span>>
+                    {{Title}}
+                </span>
+            </h1>    
+                                                     
+        </div> 
+                        
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-6 text-align-right"  ng-include src="'views/filterIndicators.html'">
+               
+        </div>                  
+        
+</div>
+
+<div class="row">
+    <section class="col col-lg-3">
+        <select id="selectedFactory" name="selectedFactory"
+        ng-model="failureFactory" 
+        chosen
+        options="failureFactories" 
+        ng-options="f.Name for f in failureFactories" 
+        style="width: 240px !important;"
+        ng-change="selectedLevelMenuChange(1)"
+        data-placeholder="SELECIONE">
+        </select>    
+    </section>
+    <section class="col col-lg-3">
+        <select id="selectedArea" name="selectedArea"
+        ng-model="failureArea" 
+        chosen
+        options="failureAreas" 
+        ng-options="a.Name for a in failureAreas" 
+        style="width: 240px !important;"
+        ng-change="selectedLevelMenuChange(2)"
+        data-placeholder="SELECIONE">
+        </select>    
+    </section>
+    <section class="col col-lg-3">
+        <select id="selectedEquipment" name="selectedEquipment"
+        ng-model="failureEquipment" 
+        chosen
+        options="failureEquipments" 
+        ng-options="e.Name for e in failureEquipments" 
+        style="width: 240px !important;"
+        data-placeholder="SELECIONE">
+        </select>    
+    </section>
+    <section class="col col-lg-3">
+        <select id="selectedWorkCenter" name="selectedWorkCenter" class="form-control"
+        ng-model="failureWorkCenter" 
+        chosen
+        options="failureWorkCenters" 
+        ng-options="w.Name for w in failureWorkCenters" 
+        style="width: 240px !important;"        
+        data-placeholder="SELECIONE">
+        </select>    
+    </section>
+</div>
+
+<!-- widget grid -->
+<section id="widget-grid-indicatorFailures"  ng-repeat="row in failuresData" ng-widget-grid class="">
+    <!-- row -->    
+    <!-- <div class="row" ng-include src="'views/contentIndicatorsFailureAnalyzed.html'" ng-if = "(selLocation == -1 || selLocation == row.idPlant)">
+       
+    </div>  -->
+    <!-- end row -->
+</section>
+<!-- end widget grid -->
+
+
+
+        
+        
+        

@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{16B344BD-ABD6-45D5-B337-C87FF3E6207E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tenaris.Confab.SGM.Repositories</RootNamespace>
+    <AssemblyName>Tenaris.Confab.SGM.Repositories</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interfaces\INoteFailureRepositorie.cs" />
+    <Compile Include="Interfaces\IPlantGroupRepositorie.cs" />
+    <Compile Include="NoteFailureRepositorie.cs" />
+    <Compile Include="PlantGroupRepositorie.cs" />
+    <Compile Include="BudgetPlantRepositorie.cs" />
+    <Compile Include="BudgetLocationRepositorie.cs" />
+    <Compile Include="ComponentRepository.cs" />
+    <Compile Include="EquipmentPlantGroupRepositorie.cs" />
+    <Compile Include="Interfaces\IBudgetPlantRepositorie.cs" />
+    <Compile Include="Interfaces\IBudgetLocationRepositorie.cs" />
+    <Compile Include="Interfaces\IComponentRepository.cs" />
+    <Compile Include="Interfaces\IEquipmentDataRepositorie.cs" />
+    <Compile Include="Interfaces\IEquipmentPlantGroupRepositorie.cs" />
+    <Compile Include="Interfaces\IOilManagementAccessRepository.cs" />
+    <Compile Include="Interfaces\IOilManagementAlarmRepository.cs" />
+    <Compile Include="Interfaces\IOilManagementReportRepository.cs" />
+    <Compile Include="Interfaces\IOilSupplyRepository.cs" />
+    <Compile Include="Interfaces\IOilSupplyTypeRepository.cs" />
+    <Compile Include="Interfaces\IOilTypeRepository.cs" />
+    <Compile Include="Interfaces\IFailureDataRepositorie.cs" />
+    <Compile Include="Interfaces\IPlantDataRepositorie.cs" />
+    <Compile Include="Interfaces\ILocationPlantRepositorie.cs" />
+    <Compile Include="Interfaces\ILocationLocalRepositorie.cs" />
+    <Compile Include="Interfaces\INotificationRepositorie.cs" />
+    <Compile Include="Interfaces\IStoppageTypeRepository.cs" />
+    <Compile Include="Interfaces\ITypeNoteRepositorie.cs" />
+    <Compile Include="Interfaces\ITypeDocRepositorie.cs" />
+    <Compile Include="Interfaces\IScheduledRangeRepositorie.cs" />
+    <Compile Include="Interfaces\IPlantRepositorie.cs" />
+    <Compile Include="EquipmentDataRepositorie.cs" />
+    <Compile Include="OilManagementAccessRepository.cs" />
+    <Compile Include="OilManagementAlarmRepository.cs" />
+    <Compile Include="OilManagementReportRepository.cs" />
+    <Compile Include="OilSupplyRepository.cs" />
+    <Compile Include="OilSupplyTypeRepository.cs" />
+    <Compile Include="OilTypeRepository.cs" />
+    <Compile Include="FailureDataRepositorie.cs" />
+    <Compile Include="PlantDataRepositorie.cs" />
+    <Compile Include="LocationPlantRepositorie.cs" />
+    <Compile Include="LocationLocalRepositorie.cs" />
+    <Compile Include="NotificationRepositorie.cs" />
+    <Compile Include="StoppageTypeRepository.cs" />
+    <Compile Include="TypeNoteRepositorie.cs" />
+    <Compile Include="TypeDocRepositorie.cs" />
+    <Compile Include="ScheduledRangeRepositorie.cs" />
+    <Compile Include="PlantRepositorie.cs" />
+    <Compile Include="OrderHeadRepositorie.cs" />
+    <Compile Include="IndicatorRepositorie.cs" />
+    <Compile Include="Interfaces\IOrderHeadRepositorie.cs" />
+    <Compile Include="Interfaces\IBudgetRepositorie.cs" />
+    <Compile Include="Interfaces\IIndicatorRepositorie.cs" />
+    <Compile Include="Interfaces\ILocationDataRepositorie.cs" />
+    <Compile Include="Interfaces\ILocationRepositorie.cs" />
+    <Compile Include="LocationDataRepositorie.cs" />
+    <Compile Include="PriorityRepositorie.cs" />
+    <Compile Include="AreaRepositorie.cs" />
+    <Compile Include="EquipmentBackupRepositorie.cs" />
+    <Compile Include="Interfaces\IPriorityRepositorie.cs" />
+    <Compile Include="Interfaces\IReportFileRepositorie.cs" />
+    <Compile Include="Interfaces\INoteSAPRepositorie.cs" />
+    <Compile Include="ReportFileRepositorie.cs" />
+    <Compile Include="LocationRepositorie.cs" />
+    <Compile Include="BudgetRepositorie.cs" />
+    <Compile Include="ReportRepositorie.cs" />
+    <Compile Include="EquipmentRepositorie.cs" />
+    <Compile Include="Interfaces\IAreaRepositorie.cs" />
+    <Compile Include="Interfaces\IEquipmentBackupRepositorie.cs" />
+    <Compile Include="Interfaces\IEquipmentRepositorie.cs" />
+    <Compile Include="Interfaces\IPartRepositorie.cs" />
+    <Compile Include="Interfaces\IReportTypeRepositorie.cs" />
+    <Compile Include="Interfaces\IReportStatusRepositorie.cs" />
+    <Compile Include="Interfaces\IReportRepositorie.cs" />
+    <Compile Include="Interfaces\ITypeRepositorie.cs" />
+    <Compile Include="PartRepositorie.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ReportStatusRepositorie.cs" />
+    <Compile Include="ReportTypeRepositorie.cs" />
+    <Compile Include="NoteSAPRepositorie.cs" />
+    <Compile Include="TypeRepositorie.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tenaris.Confab.SAP.Connector\Tenaris.Confab.SAP.Connector.csproj">
+      <Project>{9d1edf32-6b87-477a-a804-3618a150dd55}</Project>
+      <Name>Tenaris.Confab.SAP.Connector</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tenaris.Confab.SGM.Entities\Tenaris.Confab.SGM.Domain.csproj">
+      <Project>{1cb29571-e783-4484-81fe-22566eb53685}</Project>
+      <Name>Tenaris.Confab.SGM.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

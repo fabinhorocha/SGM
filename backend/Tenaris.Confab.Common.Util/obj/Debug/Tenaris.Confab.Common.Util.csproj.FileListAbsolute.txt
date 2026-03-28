@@ -1,0 +1,17 @@
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SSMC\DEV\SSMC_v1\Tenaris.Confab.Common.Util\bin\Debug\Tenaris.Confab.Common.Util.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SSMC\DEV\SSMC_v1\Tenaris.Confab.Common.Util\bin\Debug\Tenaris.Confab.Common.Util.pdb
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SSMC\DEV\SSMC_v1\Tenaris.Confab.Common.Util\bin\Debug\ConfabEmail.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SSMC\DEV\SSMC_v1\Tenaris.Confab.Common.Util\bin\Debug\log4net.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SSMC\DEV\SSMC_v1\Tenaris.Confab.Common.Util\obj\Debug\Tenaris.Confab.Common.Util.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SSMC\DEV\SSMC_v1\Tenaris.Confab.Common.Util\obj\Debug\Tenaris.Confab.Common.Util.pdb
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SSMC\DEV\SSMC_v1\Tenaris.Confab.Common.Util\obj\Debug\Tenaris.Confab.Common.Util.csprojResolveAssemblyReference.cache
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.Common.Util\bin\Debug\Tenaris.Confab.Common.Util.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.Common.Util\bin\Debug\Tenaris.Confab.Common.Util.pdb
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.Common.Util\obj\Debug\Tenaris.Confab.Common.Util.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.Common.Util\obj\Debug\Tenaris.Confab.Common.Util.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.Common.Util\bin\Debug\Tenaris.Confab.Common.Util.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.Common.Util\bin\Debug\Tenaris.Confab.Common.Util.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.Common.Util\obj\Debug\Tenaris.Confab.Common.Util.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.Common.Util\obj\Debug\Tenaris.Confab.Common.Util.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.Common.Util\obj\Debug\Tenaris.Confab.Common.Util.csprojResolveAssemblyReference.cache
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.Common.Util\obj\Debug\Tenaris.Confab.Common.Util.csprojResolveAssemblyReference.cache

@@ -1,0 +1,75 @@
+ <!-- NEW WIDGET START -->
+ <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        
+        <!-- Widget ID (each widget will need unique ID)-->
+        <div class="jarviswidget" data-widget-editbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false">
+            <header>
+                <span class="widget-icon"> <i class="fa fa-bar-chart-o"></i> </span>
+                <h2>{{row.chartReportTitle}}</h2>
+            </header>
+
+            <!-- widget div-->
+            <div>
+
+                <!-- widget edit box -->
+                <div class="jarviswidget-editbox">
+                    <!-- This area used as dropdown edit box -->
+
+                </div>
+                <!-- end widget edit box -->
+
+                <!-- widget content -->
+                <div class="widget-body">
+                    <ul id="myTab{{row.idLocation}}" class="nav nav-tabs bordered">
+
+                        <li class="active" ng-if = "row.idChartReport == 1">
+                            <a href="#tChartOilSupplies{{row.idChartReport}}"  target="_self" data-toggle="tab"></i>Abastecimentos</a>                                                                    
+                        </li>
+                        <li ng-if = "row.idChartReport == 2">                     
+                            <a  href="#tChartStoppages{{row.idChartReport}}" target="_self" data-toggle="tab"></i>Paradas</a>                                                                
+                        </li>
+                    </ul>
+                    <div id="myTabLancContent1{{row.idChartReport}}" class="tab-content padding-10">
+                        <div ng-if = "idReportClass == 1" id="tChartOilSupplies{{row.idChartReport}}">
+                            <section> 
+                                <div>
+                                    <canvas id="bar" canvas height="100" 
+                                    class="chart chart-bar" 
+                                    chart-data="data" 
+                                    chart-labels="labels" 
+                                    chart-series="series" 
+                                    chart-colors="colors" 
+                                    chart-dataset-override="datasetOverride"
+                                    chart-options="options">
+                                    </canvas>
+                                </div>
+                            </section>
+                        </div>
+                        <div ng-if = "idReportClass == 2" id="tChartOilSupplies{{row.idChartReport}}">
+                            <section> 
+                                <div>
+                                    <canvas id="bar" canvas height="100" 
+                                    class="chart chart-bar" 
+                                    chart-data="data" 
+                                    chart-labels="labels" 
+                                    chart-series="series" 
+                                    chart-colors="colors" 
+                                    chart-dataset-override="datasetOverride"
+                                    chart-options="options">
+                                    </canvas>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <!-- end widget content -->
+
+            </div>                               
+            <!-- end widget div -->
+
+
+        </div>
+        <!-- end widget -->
+                                                                                                             
+    </article>
+    <!-- WIDGET END -->

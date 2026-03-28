@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using Tenaris.Confab.SGM.Domain.Entities;
+
+namespace Tenaris.Confab.SGM.WebAPI.Models
+{
+    public class ScheduledRangeViewModel
+    {
+        
+        public int idScheduledRange { get; set; }
+
+        public DateTime startdate { get; set; }
+
+        public DateTime endDate { get; set; }
+
+        public int cdStatus { get; set; }
+
+        public string Message { get; set; }
+
+        public DateTime InsDateTime { get; set; }
+
+        public DateTime UpdDateTime { get; set; }
+
+        public Status Status { get; set; }
+
+        public string PlantGroups { get; set; }
+
+
+        public string TypeDocs { get; set; }
+
+        public int cdScheduledType { get; set; }
+    }
+}

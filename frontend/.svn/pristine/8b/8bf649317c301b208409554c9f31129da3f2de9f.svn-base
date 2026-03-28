@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9,chrome=1">
+		<title> SGM </title>
+
+		<meta name="description" content="">
+		<meta name="author" content="">		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">	
+
+		<link rel="stylesheet" type="text/css" media="screen" href="content/vendor/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="content/vendor/font-awesome/font-awesome.min.css">				
+		<link rel="stylesheet" type="text/css" media="screen" href="content/vendor/smartadmin/smartadmin-production_unminified.css">		
+		<link rel="stylesheet" type="text/css" media="screen" href="content/vendor/smartadmin/smartadmin-skins.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="content/vendor/angular-ui-tree/css/angular-ui-tree.css">		
+		<link rel="stylesheet" type="text/css" media="screen" href="content/vendor/angular-loading-bar/css/loading-bar.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="content/vendor/plugin/jquery-chosen/css/chosen.css">	
+		<!-- <link rel="stylesheet" type="text/css" media="screen" href="content/vendor/dropzone/css/dropzone.css">	
+		<link rel="stylesheet" type="text/css" media="screen" href="content/vendor/dropzone/css/ng-dropzone.css">
+		 -->
+				
+		<link rel="stylesheet" type="text/css" media="screen" href="content/dist/css/sgm.css">		
+		<link rel="shortcut icon" href="img/favicon/Tenaris.ico" type="image/x-icon">
+		<link rel="icon" href="img/favicon/Tenaris.ico" type="image/x-icon">
+	  
+		
+	</head>
+	<body class="" ng-app="appSGM" ng-controller="menuController">
+		
+		<!-- HEADER -->
+		<header id="header">
+			<div id="logo-group">
+				<!-- PLACE YOUR LOGO HERE -->
+				<span id="logo"> 
+					<img src="img/logotenaris.gif" alt="Tenaris"> 	
+								
+				</span>
+				
+				<!-- END LOGO PLACEHOLDER -->		
+				<!-- <h1 class="page-title-sgm txt-color-Pink">Sistema de Gestão de Manutenção</h1> -->
+			</div>
+
+			<div>								
+				<!-- <h1 class="page-title-sgm txt-color-Pink"> Sistema de Gestão de Manutenção <span></span></h1>								 -->
+				<h2 class="page-title-sgm txt-color-Pink">Sistema de Gestão de Manutenção</h2>	
+			</div>
+			<!-- end projects dropdown -->
+
+			<!-- pulled right: nav area -->
+			
+			<div class="pull-right">
+				<!-- collapse menu button -->								
+				
+				<div id="hide-menu" class="btn-header pull-right">					
+					<span>{{user.Name}}  <a href="javascript:void(0);" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
+				</div>
+				
+			
+				<!-- end collapse menu -->				
+				<!-- <div  class="header-search pull-right">
+					<input type="text" placeholder="Filtrar Equipamentos" id="search-fld" ng-model="queryEquips" ng-change="findNodes()">
+					<button type="submit">
+						<i class="fa fa-search"></i>
+					</button>
+					<a href="javascript:void(0);" id="cancel-search-js" title="Cancel Search"><i class="fa fa-times"></i></a>
+				</div> -->
+					
+			</div>
+			<!-- end pulled right: nav area -->							
+					
+		</header>
+		<!-- END HEADER -->
+
+		<!-- Left panel : Navigation area -->
+		<!-- Note: This width of the aside area can be adjusted through LESS variables -->
+		<aside id="left-panel">			
+			<!-- User info -->
+			<!-- <div class="login-info">
+					<span> 					 
+
+						<a href="javascript:void(0);" id="show-shortcut">
+								<img src="img/male.png" alt="me" class="online" /> 
+								<span>
+										{{user.Name}}
+								</span>
+						
+							</a> 
+					</span>
+			</div>			 -->
+			<nav ng-jarvis-menu>
+				<ul>
+						
+					 <li class="active">
+						<a href="index.html" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Dashboard</span></a>
+					</li>
+					<li>							
+							<a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">Manutenção Preditiva</span></a>												
+							<ul>
+									<li>
+										<a href="#"><span class="menu-item-parent">Plantas</span></a>
+
+										 <ul>
+												
+											<li>														
+												<div ui-tree id="tree-root_menu">																																			
+														<ol ui-tree-nodes ng-model="equipsMenu">
+															<li ng-repeat="item in equipsMenu" ui-tree-node ng-include="'nodes_renderer11.html'"></li>															
+														</ol>
+												</div>
+																																										
+											</li>
+										</ul>
+									</li>
+							</ul>												
+					</li>
+					
+					 <li>
+						<a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">Indicadores</span></a>
+						<ul>
+							<li ng-hide="user.ReadOnly || !user.Configuration">
+								<a href="#/budget">Budget</a>
+							</li>
+							<li>
+								<a href="#">Execução de Preventivas</a>
+								<ul>
+										<li>
+											<a href="#/indicatorMaintenance/1/Exec">Executadas</a>
+										</li>	
+										<li>
+												<a href="#/indicatorMaintenance/1/NExec">Não Executadas</a>
+										</li>
+															
+								</ul>
+							</li>
+							<li>
+									<a href="#">Execução de Preditivas</a>
+									<ul>
+											<li>
+													<a href="#/indicatorMaintenance/2/Exec">Executadas</a>
+											</li>	
+											<li>
+													<a href="#/indicatorMaintenance/2/NExec">Não Executadas</a>
+											</li>
+																	
+									</ul>
+								</li>
+							<li>
+									<a href="#">OT's Pendentes</a>
+									<ul>
+											<li>
+												<a href="#/indicatorOT/3">Pendência Geral</a>
+											</li>	
+											<li>
+													<a href="#/indicatorOT/3/Pred">Pendência Preditiva</a>
+											</li>
+											<li> 
+												<a href="#/indicatorHoursWorked/3">Hh Necessárias</a>
+											</li>	
+											<li>
+													<a href="#/indicatorOTPlant/3/CF9">Detalhe EAME</a>
+											</li>						
+									</ul>
+							</li>
+							<li>
+									<a href="#">Notas Pendentes</a>
+									<ul>
+											<li>
+												<a href="#/indicatorNote/3">Pendência Geral</a>
+											</li>	
+											<li>
+													<a href="#/indicatorNote/3/Pred">Pendência Preditiva</a>
+											</li>														
+									</ul>
+							</li>
+							<li>
+								<a href="#">Análise de Falhas</a>
+								<ul>
+										<li>
+											<a href="#/indicatorFailureAnalyzed">Falhas M2 - FA</a>
+										</li>	
+										<!-- <li>
+												<a href="#/indicatorNote/3/Pred">Pendência Preditiva</a>
+										</li>	-->													
+								</ul>
+						</li>
+						</ul>
+					</li>					
+					 <!-- <li ng-hide="!user.OilManagement && !user.OilUser"> -->
+					<li>
+						<a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">Administração de Óleo Industrial</span></a>
+						<ul>
+							<li>
+								<a href="#/oilManagement">Abastecimento</a>
+							</li>							
+							<li>
+								<a href="#/oilManagementAlarms">Alarmes</a>
+							</li>							
+							<li>
+								<a href="#/oilManagementAlarmsGroup">Grupos</a>
+							</li>							
+							<li>
+								<a href="#">Indicadores</a>
+								<ul>
+									<li>
+										<a href="#/oilManagementIndicators/1">Indicadores de Abastecimento</a>
+									</li>
+									<li>
+										<a href="#/oilManagementIndicators/2">Indicadores de Paradas</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					 <li ng-hide="user.ReadOnly">
+						<a href="#"><i class="fa fa-lg fa-fw fa-pencil-square-o"></i> <span class="menu-item-parent">Configurações</span></a>
+						<ul>
+							<li>
+								<a href="#/config">Plantas</a>
+							</li>							
+						</ul>
+					 </li>					
+				</ul>
+			</nav>
+			<span class="minifyme"> <i class="fa fa-arrow-circle-left hit"></i> </span>
+
+		</aside>
+		<!-- END NAVIGATION -->
+
+		<!-- MAIN PANEL -->
+		<div id="main" role="main">
+
+			<!-- RIBBON -->
+			<div id="ribbon">
+
+				<span class="ribbon-button-alignment"> <span id="refresh" class="btn btn-ribbon" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Alerta! Todas configurações serão redefinidas." data-html="true"><i class="fa fa-refresh"></i></span></span>
+
+				<!-- breadcrumb -->
+				<ol class="breadcrumb">
+					<!-- <li>Home</li><li>Dashboard</li> -->
+					
+				</ol>
+				<!-- end breadcrumb -->
+			
+			</div>
+			<!-- END RIBBON -->
+
+			<!-- MAIN CONTENT -->
+			<div id="content">
+				<ng-view></ng-view>
+			</div>
+			<!-- END MAIN CONTENT -->
+		</div>
+		<!-- END MAIN PANEL -->
+
+		<!--================================================== -->		
+	
+		
+		<!-- jQuery + jQueryUI; -->
+		<script src="content/vendor/libs/jquery-2.0.2.min.js"></script>
+		<script src="content/vendor/libs/jquery-ui-1.10.3.min.js"></script>
+		
+
+		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events
+		<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> -->
+
+		<!-- ANGULAR JS -->
+		<script src="content/vendor/angular/angular.js"></script>		
+		<script src="content/vendor/angular/angular-sanitize.js"></script>
+		<script src="content/vendor/angular/angular-route.js"></script>
+		<script src="content/vendor/angular/angular-animate.js"></script>
+		<script src="content/vendor/angular/angular-chosen.js"></script>
+		<script src="content/vendor/angular/angular-messages.js"></script>
+		<script src="content/vendor/angular-ui-tree/js/angular-ui-tree.js"></script>
+		<script src="content/vendor/angular-ui-tree/js/angular-ui-tree-filter.js"></script>
+		<script src="content/vendor/angular-ui-tree/js/highlight.min.js"></script>
+		<script src="content/vendor/angular-loading-bar/js/loading-bar.js"></script>
+		
+		
+		<!-- DROPZONE JS -->
+		<script src="content/vendor/plugin/dropzone/dropzone.min.js"></script>
+		<script src="content/vendor/ng-dropzone/js/ng-dropzone.js"></script>
+		
+		<!-- CHART JS -->
+		<script src="content/vendor/angular-chart/Chart.min.js"></script>
+		<script src="content/vendor/angular-chart/angular-chart.min.js"></script>
+
+		<!-- BOOTSTRAP JS -->
+		<script src="content/vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="content/vendor/angular-ui-bootstrap/ui-bootstrap-tpls.js"></script>
+
+		<!-- CUSTOM NOTIFICATION -->
+		<script src="content/vendor/notification/SmartNotification.js"></script>
+
+		<!-- JARVIS WIDGETS -->
+		<script src="content/vendor/smartwidgets/jarvis.widget.min.js"></script>
+
+		<!-- EASY PIE CHARTS -->
+		<script src="content/vendor/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+
+		<!-- SPARKLINES -->
+		<script src="content/vendor/plugin/sparkline/jquery.sparkline.min.js"></script>
+
+		<!-- JQUERY VALIDATE -->
+		<script src="content/vendor/plugin/jquery-validate/jquery.validate.min.js"></script>
+
+		<!-- JQUERY MASKED INPUT -->
+		<script src="content/vendor/plugin/masked-input/jquery.maskedinput.min.js"></script>
+
+		<!-- JQUERY SELECT2 INPUT -->
+		<script src="content/vendor/plugin/select2/select2.min.js"></script>
+
+		<!-- JQUERY UI + Bootstrap Slider -->
+		<script src="content/vendor/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+
+		<!-- browser msie issue fix -->
+		<script src="content/vendor/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+
+		<!-- FastClick: For mobile devices -->
+		<script src="content/vendor/plugin/fastclick/fastclick.js"></script>
+
+		<!-- JQUERY Chosen -->
+		<script src="content/vendor/plugin/jquery-chosen/js/chosen.jquery.js"></script>
+
+		<!-- Export -->
+		<!-- <script src="content/vendor/plugin/download/xlsx.js"></script>
+		<script src="content/vendor/plugin/download/jszip.js"></script> -->
+		<script src="content/vendor/plugin/download/xlsx.full.min.js"></script>
+		<script src="content/vendor/plugin/download/FileSaver.min.js"></script>
+
+		<!--[if IE 7]>
+
+		<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+
+		<![endif]-->
+		
+		<!-- MAIN SGM JS FILE -->
+		<script src="content/dist/js/sgm.js"></script>
+
+
+		<!-- MAIN APP JS FILE -->
+		<script src="content/dist/js/app.js"></script>
+		
+		<!-- PAGE RELATED PLUGIN(S) -->
+		
+		<!-- Flot Chart Plugin: Flot Engine, Flot Resizer, Flot Tooltip -->
+		<script src="content/vendor/plugin/flot/jquery.flot.cust.js"></script>
+		<script src="content/vendor/plugin/flot/jquery.flot.resize.js"></script>
+		<script src="content/vendor/plugin/flot/jquery.flot.tooltip.js"></script>
+		
+		<!-- Vector Maps Plugin: Vectormap engine, Vectormap language -->
+		<script src="content/vendor/plugin/vectormap/jquery-jvectormap-1.2.2.min.js"></script>
+		<script src="content/vendor/plugin/vectormap/jquery-jvectormap-world-mill-en.js"></script>
+		
+		<!-- Full Calendar -->
+		<script src="content/vendor/plugin/fullcalendar/jquery.fullcalendar.min.js"></script>
+		
+
+		<!-- Tree Plugin -->
+		<script src="content/vendor/plugin/jquery-nestable/jquery.nestable.js"></script>
+
+
+		<!-- PAGE RELATED PLUGIN(S) -->
+		<script src="content/vendor/plugin/datatables/jquery.dataTables-cust.js"></script>
+		<script src="content/vendor/plugin/datatables/ColReorder.min.js"></script>
+		<script src="content/vendor/plugin/datatables/FixedColumns.min.js"></script>
+		<script src="content/vendor/plugin/datatables/ColVis.min.js"></script>
+		<script src="content/vendor/plugin/datatables/ZeroClipboard.js"></script>
+		<script src="content/vendor/plugin/datatables/media/js/TableTools.min.js"></script>
+		<script src="content/vendor/plugin/datatables/DT_bootstrap.js"></script>
+		
+		
+
+        <script type="text/javascript">
+            
+            // DO NOT REMOVE : GLOBAL FUNCTIONS!
+            
+            $(document).ready(function() {
+                
+                pageSetUp();
+                
+            })
+    
+        </script>
+	
+
+		<!-- MAIN JS FILE -->
+		<script src="main.js"></script>
+
+		<!-- Config -->
+		<script src="config/sgmConsts.js"></script>
+		<script src="config/sgmFilter.js"></script>
+		<script src="config/sgmRoute.js"></script>
+		<script src="config/sgmConfig.js"></script>
+		<script src="config/sgmRun.js"></script>
+
+		<!-- Services -->
+		<script src="services/equipmentsService.js"></script>
+		<script src="services/commonService.js"></script>
+		<script src="services/oilSupplyService.js"></script>
+		<script src="services/oilComponentsService.js"></script>
+		<script src="services/oilAlarmsService.js"></script>
+
+		<!-- Controllers -->
+		<script src="controllers/dashboardController.js"></script>
+		<script src="controllers/menuController.js"></script>
+		<script src="controllers/reportsController.js"></script>
+		<script src="controllers/configController.js"></script>
+		<script src="controllers/modalInstanceController.js"></script>
+		<script src="controllers/modalInstanceController2.js"></script>
+		<script src="controllers/modalInstanceGroupController.js"></script>
+		<script src="controllers/reportsModalController.js"></script>
+		<script src="controllers/budgetController.js"></script>
+		<script src="controllers/indicatorMaintenanceController.js"></script>
+		<script src="controllers/indicatorOTController.js"></script>
+		<script src="controllers/indicatorNoteController.js"></script>
+		<script src="controllers/oilManagementController.js"></script>
+		<script src="controllers/oilManagementAlarmsController.js"></script>
+		<script src="controllers/oilManagementAlarmsGroupController.js"></script>
+		<script src="controllers/indicatorOilManagementController.js"></script>
+		<script src="controllers/indicatorFailureAnalyzedController.js"></script>
+
+		<!-- Factories -->
+		<script src="factories/equipmentsFactory.js"></script>
+		<script src="factories/typesFactory.js"></script>
+		<script src="factories/areasFactory.js"></script>
+		<script src="factories/partsFactory.js"></script>
+		<script src="factories/equipmentsBackupFactory.js"></script>
+		<script src="factories/reportsTypesFactory.js"></script>
+		<script src="factories/reportsStatusFactory.js"></script>
+		<script src="factories/reportsFactory.js"></script>
+		<script src="factories/filesFactory.js"></script>
+		<script src="factories/userFactory.js"></script>
+		<script src="factories/prioritiesFactory.js"></script>
+		<script src="factories/budgetFactory.js"></script>
+		<script src="factories/budgetLocationFactory.js"></script>
+		<script src="factories/budgetPlantFactory.js"></script>
+		<script src="factories/locationFactory.js"></script>
+		<script src="factories/plantFactory.js"></script>
+		<script src="factories/indicatorMaintenanceFactory.js"></script>
+		<script src="factories/indicatorOTFactory.js"></script>
+		<script src="factories/notificationFactory.js"></script>
+		<script src="factories/orderHeadFactory.js"></script>
+		<script src="factories/indicatorNoteFactory.js"></script>
+		<script src="factories/oilManagementFactory.js"></script>
+		<script src="factories/indicatorOilManagementFactory.js"></script>
+		<script src="factories/indicatorFailureAnalyzedFactory.js"></script>
+		<script src="factories/equipmentPlantGroupFactory.js"></script>
+
+		<!-- Directives -->
+		<script src="directives/sgmDirective.js"></script>
+		
+		<script type="text/ng-template" id="nodes_renderer.html">
+			<a href="#/equipments/{{item.idEquipment}}/{{item.Name}}">
+				<i ng-class="{
+					'fa fa-fw fa-folder-open': item.EquipmentsChilds.length > 0,
+					'fa fa-fw fa-file': item.EquipmentsChilds.length == 0}">
+				</i> 
+				{{item.Name | capitalize}}
+				
+			</a>					
+			<ul ng-model="item.EquipmentsChilds" ng-if="item.EquipmentsChilds.length > 0" >
+			  <li ng-repeat="item in item.EquipmentsChilds" ng-include="'nodes_renderer.html'">
+			  </li>			  
+			</ul>
+		</script>
+
+		<script type="text/ng-template" id="nodes_renderer11.html">		
+			<a href="#/equipments/{{item.idEquipment}}/{{item.Name | replace}}">
+				<i ng-class="{
+					'fa fa-fw fa-folder-open': item.CountChilds > 0,
+					'fa fa-fw fa-file': !item.CountChilds || item.CountChilds == 0}">
+				</i> 
+		
+					{{item.Name}}
+				
+				<b class="collapse-sign" ng-click="expandedChilds(this)" ng-if="item.CountChilds > 0"><em ng-class="{'fa fa-collapse-o': !collapsed, 'fa fa-expand-o': collapsed}"></em></b>							
+			</a>															
+			<ol ui-tree-nodes="" ng-model="item.EquipmentsChilds" ng-class="{hidden: collapsed}" >
+			  <li ng-repeat="item in item.EquipmentsChilds"  ui-tree-node ng-include="'nodes_renderer11.html'" ng-show="visibleEquips(item)">
+			  </li>			  
+			</ol>
+		  </script>
+		  
+		  <script type="text/ng-template" id="terminal_item_renderer.html">
+			<div ui-tree-handle class="tree-node tree-node-content">
+			  <a href="">
+				<span></span>
+				<div ng-if="!item.EquipmentsChilds" class="item outcome">				  
+				  <span class="" ng-bind-html="item.Name | highlight:queryEquips | trust"> {{item.Name | capitalize}}</span>
+				</div>
+				
+			  </a>
+			</div>
+		  </script>
+		
+	</body>
+
+</html>

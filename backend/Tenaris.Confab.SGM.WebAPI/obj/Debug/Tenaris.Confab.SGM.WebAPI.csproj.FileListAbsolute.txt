@@ -1,0 +1,505 @@
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\csc.exe
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\vbc.exe
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\VBCSCompiler.exe
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.WebAPI.dll.config
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.WebAPI.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.WebAPI.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Antlr3.Runtime.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\AutoMapper.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\EntityFramework.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\EntityFramework.SqlServer.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Newtonsoft.Json.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Ninject.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Ninject.Web.Common.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Ninject.Web.WebApi.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Owin.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Net.Http.Formatting.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Cors.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Helpers.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.Cors.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.Owin.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.WebHost.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Mvc.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Optimization.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Razor.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.WebPages.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.WebPages.Razor.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.Domain.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.Services.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\WebActivatorEx.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\WebGrease.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.Repositories.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SAP.Connector.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Dapper.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\sapnco.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\sapnco_utils.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.Domain.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.Services.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\AutoMapper.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Newtonsoft.Json.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Ninject.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Ninject.Web.Common.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Ninject.Web.WebApi.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.Cors.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Net.Http.Formatting.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Helpers.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.WebHost.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Mvc.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Optimization.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Razor.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.WebPages.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.WebPages.Razor.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Antlr3.Runtime.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\EntityFramework.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\EntityFramework.SqlServer.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.Owin.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.Repositories.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SAP.Connector.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Dapper.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\obj\Debug\Tenaris.Confab.SGM.WebAPI.csprojResolveAssemblyReference.cache
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\obj\Debug\Tenaris.Confab.SGM.WebAPI.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\obj\Debug\Tenaris.Confab.SGM.WebAPI.pdb
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\roslyn\csc.exe
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\roslyn\System.Collections.Immutable.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\roslyn\System.Reflection.Metadata.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\roslyn\vbc.exe
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\roslyn\VBCSCompiler.exe
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\roslyn\VBCSCompiler.exe.config
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.WebAPI.dll.config
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.WebAPI.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.WebAPI.pdb
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Antlr3.Runtime.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\AutoMapper.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\EntityFramework.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\EntityFramework.SqlServer.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Google.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Web.Infrastructure.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Newtonsoft.Json.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Ninject.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Ninject.Web.Common.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Ninject.Web.WebApi.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Owin.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\System.Net.Http.Formatting.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Cors.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Helpers.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.Cors.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.Owin.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.WebHost.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Mvc.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Optimization.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Razor.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\System.Web.WebPages.Deployment.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\System.Web.WebPages.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\System.Web.WebPages.Razor.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.Domain.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.Services.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\WebActivatorEx.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\WebGrease.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.Repositories.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SAP.Connector.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Dapper.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\sapnco.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\sapnco_utils.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.Domain.pdb
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.Services.pdb
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\AutoMapper.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Newtonsoft.Json.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Ninject.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Ninject.Web.Common.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Ninject.Web.WebApi.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.Cors.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\System.Net.Http.Formatting.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Helpers.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.WebHost.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Mvc.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Optimization.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Razor.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\System.Web.WebPages.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\System.Web.WebPages.Deployment.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\System.Web.WebPages.Razor.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Antlr3.Runtime.pdb
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\EntityFramework.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\EntityFramework.SqlServer.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Google.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.Owin.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.Repositories.pdb
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SAP.Connector.pdb
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\bin\Dapper.xml
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\obj\Debug\Tenaris.Confab.SGM.WebAPI.csprojResolveAssemblyReference.cache
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\obj\Debug\Tenaris.Confab.SGM.WebAPI.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SGM.WebAPI\obj\Debug\Tenaris.Confab.SGM.WebAPI.pdb
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\csc.exe
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\vbc.exe
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\VBCSCompiler.exe
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.WebAPI.dll.config
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.WebAPI.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.WebAPI.pdb
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Antlr3.Runtime.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\AutoMapper.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\EntityFramework.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\EntityFramework.SqlServer.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Newtonsoft.Json.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Ninject.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Ninject.Web.Common.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Ninject.Web.WebApi.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Owin.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Net.Http.Formatting.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Cors.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Helpers.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.Cors.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.Owin.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.WebHost.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Mvc.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Optimization.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Razor.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.WebPages.Deployment.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.WebPages.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.WebPages.Razor.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.Domain.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.Services.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\WebActivatorEx.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\WebGrease.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.Repositories.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SAP.Connector.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Dapper.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\sapnco.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\sapnco_utils.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.Domain.pdb
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.Services.pdb
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\AutoMapper.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Newtonsoft.Json.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Ninject.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Ninject.Web.Common.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Ninject.Web.WebApi.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.Cors.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Net.Http.Formatting.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Helpers.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.WebHost.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Mvc.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Optimization.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Razor.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.WebPages.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.WebPages.Deployment.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.WebPages.Razor.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Antlr3.Runtime.pdb
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\EntityFramework.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\EntityFramework.SqlServer.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.Owin.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.Repositories.pdb
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SAP.Connector.pdb
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Dapper.xml
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\obj\Debug\Tenaris.Confab.SGM.WebAPI.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\obj\Debug\Tenaris.Confab.SGM.WebAPI.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\csc.exe
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\vbc.exe
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\VBCSCompiler.exe
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.WebAPI.dll.config
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.WebAPI.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.WebAPI.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Antlr3.Runtime.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\AutoMapper.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\EntityFramework.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\EntityFramework.SqlServer.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Newtonsoft.Json.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Ninject.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Ninject.Web.Common.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Ninject.Web.WebApi.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Owin.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Net.Http.Formatting.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Cors.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Helpers.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.Cors.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.Owin.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.WebHost.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Mvc.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Optimization.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Razor.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.WebPages.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.WebPages.Razor.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.Domain.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.Services.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\WebActivatorEx.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\WebGrease.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.Repositories.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SAP.Connector.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Dapper.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\sapnco.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\sapnco_utils.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.Domain.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.Services.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\AutoMapper.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Newtonsoft.Json.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Ninject.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Ninject.Web.Common.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Ninject.Web.WebApi.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.Cors.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Net.Http.Formatting.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Helpers.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.WebHost.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Mvc.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Optimization.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Razor.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.WebPages.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.WebPages.Razor.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Antlr3.Runtime.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\EntityFramework.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\EntityFramework.SqlServer.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.Owin.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.Repositories.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SAP.Connector.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\bin\Dapper.xml
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\obj\Debug\Tenaris.Confab.SGM.WebAPI.csprojResolveAssemblyReference.cache
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\obj\Debug\Tenaris.Confab.SGM.WebAPI.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SGM.WebAPI\obj\Debug\Tenaris.Confab.SGM.WebAPI.pdb
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\obj\Debug\Tenaris.Confab.SGM.WebAPI.csprojResolveAssemblyReference.cache
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\csc.exe
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\System.Collections.Immutable.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\System.Reflection.Metadata.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\vbc.exe
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\VBCSCompiler.exe
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\roslyn\VBCSCompiler.exe.config
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.WebAPI.dll.config
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.WebAPI.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.WebAPI.pdb
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Antlr3.Runtime.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\AutoMapper.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\EntityFramework.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\EntityFramework.SqlServer.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Google.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Web.Infrastructure.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Newtonsoft.Json.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Ninject.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Ninject.Web.Common.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Ninject.Web.WebApi.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Owin.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Net.Http.Formatting.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Cors.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Helpers.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.Cors.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.Owin.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.WebHost.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Mvc.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Optimization.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Razor.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.WebPages.Deployment.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.WebPages.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.WebPages.Razor.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.Domain.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.Services.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\WebActivatorEx.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\WebGrease.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.Repositories.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SAP.Connector.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Dapper.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\sapnco.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\sapnco_utils.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.Domain.pdb
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.Services.pdb
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\AutoMapper.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Newtonsoft.Json.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Ninject.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Ninject.Web.Common.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Ninject.Web.WebApi.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.Cors.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Net.Http.Formatting.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Helpers.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.WebHost.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Mvc.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Optimization.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Razor.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.WebPages.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.WebPages.Deployment.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.WebPages.Razor.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Antlr3.Runtime.pdb
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\EntityFramework.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\EntityFramework.SqlServer.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Google.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\System.Web.Http.Owin.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SGM.Repositories.pdb
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Tenaris.Confab.SAP.Connector.pdb
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\bin\Dapper.xml
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\obj\Debug\Tenaris.Confab.SGM.WebAPI.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\obj\Debug\Tenaris.Confab.SGM.WebAPI.pdb
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SGM.WebAPI\obj\Debug\Tenaris.Confab.SGM.WebAPI.csprojResolveAssemblyReference.cache

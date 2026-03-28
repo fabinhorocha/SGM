@@ -1,0 +1,27 @@
+<div class="row">
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-6 text-align-left"> 
+            <h1 class="page-title txt-color-blueDark"><i class="fa-fw fa fa-bar-chart-o"></i>                                 
+                Indicadores 
+                <span>>
+                    {{Title}}
+                </span>
+            </h1>                                                         
+        </div> 
+</div>
+
+
+
+<!-- widget grid -->
+<section id="widget-grid-indicatorFailures" ng-widget-grid class="">            
+   
+    <!-- row -->    
+    <div class="row" ng-include="'views/contentIndicatorsFailureAnalyzed.html'">
+        
+     </div>  
+     <!-- end row -->
+</section>
+
+
+        
+        
+        

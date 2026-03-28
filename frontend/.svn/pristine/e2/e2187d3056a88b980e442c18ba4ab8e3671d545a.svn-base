@@ -1,0 +1,252 @@
+<script type="text/ng-template" id="modalContent.html">
+        <form name="frm" class="smart-form" ng-submit="$ctrl.save()">
+                <header>
+                        
+                        <button type="button" class="close" ng-click="$ctrl.cancel()" aria-hidden="true">
+                                        &times;
+                        </button>                
+                        <h4 class="modal-title txt-color-blueDark">
+                                <i ng-class = "{
+                                        'fa-fw fa fa-pencil-square-o': $ctrl.item.action == 'Edit',
+                                        'fa-fw fa fa-plus-square': $ctrl.item.action == 'Insert'}">
+                                </i> 
+                                {{$ctrl.item.title}}
+                                <span>
+                        </h4>
+                
+                </header>
+                
+                <fieldset>
+                        <div class="row">
+                                        <section class="col col-6">
+                                                        
+                                                <label class="label" ng-if="$ctrl.item.model.idType == 0">Código do Equipamento</label>
+                                                <label class="label" ng-if="$ctrl.item.model.idType == -1">Código do Local</label>
+                                                <label class="label" ng-if="$ctrl.item.model.idType == null">Código</label>
+                                                <label class="input">
+                                                        <input name="txtCodigo" ng-maxlength="30" type="text" class="form-control" required ng-model="$ctrl.item.model.Sheet" capitalize/>                                                
+                                                </label>
+                                                              
+                                        </section>
+                        </div>
+                      
+                                       
+                        <section>
+                                        <!-- <div class="form-group" ng-class="{ 'has-error': frm.txtName.$touched && frm.txtName.$invalid }"> -->
+                                                        <label class="label">Nome</label>
+                                                                <label class="input">
+                                                                <input name="txtName" maxlength="50" type="text" class="form-control"  required ng-model="$ctrl.item.model.Name" capitalize/>
+                                                                <!-- <div class="help-block" ng-messages="frm.txtName.$error" ng-if="frm.txtName.$touched">                                                                                
+                                                                        <div ng-messages-include="views/messages.html"></div>
+                                                                </div> -->
+                                                        </label>
+                                                <!-- </div>    -->
+                        </section>
+        
+
+                                        
+                        <section>
+                                <div class="form-group">
+                                        <label for="group"> Pai</label>
+                                        <select ng-disabled="true" class="form-control"  ng-model="$ctrl.item.model.cdEquipment" options="$ctrl.item.equips" ng-options="item.idEquipment as item.Name for item in $ctrl.item.equips | orderBy:'Name'"  allow-single-deselect="true">
+                                        </select>
+                                </div>
+                        </section>
+
+                        <div class="row">
+                                <section class="col col-6">
+                                      
+                                                <label for="type"> Tipo</label>
+                                                <select name="selectedType" class="form-control" ng-model="$ctrl.item.model.idType" options="$ctrl.item.types" ng-options="item.idType as item.Name for item in $ctrl.item.types"  required>
+                                                </select>
+                                                
+                                </section>
+                                <section class="col col-6">
+                                        
+                                                <label for="area"> Área</label>
+                                                <select name="selectedArea" class="form-control" ng-model="$ctrl.item.model.idArea" options="$ctrl.item.areas" ng-options="item.idArea as item.Name for item in $ctrl.item.areas" required>
+                                                </select>
+                                               
+                                </section>
+                        </div>
+
+                        <section>
+                                <div class="form-group">
+                                        <label for="group"> Grupo</label>
+                                        <select class="form-control" ng-model="$ctrl.item.model.idPart" options="$ctrl.item.parts" ng-options="item.idPart as item.Description for item in $ctrl.item.parts">
+                                        </select>
+                                </div>
+                        </section>
+
+                        <div class="row">
+                                <section class="col col-4">  
+                                        <div class="form-group">                                                                 
+                                                <label class="toggle">
+                                                        <input type="checkbox" name="checkbox-toggle" checked="checked" ng-model="$ctrl.item.model.cdIntegrate">
+                                                        <i data-swchon-text="ON" data-swchoff-text="OFF"></i>Integrar SAP
+                                                </label>  
+                                        </div>                                 
+                                </section>
+                        </div>
+                </fieldset>                                     
+
+                <footer>
+                        
+                        <button type="submit" class="btn btn-primary">
+                                        Salvar
+                        </button>
+
+                        <button type="button" class="btn btn-default" ng-click="$ctrl.cancel()" >
+                                        Cancelar
+                        </button>
+                </footer>
+        </form>
+                
+</script>
+
+
+<script type="text/ng-template" id="nodes_renderer1.html">
+        <div ui-tree-handle class="dd-handle dd3-handle">Drag</div>        
+        <div  class="dd3-content">
+                <a ng-class="{'btn btn-primary btn-size-custom': collapsed, 'btn btn-danger btn-size-custom': !collapsed}"  data-nodrag ng-click="expandedChilds(this)" ng-if="item.CountChilds && item.CountChilds > 0"><span class="glyphicon"  ng-class="{'glyphicon-chevron-right ': collapsed, 'glyphicon-chevron-down': !collapsed}"></span></a>
+                        <span ng-class="{'span-color-red': !item.Active}" >{{item.Name}}</span>
+                <div class="pull-right"> 
+                        <a class="btn btn-warning btn-xs" ng-click="editItem(this)" style="margin-right: 4px;">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                        </a>
+                        <a class="btn btn-primary btn-xs" ng-click="newItem(this)" style="margin-right: 4px;">
+                                <span class="glyphicon glyphicon-plus"></span>
+                        </a>
+                        <a class="btn btn-danger btn-xs ng-scope" ng-if="(!item.CountChilds || item.CountChilds == 0) && item.Active" ng-click="confirmRemove(this)" style="margin-right: 4px;">
+                                <span class="glyphicon glyphicon-remove"></span>
+                        </a>
+                        <a class="btn btn-success btn-xs ng-scope" ng-if="!item.Active" ng-click="confirmRestore(this)" style="margin-right: 4px;">
+                                <span class="glyphicon glyphicon-save"></span>
+                        </a>
+                </div>         
+        </div>
+        
+        <ol ui-tree-nodes="" ng-model="item.EquipmentsChilds" class="dd-list" ng-class="{hidden: collapsed}">
+          <li class="dd-item dd3-item" ng-repeat="item in item.EquipmentsChilds" ui-tree-node ng-include="'nodes_renderer1.html'">
+          </li>
+          
+        </ol>
+</script>
+<div class="row">
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-12">            
+                <h1 class="page-title txt-color-blueDark"><i class="fa-fw fa fa-pencil-square-o "></i> 
+                        Configurações 
+                        <span>>
+                        Plantas
+                        </span>
+                </h1>
+        </div>        
+</div>
+
+
+
+<!-- widget grid -->
+<section id="widget-grid-8" ng-widget-grid class="" ng-hide="user.ReadOnly">       
+        <!-- row -->
+        <div class="row">
+
+                <!-- NEW WIDGET START -->
+                <article class="col-sm-12">
+
+                        <!-- Widget ID (each widget will need unique ID)-->
+                        <div class="jarviswidget jarviswidget-color-darken"  data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-colorbutton="false">
+                        <!-- <div class="jarviswidget well" id="wid-id-0"> -->
+                                <!-- widget options:
+                                usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                                data-widget-colorbutton="false"
+                                data-widget-editbutton="false"
+                                data-widget-togglebutton="false"
+                                data-widget-deletebutton="false"
+                                data-widget-fullscreenbutton="false"
+                                data-widget-custombutton="false"
+                                data-widget-collapsed="true"
+                                data-widget-sortable="false"
+
+                                -->
+                                <header>
+                                        <span class="widget-icon"> <i class="fa fa-sitemap"></i> </span>                                        
+                                        <h2></h2>
+                                        <div class="widget-toolbar hidden-mobile">                  
+                                                <span class="onoffswitch-title"><i class="fa fa-location-arrow"></i> Exibir Inativos</span>
+                                                <span class="onoffswitch">
+                                                <input type="checkbox" name="onoffswitch" ng-model="selectStatus" class="onoffswitch-checkbox" id="myonoffswitch" ng-click="checkedStatus(this)">
+                                                <label class="onoffswitch-label" for="myonoffswitch"> <span class="onoffswitch-inner" data-swchon-text="ON" data-swchoff-text="OFF"></span> <span class="onoffswitch-switch"></span> </label> </span>                                                
+                                        </div>
+                                       
+                                </header>
+
+                                <!-- widget div-->
+                                <div>
+                                        <!-- widget edit box -->
+                                        <div class="jarviswidget-editbox">
+                                                <!-- This area used as dropdown edit box -->
+                                        </div>
+                                        <!-- end widget edit box -->
+
+                                        <!-- widget content -->
+                                        <div class="widget-body">                                                                
+                                                <div class="row">
+                                                        <div class="col-sm-6 col-lg-12">                                                                
+                                                                <div ui-tree="treeEquips" id="treeEquips" class="dd">
+                                                                        <div class="row">                                                                                
+                                                                                <div class="col-lg-6 text-left">                                                                                                
+                                                                                        <div class="btn-group">
+                                                                                                <a class="btn btn btn-default" href="javascript:void(0);" ng-click="confirmBackupTree()"><i class="fa fa-save"></i> Backup</a>
+                                                                                                <a class="btn btn btn-default" href="javascript:void(0);" ng-click="confirmRestoreTree(selectBackup)"><i class="fa fa-undo"></i> Restaurar</a>
+                                                                                                <a class="btn btn btn-default dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);"><span class="caret"></span></a>
+                                                                                                <ul class="dropdown-menu pull-right js-status-update" ng-model="backups">
+                                                                                                        <li ng-repeat="item in backups">
+                                                                                                                <a href="javascript:void(0);" ng-click="setRestore(item)"><i ng-class="item.cls"></i> {{item.dateInput | date:'dd/MM/yyyy HH:mm:ss' }}</a>
+                                                                                                        </li>                                                                
+                                                                                                </ul>                                                                                               
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="col-lg-6 text-right">                                                                                                
+                                                                                        <div class="btn-group">
+                                                                                                <button class="btn btn-default" ng-click="newRoot()">
+                                                                                                <i class="fa fa-plus"></i> <span class="hidden-mobile">Nova Planta</span>
+                                                                                                </button>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>                                                                             
+                                                                        <ol ui-tree-nodes ng-model="equipsConfig" class="dd-list">
+                                                                                <li class="dd-item dd3-item" ng-repeat="item in equipsConfig" ui-tree-node ng-include="'nodes_renderer1.html'"></li>                                                                               
+                                                                        </ol>
+                                                                </div>
+                                                        </div>
+                                                </div>
+
+                                        </div>
+                                        <!-- end widget content -->
+
+                                </div>
+                                <!-- end widget div -->
+
+                        </div>
+                        <!-- end widget -->
+
+                </article>
+                <!-- WIDGET END -->
+
+        </div>
+
+        <!-- end row -->
+
+        
+
+</section>
+<!-- end widget grid -->
+
+
+
+
+    
+                                                           
+
+

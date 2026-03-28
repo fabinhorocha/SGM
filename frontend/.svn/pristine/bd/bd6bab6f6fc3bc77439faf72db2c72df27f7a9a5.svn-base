@@ -1,0 +1,334 @@
+<div class="row">
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-12">
+            <h1 class="page-title txt-color-blueDark"><i class="fa-fw fa fa-table"></i> 
+                
+                
+                Manutenção Preditiva 
+                <span>>
+                Laudos
+                </span>
+            </h1>    
+                <!-- Laudos <span></span></h1> -->
+        </div>        
+</div>
+
+
+ <!-- widget grid -->
+ <section id="widget-grid-2" ng-widget-grid class="">            
+    <!-- row -->
+    <div class="row">
+                               
+        <!-- NEW WIDGET START -->
+        <article class="col-sm-12 col-md-12 col-lg-12">
+
+            <!-- Widget ID (each widget will need unique ID)-->
+            <div class="jarviswidget jarviswidget-sortable" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-colorbutton="false" data-widget-collapsed="false" data-widget-togglebutton="false">
+                 
+                <header>
+                    <span class="widget-icon"> <i class="fa fa-comments"></i> </span> 
+                    <h2>{{Name}}</h2>  
+                    
+                    <div class="widget-toolbar">
+                            <a class="btn btn-primary" ng-click="getReports(selTab)"><i class="fa fa-refresh"></i></a>
+                    </div> 
+                    <div class="widget-toolbar smart-form">                                                                                                                                                  
+                            <label class="input"> <i class="icon-append fa fa-calendar"></i>
+                                <input style="width: 120px" type="text" name="txtDateEnd" ng-model="endDate"  placeholder="Data Final" ng-date-picker  data-dateformat="dd/mm/yy" id="dp112">
+                            </label>                                                                                                                                                                                                                                                                                                                                                                                              
+                    </div>   
+                    <div class="widget-toolbar smart-form">                                                        
+                                <label class="input"> <i class="icon-append fa fa-calendar"></i>
+                                    <input style="width: 120px" type="text" name="txtDateStart" ng-model="startDate" placeholder="Data inicial"   ng-date-picker  data-dateformat="dd/mm/yy" id="dp111">                                
+                                </label>                                                                                                                                                                                                                                                                                                
+                    </div>  
+                    <div class="widget-toolbar">
+                            <span><i class="fa fa-filter"></i> Filtrar:</span>
+                    </div> 
+
+                </header>
+                
+                <!-- widget div-->
+                <div>
+
+                    <!-- widget edit box -->
+                    <div class="jarviswidget-editbox">
+                        <!-- This area used as dropdown edit box -->
+
+                    </div>
+                    <!-- end widget edit box -->
+
+                    <!-- widget content -->
+                    <div class="widget-body">
+                                                                                               
+                        <ul id="myTab" class="nav nav-tabs bordered">
+
+                            <li ng-repeat="t in tabs" ng-class="{'active': selTab == t.id}" ng-hide="t.hide">
+                                <a href="#t{{t.id}}" target="_self" data-toggle="tab" ng-click= "getReports(t.id)" ><i class={{t.class}}></i>{{t.name}}</a>                                    
+                            </li>
+                            
+                        </ul>
+
+                        <div id="myTabContent" class="tab-content padding-10">
+                             
+                            <div ng-class="{'tab-pane fade in active': selTab == 1, 'tab-pane fade': selTab != 1}" ng-hide="user.ReadOnly || (user.Configuration && !user.Maintance )" id="t1">
+                                
+                                <div class="row">
+                                     <!-- NEW WIDGET START -->
+                                     <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                         
+                                        <!-- Widget ID (each widget will need unique ID)-->
+                                        <div class="jarviswidget jarviswidget-color-darken"  data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-collapsed="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false" data-widget-colorbutton="false">
+                                       
+                                            <header>
+                                                <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+                                                <h2></h2>				
+                                             
+                                            </header>
+    
+                                            <!-- widget div-->
+                                            <div>
+                                            
+                                                <!-- widget edit box -->
+                                                <div class="jarviswidget-editbox">
+                                                    <!-- This area used as dropdown edit box -->
+                                                    
+                                                </div>
+                                                <!-- end widget edit box -->
+                                                
+                                                <!-- widget content -->
+                                                <div class="widget-body no-padding" >
+                                                  
+                                                    <div ng-include src="'views/formReport.html'"></div>
+                            
+                                                </div>
+                                                <!-- end widget content -->
+                                            </div>
+                                            <!-- end widget div -->
+
+                                        </div>
+                                        <!-- end widget -->		
+                                    </article>
+                                        	
+                                </div>  
+                                                               
+                            </div>
+                            <div ng-class="{'tab-pane fade in active': selTab == 2, 'tab-pane fade': selTab != 2}" id="t2">                                    
+                                <section ng-widget-grid id="GridHist" class="">
+                                    <!-- row -->
+                                    <div class="row">
+                                
+                                        <!-- NEW WIDGET START -->
+                                        <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        
+                                            <!-- Widget ID (each widget will need unique ID)-->
+                                            <div class="jarviswidget jarviswidget-color-darken"  data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-collapsed="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false" data-widget-colorbutton="false">
+                                            
+                                                    <header>
+                                                        <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                                                        <h2></h2>
+                                    
+                                                    </header>
+                                    
+                                                    <!-- widget div-->
+                                                    <div>
+                                    
+                                                        <!-- widget edit box -->
+                                                        <div class="jarviswidget-editbox">
+                                                            <!-- This area used as dropdown edit box -->
+                                    
+                                                        </div>
+                                                        <!-- end widget edit box -->
+                                    
+                                                        <!-- widget content -->
+                                                        <div class="widget-body no-padding">
+                                                            <div class="widget-body-toolbar">
+                                    
+                                                            </div>
+                                                           
+                                                            <div class="dataTables_wrapper form-inline" role="grid">
+                                                                <div class="dt-top-row">
+                                                                    <div id="dt_basic_length" class="dataTables_length">
+                                                                        <span class="smart-form">
+                                                                            <label class="select" style="width:60px">
+                                                                                <select size="1" ng-model="viewby" ng-change="setItemsPerPage(viewby)" name="dt_basic_length" aria-controls="dt_basic">
+                                                                                    <option value="5">5</option>
+                                                                                    <option value="10">10</option>
+                                                                                    <option value="25">25</option>
+                                                                                    <option value="50">50</option>
+                                                                                    <option value="100">100</option>
+                                                                                </select><i></i>
+                                                                            </label>
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="dataTables_filter" >
+                                                                        <div class="row">
+                                                                            <div class="col-sm-5">
+                                                                                <div class="input-group">
+                                                                                    <span class="input-group-addon">
+                                                                                        <i class="fa fa-search"></i>
+                                                                                    </span>
+                                                                                    <input class="form-control" placeholder="Filtro" type="text" aria-controls="dt_basic" ng-model="searchEquip">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-5">
+                                                                                <div class="input-group" >                                                                                                                                                                                                                                                                                                                 
+                                                                                        <label class="select">
+                                                                                            <select name="filterTechnicsHist" class="form-control" ng-model="filterTypeHist" options="reportsTypesFilter" ng-click="getReports(2)" ng-options="item.idType as item.Name for item in reportsTypesFilter">
+                                                                                            </select>                                                                                                                                                                    
+                                                                                            <i></i> 
+                                                                                        </label>                                                                                        
+                                                                                    </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                </div>
+                                                                <div class="dt-wrapper">
+                                                                    <table class="table table-striped table-bordered table-hover">
+                                                                        <thead>
+                                                                            <tr>
+                                                                            
+                                                                                <th ng-repeat="col in reports.cols" ng-class="{'text-center': col != 'Equipamentos'}">
+                                                                                    {{col}}
+                                                                                </th>                                                                      
+                                                                            
+                                                                        </thead>
+                                                                        <tbody>
+                                                                                <tr ng-repeat="row in reports.rows.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))" ng-show="visibleEquips(row)">
+                                                                                        <td ng-repeat="col in reports.cols track by $index">
+                                                                                            <div class="text-center" ng-if="col != 'Equipamentos'">
+                                                                                                <div ng-repeat="row2 in row[$index] | orderBy: 'id' track by $index" class="btn-group">                                                                                        
+                                                                                                        <a ng-if="row2.Active == 1"  style="min-width: 25px" ng-class="{'btn btn-success btn-xs': row2.idStatus == 1, 'btn btn-warning btn-xs': row2.idStatus == 2, 'btn btn-danger btn-xs': row2.idStatus == 3}"  ng-click="viewReport(row2)" ng-popover data-placement="left"  data-content= "<b>Laudo</b> : {{row2.id}} <br/> <b>Estado</b>: {{row2.nameStatus}}">
+                                                                                                                {{row2.id}}
+                                                                                                        </a>                                                                                                        
+                                                                                                </div> 
+                                                                                            </div>    
+
+                                                                                            <span ng-if="col == 'Equipamentos'">{{row[$index]}}</span>
+                                                                                        </td>
+                                                                                </tr>
+
+                                                                               
+                                                                        </tbody>
+                                                                    
+                                                                    </table>
+                                                                </div>
+                                                                <div class="dt-row dt-bottom-row">
+                                                                    <div class="row">
+                                                                        <div class="col-sm-6">
+                                                                            <div class="dataTables_info">Mostrando de {{itemPageStart}} até {{itemPageEnd}} de {{totalItems}} registros</div>
+                                                                        </div>
+                                                                        <div class="col-sm-6 text-right">
+                                                                            <div class="dataTables_paginate paging_bootstrap_full">
+                                                                                <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>                                                                                                                                                                                                                                            
+                                                        </div>                                                      
+                                                        <!-- end widget content -->
+                                                        
+                                                        
+                                                    </div>                                                    
+                                                    <!-- end widget div -->
+                                    
+                                            </div>
+                                            <!-- end widget -->
+                                                                                                                                    
+                                        </article>
+                                        <!-- WIDGET END -->
+                                
+                                    </div>        
+                                    
+                                </section>                                                             
+                            </div>
+                            <div ng-class="{'tab-pane fade in active': selTab == 3, 'tab-pane fade': selTab != 3}" id="t3">
+                                <section ng-widget-grid id="GridChart1" class="">
+                                    <!-- row -->
+                                    <div class="row">
+                                
+                                        <!-- NEW WIDGET START -->
+                                        <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        
+                                            <!-- Widget ID (each widget will need unique ID)-->
+                                            <div class="jarviswidget jarviswidget-color-darken"  data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-collapsed="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false" data-widget-colorbutton="false">
+                                            
+                                                    <header>
+                                                        <span class="widget-icon"> <i class="fa fa-bar-chart-o"></i> </span>
+                                                        <h2></h2>
+                                                        <div class="widget-toolbar smart-form">                                                        
+                                                            
+                                                                                                                                                                                                                                                                                                                                        
+                                                         </div> 
+                                                    </header>
+                                    
+                                                    <!-- widget div-->
+                                                    <div>
+                                    
+                                                        <!-- widget edit box -->
+                                                        <div class="jarviswidget-editbox">
+                                                            <!-- This area used as dropdown edit box -->
+                                    
+                                                        </div>
+                                                        <!-- end widget edit box -->
+                                    
+                                                        <!-- widget content -->
+                                                        <div class="widget-body no-padding">
+                                                            <div class="widget-body-toolbar">
+                                                                
+                                                            </div>
+                                                                                       
+                                                            <div class="dataTables_wrapper form-inline" role="grid">
+                                                                <div class="dt-top-row">                                                                   
+                                                                    <div class="dataTables_filter" >                                                                            
+                                                                        <span><i class="fa fa-filter"></i> Filtrar:</span>                                                                                                                                                  
+                                                                        <label class="select">
+                                                                            <select name="filterTechnics" class="form-control" ng-model="filterType" options="reportsTypesFilter" ng-click="getReports(3)" ng-options="item.idType as item.Name for item in reportsTypesFilter">
+                                                                            </select>                                                                                                                                                                    
+                                                                            <i></i> 
+                                                                        </label>                                                                                        
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dt-wrapper">
+                                                                    <canvas class="chart chart-bar" chart-data="measurements.data" chart-labels="measurements.labels" chart-colors = "measurements.colors"
+                                                                    chart-options="options" chart-series="measurements.series"></canvas>
+                                                                </div>
+                                                            </div>
+                                                                                                                                                                                                                                                                                                    
+                                                        </div>                                                      
+                                                        <!-- end widget content -->
+                                                        
+                                                        
+                                                    </div>                                                    
+                                                    <!-- end widget div -->
+                                    
+                                            </div>
+                                            <!-- end widget -->
+                                                                                                                                    
+                                        </article>
+                                        <!-- WIDGET END -->
+                                
+                                    </div>        
+                                    
+                                </section>          
+                            </div>
+                                                        
+                        </div>
+                    </div>
+                    <!-- end widget content -->
+                </div>
+                <!-- end widget div -->
+            </div>
+            <!-- end widget -->                                  
+        </article>
+        <!-- WIDGET END -->
+                               
+    </div>
+ </section>
+
+
+
+        
+        
+        

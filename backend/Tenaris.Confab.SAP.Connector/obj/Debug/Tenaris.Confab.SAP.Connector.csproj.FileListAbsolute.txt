@@ -1,0 +1,31 @@
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SAP.Connector\bin\Debug\Tenaris.Confab.SAP.Connector.dll.config
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SAP.Connector\bin\Debug\Tenaris.Confab.SAP.Connector.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SAP.Connector\bin\Debug\Tenaris.Confab.SAP.Connector.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SAP.Connector\bin\Debug\sapnco.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SAP.Connector\bin\Debug\sapnco_utils.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SAP.Connector\obj\Debug\Tenaris.Confab.SAP.Connector.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Services\Tenaris.Confab.SAP.Connector\obj\Debug\Tenaris.Confab.SAP.Connector.pdb
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SAP.Connector\bin\Debug\Tenaris.Confab.SAP.Connector.dll.config
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SAP.Connector\bin\Debug\Tenaris.Confab.SAP.Connector.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SAP.Connector\bin\Debug\Tenaris.Confab.SAP.Connector.pdb
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SAP.Connector\obj\Debug\Tenaris.Confab.SAP.Connector.dll
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SAP.Connector\obj\Debug\Tenaris.Confab.SAP.Connector.pdb
+D:\Development\Source\SVN\source\Nivel2\02 - Fontes\Manutencao\Servidor\Serviços\SGM\DEV\1.1.0-T11245\Tenaris.Confab.SAP.Connector\obj\Debug\Tenaris.Confab.SAP.Connector.csprojResolveAssemblyReference.cache
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SAP.Connector\bin\Debug\Tenaris.Confab.SAP.Connector.dll.config
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SAP.Connector\bin\Debug\Tenaris.Confab.SAP.Connector.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SAP.Connector\bin\Debug\Tenaris.Confab.SAP.Connector.pdb
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SAP.Connector\obj\Debug\Tenaris.Confab.SAP.Connector.dll
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SAP.Connector\obj\Debug\Tenaris.Confab.SAP.Connector.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SAP.Connector\bin\Debug\Tenaris.Confab.SAP.Connector.dll.config
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SAP.Connector\bin\Debug\Tenaris.Confab.SAP.Connector.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SAP.Connector\bin\Debug\Tenaris.Confab.SAP.Connector.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SAP.Connector\obj\Debug\Tenaris.Confab.SAP.Connector.dll
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SAP.Connector\obj\Debug\Tenaris.Confab.SAP.Connector.pdb
+C:\Users\Fabio\Documents\Projetos\SGM\Análise de Falhas\Services\Tenaris.Confab.SAP.Connector\obj\Debug\Tenaris.Confab.SAP.Connector.csprojResolveAssemblyReference.cache
+C:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SAP.Connector\obj\Debug\Tenaris.Confab.SAP.Connector.csprojResolveAssemblyReference.cache
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SAP.Connector\bin\Debug\Tenaris.Confab.SAP.Connector.dll.config
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SAP.Connector\bin\Debug\Tenaris.Confab.SAP.Connector.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SAP.Connector\bin\Debug\Tenaris.Confab.SAP.Connector.pdb
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SAP.Connector\obj\Debug\Tenaris.Confab.SAP.Connector.dll
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SAP.Connector\obj\Debug\Tenaris.Confab.SAP.Connector.pdb
+D:\Users\fabin\Documents\Projetos\SGM\Services\Tenaris.Confab.SAP.Connector\obj\Debug\Tenaris.Confab.SAP.Connector.csprojResolveAssemblyReference.cache

@@ -1,0 +1,954 @@
+app.directive('ngDataTableFixed', function(){
+    return {
+      restrict: 'A',
+      link: function(scope, el, attrs){
+
+        
+        $("#datatable_fixed_column thead input").keyup(function() {
+            oTable.fnFilter(this.value, oTable.oApi._fnVisibleToColumnIndex(oTable.fnSettings(), $("thead input").index(this)));
+        });
+
+        $("#datatable_fixed_column thead input").each(function(i) {
+            this.initVal = this.value;
+        });
+        $("#datatable_fixed_column thead input").focus(function() {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("#datatable_fixed_column thead input").blur(function(i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = this.initVal;
+            }
+        });		
+        
+
+        var oTable = $(el).dataTable({
+            "sDom" : "<'dt-top-row'><'dt-wrapper't><'dt-row dt-bottom-row'<'row'<'col-sm-6'i><'col-sm-6 text-right'p>>",                    
+            "oLanguage" : {
+                "sSearch" : "Search all columns:"
+            },
+            "bSortCellsTop" : true
+        });		
+
+      }
+    };
+});
+
+app.directive('ngDataTableBasic', function(){
+    return {
+      restrict: 'A',
+      link: function(scope, el, attrs){      
+          
+        
+        $(el).dataTable({
+            "sPaginationType" : "bootstrap_full"
+        });
+
+      }
+    };
+});
+
+
+app.directive('ngDataTableColOrder', function(){
+    return {
+      restrict: 'A',
+      link: function(scope, el, attrs){        
+        $(el).dataTable({
+            "sPaginationType" : "bootstrap",
+            "sDom" : "R<'dt-top-row'Clf>r<'dt-wrapper't><'dt-row dt-bottom-row'<'row'<'col-sm-6'i><'col-sm-6 text-right'p>>",
+            "fnInitComplete" : function(oSettings, json) {
+                $('.ColVis_Button').addClass('btn btn-default btn-sm').html('Columns <i class="icon-arrow-down"></i>');
+            }
+        });
+      }
+    };
+});
+
+
+app.directive('ngDatatableTableTools', function(){
+    return {
+      restrict: 'A',
+      link: function(scope, el, attrs){     
+        
+        $(el).dataTable({
+            
+            "sDom" : "<'dt-top-row'Tlf>r<'dt-wrapper't><'dt-row dt-bottom-row'<'row'<'col-sm-6'i><'col-sm-6 text-right'p>>",
+            "oTableTools" : {
+                "aButtons" : [ {
+                    "sExtends" : "collection",
+                    "sButtonText" : 'Salvar <span class="caret" />',
+                    "aButtons" : ["xls", "pdf"]
+                }],
+                "sSwfPath" : "../content/vendor/plugin/datatables/media/swf/copy_csv_xls_pdf.swf"
+            },
+            "fnInitComplete" : function(oSettings, json) {
+                $(this).closest('#dt_table_tools_wrapper').find('.DTTT.btn-group').addClass('table_tools_group').children('a.btn').each(function() {
+                    $(this).addClass('btn-sm btn-default');
+                });
+            }
+        });
+      }
+    };
+});
+
+app.directive('ngTableDetails', function() {
+    return function(scope, element, attrs) {
+
+        // apply DataTable options, use defaults if none specified by user
+        var options = {};
+        if (attrs.ngTableDetails.length > 0) {
+            options = scope.$eval(attrs.ngTableDetails);
+        } else {
+            options = {
+                "bStateSave": true,
+                "iCookieDuration": 2419200, /* 1 month */
+                "bJQueryUI": true,
+                "bPaginate": false,
+                "bLengthChange": false	,
+                "bFilter": false,
+                "bInfo": false,
+                "bDestroy": true
+            };
+        }
+
+        // Tell the dataTables plugin what columns to use
+        // We can either derive them from the dom, or use setup from the controller           
+        var explicitColumns = [];
+        element.find('th').each(function(index, elem) {
+            explicitColumns.push($(elem).text());
+        });
+
+
+
+
+        if (explicitColumns.length > 0) {
+            options["aoColumns"] = explicitColumns;
+        } else if (attrs.aoColumns) {
+            options["aoColumns"] = scope.$eval(attrs.aoColumns);
+        }
+
+        // aoColumnDefs is dataTables way of providing fine control over column config
+        if (attrs.aoColumnDefs) {
+            options["aoColumnDefs"] = scope.$eval(attrs.aoColumnDefs);
+        }
+        
+        if (attrs.fnRowCallback) {
+            options["fnRowCallback"] = scope.$eval(attrs.fnRowCallback);
+        }
+
+        //options.push({"sPaginationType" : "bootstrap"});
+
+        // apply the plugin
+        var dataTable = element.dataTable({
+            "sDom" : "<'dt-top-row'Tlf>r<'dt-wrapper't><'dt-row dt-bottom-row'<'row'<'col-sm-6'i><'col-sm-6 text-right'p>>",
+            "oTableTools" : {
+                "aButtons" : [ {
+                    "sExtends" : "collection",
+                    "sButtonText" : 'Salvar <span class="caret" />',
+                    "aButtons" : ["xls", "pdf"]
+                }],
+                "sSwfPath" : "content/vendor/plugin/datatables/media/swf/copy_csv_xls_pdf.swf"
+            },
+            "fnInitComplete" : function(oSettings, json) {
+                $(this).closest('#dt_table_tools_wrapper').find('.DTTT.btn-group').addClass('table_tools_group').children('a.btn').each(function() {
+                    $(this).addClass('btn-sm btn-default');
+                });
+        }});
+
+        
+        
+        // watch for any changes to our data, rebuild the DataTable
+        scope.$watch(attrs.aaData, function(value) {
+            var val = value || null;
+            if (val) {
+                dataTable.fnClearTable();
+                dataTable.fnAddData(scope.$eval(attrs.aaData));
+            }
+        });
+    };
+});
+
+app.directive('ngTableDetails2', function() {
+  
+    return function(scope, element, attrs) {
+        scope.updateTable= function() {
+        // apply DataTable options, use defaults if none specified by user
+        var options = {};
+        if (attrs.ngTableDetails.length > 0) {
+            options = scope.$eval(attrs.ngTableDetails);
+        } else {
+            options = {
+                "bStateSave": true,
+                "iCookieDuration": 2419200, /* 1 month */
+                "bJQueryUI": true,
+                "bPaginate": false,
+                "bLengthChange": false	,
+                "bFilter": false,
+                "bInfo": false,
+                "bDestroy": true
+            };
+        }
+
+        // Tell the dataTables plugin what columns to use
+        // We can either derive them from the dom, or use setup from the controller           
+        var explicitColumns = [];
+        element.find('th').each(function(index, elem) {
+            explicitColumns.push($(elem).text());
+        });
+        if (explicitColumns.length > 0) {
+            options["aoColumns"] = explicitColumns;
+        } else if (attrs.aoColumns) {
+            options["aoColumns"] = scope.$eval(attrs.aoColumns);
+        }
+
+        // aoColumnDefs is dataTables way of providing fine control over column config
+        if (attrs.aoColumnDefs) {
+            options["aoColumnDefs"] = scope.$eval(attrs.aoColumnDefs);
+        }
+        
+        if (attrs.fnRowCallback) {
+            options["fnRowCallback"] = scope.$eval(attrs.fnRowCallback);
+        }
+
+        //options.push({"sPaginationType" : "bootstrap"});
+
+        // apply the plugin
+        var dataTable = element.dataTable({
+            "sDom" : "<'dt-top-row'Tlf>r<'dt-wrapper't><'dt-row dt-bottom-row'<'row'<'col-sm-6'i><'col-sm-6 text-right'p>>",
+            "oTableTools" : {
+                "aButtons" : [ {
+                    "sExtends" : "collection",
+                    "sButtonText" : 'Salvar <span class="caret" />',
+                    "aButtons" : ["xls", "pdf"]
+                }],
+                "sSwfPath" : "content/vendor/plugin/datatables/media/swf/copy_csv_xls_pdf.swf"
+            },
+            "fnInitComplete" : function(oSettings, json) {
+                $(this).closest('#dt_table_tools_wrapper').find('.DTTT.btn-group').addClass('table_tools_group').children('a.btn').each(function() {
+                    $(this).addClass('btn-sm btn-default');
+                });
+        }});
+
+        
+        
+        // watch for any changes to our data, rebuild the DataTable
+        scope.$watch(attrs.aaData, function(value) {
+            var val = value || null;
+            if (val) {
+                dataTable.fnClearTable();
+                dataTable.fnAddData(scope.$eval(attrs.aaData));
+            }
+        });
+    };
+};
+});
+
+app.directive('map', function () {
+    return {
+        restrict: 'A', 
+        scope: {}, 
+        templateUrl: '',
+        controller: function ($scope, $http, $attrs) {
+
+          //  $scope.api = MapApi;
+
+            $scope.updateMap = function () {
+                //Update the map 
+            };
+
+            //Add event
+            $scope.api.addUpdateEvent($scope.updateMap);
+
+        }
+    }
+});
+
+app.directive('ngTableManual', function() {
+    return {
+        restrict: 'A',
+        replace: true,
+        template: '',
+        controller: "indicatorOTController",
+        link: function($scope, element, attrs) {
+            $scope.FillData= function(columns, data, options) {
+                var options = {};
+                if (options.length > 0) {
+                    options = options;
+                } else {
+                    options = {
+                        "bStateSave": true,
+                        "iCookieDuration": 2419200, /* 1 month */
+                        "bJQueryUI": true,
+                        "bPaginate": false,
+                        "bLengthChange": false	,
+                        "bFilter": false,
+                        "bInfo": false,
+                        "bDestroy": true
+                    };
+                }
+        
+                // Tell the dataTables plugin what columns to use
+                // We can either derive them from the dom, or use setup from the controller           
+                var explicitColumns = [];                
+                angular.forEach(columns, function(obj, key){                    
+                    explicitColumns.push(obj.mDataProp);
+                });
+
+                options["aoColumns"] = explicitColumns;
+                
+                // aoColumnDefs is dataTables way of providing fine control over column config
+                
+                options["aoColumnDefs"] = explicitColumns;
+                
+                
+                if (attrs.fnRowCallback) {
+                    options["fnRowCallback"] = scope.$eval(attrs.fnRowCallback);
+                }
+        
+                //options.push({"sPaginationType" : "bootstrap"});
+        
+                // apply the plugin
+                var dataTable = element.dataTable({
+                    "sDom" : "<'dt-top-row'Tlf>r<'dt-wrapper't><'dt-row dt-bottom-row'<'row'<'col-sm-6'i><'col-sm-6 text-right'p>>",
+                    "oTableTools" : {
+                        "aButtons" : [ {
+                            "sExtends" : "collection",
+                            "sButtonText" : 'Salvar <span class="caret" />',
+                            "aButtons" : ["xls", "pdf"]
+                        }],
+                        "sSwfPath" : "content/vendor/plugin/datatables/media/swf/copy_csv_xls_pdf.swf"
+                    },
+                    "fnInitComplete" : function(oSettings, json) {
+                        $(this).closest('#dt_table_tools_wrapper').find('.DTTT.btn-group').addClass('table_tools_group').children('a.btn').each(function() {
+                            $(this).addClass('btn-sm btn-default');
+                        });
+                }});
+        
+                dataTable.fnClearTable();
+                dataTable.fnAddData(data);
+                
+                // // watch for any changes to our data, rebuild the DataTable
+                // this.$watch(data, function(value) {
+                //     var val = value || null;
+                //     if (val) {
+                //         dataTable.fnClearTable();
+                //         dataTable.fnAddData(data);
+                //     }
+                // });
+            }
+        }
+    }
+});
+
+app.directive('ngUpdatingChart', function(){
+
+    return {
+        restrict: 'A',
+        link: function(scope, el, attrs){
+            /*
+        * RUN PAGE GRAPHS
+        */
+
+        /* TAB 1: UPDATING CHART */
+        // For the demo we use generated data, but normally it would be coming from the server
+
+        var data = [], totalPoints = 200, $UpdatingChartColors = $(el).css('color');
+        
+        function getRandomData() {
+            if (data.length > 0)
+                data = data.slice(1);
+
+            // do a random walk
+            while (data.length < totalPoints) {
+                var prev = data.length > 0 ? data[data.length - 1] : 50;
+                var y = prev + Math.random() * 10 - 5;
+                if (y < 0)
+                    y = 0;
+                if (y > 100)
+                    y = 100;
+                data.push(y);
+            }
+
+            // zip the generated y values with the x values
+            var res = [];
+            for (var i = 0; i < data.length; ++i)
+                res.push([i, data[i]])
+            return res;
+        }
+        
+        // setup control widget
+        var updateInterval = 1500;
+        $(el).val(updateInterval).change(function() {
+
+            var v = $(this).val();
+            if (v && !isNaN(+v)) {
+                updateInterval = +v;
+                $(this).val("" + updateInterval);
+            }
+
+        });
+
+        // setup plot
+        var options = {
+            yaxis : {
+                min : 0,
+                max : 100
+            },
+            xaxis : {
+                min : 0,
+                max : 100
+            },
+            colors : [$UpdatingChartColors],
+            series : {
+                lines : {
+                    lineWidth : 1,
+                    fill : true,
+                    fillColor : {
+                        colors : [{
+                            opacity : 0.4
+                        }, {
+                            opacity : 0
+                        }]
+                    },
+                    steps : false
+
+                }
+            }
+        };
+
+        var plot = $.plot($(el), [getRandomData()], options);
+
+        /* live switch */
+        $('input[type="checkbox"]#start_interval').click(function() {
+            if ($(this).prop('checked')) {
+                $on = true;
+                updateInterval = 1500;
+                update();
+            } else {
+                clearInterval(updateInterval);
+                $on = false;
+            }
+        });
+
+        function update() {
+            if ($on == true) {
+                plot.setData([getRandomData()]);
+                plot.draw();
+                setTimeout(update, updateInterval);
+
+            } else {
+                clearInterval(updateInterval)
+            }
+
+        }
+
+        var $on = false;
+
+            // check and uncheck
+        $('.todo .checkbox > input[type="checkbox"]').click(function() {
+            var $this = $(this).parent().parent().parent();
+
+            if ($(this).prop('checked')) {
+                $this.addClass("complete");
+
+                // remove this if you want to undo a check list once checked
+                //$(this).attr("disabled", true);
+                $(this).parent().hide();
+
+                // once clicked - add class, copy to memory then remove and add to sortable3
+                $this.slideUp(500, function() {
+                    $this.clone().prependTo("#sortable3").effect("highlight", {}, 800);
+                    $this.remove();
+                    countTasks();
+                });
+            } else {
+                // insert undo code here...
+            }
+
+        })
+
+        }
+
+        
+    };
+});
+
+app.directive('ngCalendar', function(){
+    return {
+      restrict: 'A',
+      link: function(scope, el, attrs){
+
+        if ($(el).length) {
+            var date = new Date();
+            var d = date.getDate();
+            var m = date.getMonth();
+            var y = date.getFullYear();
+
+            var calendar = $(el).fullCalendar({
+
+                editable : true,
+                draggable : true,
+                selectable : false,
+                selectHelper : true,
+                unselectAuto : false,
+                disableResizing : false,
+
+                header : {
+                    left : 'title', //,today
+                    center : 'prev, next, today',
+                    right : 'month, agendaWeek, agenDay' //month, agendaDay,
+                },
+
+                select : function(start, end, allDay) {
+                    var title = prompt('Event Title:');
+                    if (title) {
+                        calendar.fullCalendar('renderEvent', {
+                            title : title,
+                            start : start,
+                            end : end,
+                            allDay : allDay
+                        }, true // make the event "stick"
+                        );
+                    }
+                    calendar.fullCalendar('unselect');
+                },
+
+                events : [{
+                    title : 'All Day Event',
+                    start : new Date(y, m, 1),
+                    description : 'long description',
+                    className : ["event", "bg-color-greenLight"],
+                    icon : 'fa-check'
+                }, {
+                    title : 'Long Event',
+                    start : new Date(y, m, d - 5),
+                    end : new Date(y, m, d - 2),
+                    className : ["event", "bg-color-red"],
+                    icon : 'fa-lock'
+                }, {
+                    id : 999,
+                    title : 'Repeating Event',
+                    start : new Date(y, m, d - 3, 16, 0),
+                    allDay : false,
+                    className : ["event", "bg-color-blue"],
+                    icon : 'fa-clock-o'
+                }, {
+                    id : 999,
+                    title : 'Repeating Event',
+                    start : new Date(y, m, d + 4, 16, 0),
+                    allDay : false,
+                    className : ["event", "bg-color-blue"],
+                    icon : 'fa-clock-o'
+                }, {
+                    title : 'Meeting',
+                    start : new Date(y, m, d, 10, 30),
+                    allDay : false,
+                    className : ["event", "bg-color-darken"]
+                }, {
+                    title : 'Lunch',
+                    start : new Date(y, m, d, 12, 0),
+                    end : new Date(y, m, d, 14, 0),
+                    allDay : false,
+                    className : ["event", "bg-color-darken"]
+                }, {
+                    title : 'Birthday Party',
+                    start : new Date(y, m, d + 1, 19, 0),
+                    end : new Date(y, m, d + 1, 22, 30),
+                    allDay : false,
+                    className : ["event", "bg-color-darken"]
+                }, {
+                    title : 'Smartadmin Open Day',
+                    start : new Date(y, m, 28),
+                    end : new Date(y, m, 29),
+                    className : ["event", "bg-color-darken"]
+                }],
+
+                eventRender : function(event, element, icon) {
+                    if (!event.description == "") {
+                        element.find('.fc-event-title').append("<br/><span class='ultra-light'>" + event.description + "</span>");
+                    }
+                    if (!event.icon == "") {
+                        element.find('.fc-event-title').append("<i class='air air-top-right fa " + event.icon + " '></i>");
+                    }
+                }
+            });
+
+        };
+
+        
+        $(".js-status-update a").click(function() {
+            var selText = $(this).text();
+            var $this = $(this);
+            $this.parents('.btn-group').find('.dropdown-toggle').html(selText + ' <span class="caret"></span>');
+            $this.parents('.dropdown-menu').find('li').removeClass('active');
+            $this.parent().addClass('active');
+        });
+
+        /* hide default buttons */
+        $('.fc-header-right, .fc-header-center').hide();
+
+        // calendar prev
+        $('#calendar-buttons #btn-prev').click(function() {
+            $('.fc-button-prev').click();
+            return false;
+        });
+
+        // calendar next
+        $('#calendar-buttons #btn-next').click(function() {
+            $('.fc-button-next').click();
+            return false;
+        });
+
+        // calendar today
+        $('#calendar-buttons #btn-today').click(function() {
+            $('.fc-button-today').click();
+            return false;
+        });
+
+        // calendar month
+        $('#mt').click(function() {
+            $('#calendar').fullCalendar('changeView', 'month');
+        });
+
+        // calendar agenda week
+        $('#ag').click(function() {
+            $('#calendar').fullCalendar('changeView', 'agendaWeek');
+        });
+
+        // calendar agenda day
+        $('#td').click(function() {
+            $('#calendar').fullCalendar('changeView', 'agendaDay');
+        });
+      }
+    };
+});
+
+app.directive('ngWidgetGrid',function(){
+
+    return {
+        restricted: 'A',
+        link: function(scope, el, attrs){
+            $(el).jarvisWidgets({
+                
+                            grid : 'article',
+                            widgets : '.jarviswidget',
+                            localStorage : true,
+                            deleteSettingsKey : '#deletesettingskey-options',
+                            settingsKeyLabel : 'Reset settings?',
+                            deletePositionKey : '#deletepositionkey-options',
+                            positionKeyLabel : 'Reset position?',
+                            sortable : true,
+                            buttonsHidden : false,
+                            // toggle button
+                            toggleButton : true,
+                            toggleClass : 'fa fa-minus | fa fa-plus',
+                            toggleSpeed : 200,
+                            onToggle : function() {
+                            },
+                            // delete btn
+                            deleteButton : true,
+                            deleteClass : 'fa fa-times',
+                            deleteSpeed : 200,
+                            onDelete : function() {
+                            },
+                            // edit btn
+                            editButton : true,
+                            editPlaceholder : '.jarviswidget-editbox',
+                            editClass : 'fa fa-cog | fa fa-save',
+                            editSpeed : 200,
+                            onEdit : function() {
+                            },
+                            // color button
+                            colorButton : true,
+                            // full screen
+                            fullscreenButton : true,
+                            fullscreenClass : 'fa fa-resize-full | fa fa-resize-small',
+                            fullscreenDiff : 3,
+                            onFullscreen : function() {
+                            },
+                            // custom btn
+                            customButton : false,
+                            customClass : 'folder-10 | next-10',
+                            customStart : function() {
+                                alert('Hello you, this is a custom button...')
+                            },
+                            customEnd : function() {
+                                alert('bye, till next time...')
+                            },
+                            // order
+                            buttonOrder : '%refresh% %custom% %edit% %toggle% %fullscreen% %delete%',
+                            opacity : 1.0,
+                            dragHandle : '> header',
+                            placeholderClass : 'jarviswidget-placeholder',
+                            indicator : true,
+                            indicatorTime : 600,
+                            ajax : true,
+                            timestampPlaceholder : '.jarviswidget-timestamp',
+                            timestampFormat : 'Last update: %m%/%d%/%y% %h%:%i%:%s%',
+                            refreshButton : true,
+                            refreshButtonClass : 'fa fa-refresh',
+                            labelError : 'Sorry but there was a error:',
+                            labelUpdated : 'Last Update:',
+                            labelRefresh : 'Refresh',
+                            labelDelete : 'Delete widget:',
+                            afterLoad : function() {
+                            },
+                            rtl : false, // best not to toggle this!
+                            onChange : function() {
+                                
+                            },
+                            onSave : function() {
+                                
+                            },
+                            ajaxnav : $.navAsAjax // declears how the localstorage should be saved
+                
+                        });
+        }
+
+    };
+});  
+
+app.directive('capitalize', function() {
+    return {
+      require: 'ngModel',
+      link: function(scope, element, attrs, modelCtrl) {
+        var capitalize = function(inputValue) {
+          if (inputValue == undefined) inputValue = '';
+          var capitalized = inputValue.toUpperCase();
+          if (capitalized !== inputValue) {
+            modelCtrl.$setViewValue(capitalized);
+            modelCtrl.$render();
+          }
+          return capitalized;
+        }
+        modelCtrl.$parsers.push(capitalize);
+        capitalize(scope[attrs.ngModel]); // capitalize initial value
+      }
+    };
+});
+
+app.directive('ngDatePicker', function(){
+
+    return {
+        restrict: 'A',
+        link: function(scope, el, attrs){
+                               
+            var dataDateFormat = $(el).attr('data-dateformat') || 'dd.mm.yy';
+            $(el).datepicker({
+                dateFormat : dataDateFormat,
+                prevText : '<i class="fa fa-chevron-left"></i>',
+                nextText : '<i class="fa fa-chevron-right"></i>',
+                defaultDate: "+1w",
+                changeMonth: true,
+                numberOfMonths: 1,
+                dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
+                dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
+                dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
+                monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+                monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+                
+            });                                  
+        }
+      };
+
+   
+});
+
+app.directive('ngPopover', function(){
+    
+        return {
+            restrict: 'A',
+            link: function(scope, el, attrs){                                                  
+                     
+            // activate popovers with hover states
+            $(el).popover({
+                trigger : "hover",
+                html:true
+            });
+            }
+          };
+    
+       
+});
+
+
+app.directive('ngStatusUpdate',function(){
+
+    return {
+        restrict: 'A',
+        link: function (scope, el, attrs){
+            
+            $(el).find("a").each(function(i,a){                
+                $(a).click(function() {
+                    var selText = $(this).text();
+                    var $this = $(this);
+                    $this.parents('.btn-group').find('.dropdown-toggle').html(selText + ' <span class="caret"></span>');
+                    $this.parents('.dropdown-menu').find('li').removeClass('active');
+                    $this.parent().addClass('active');
+                });            
+            
+            });
+
+        }
+    };
+});
+
+app.directive('ngJarvisMenu', function(){
+    
+        return {
+            restrict: 'A',
+            link: function(scope, el, attrs){
+                                   
+                $('nav ul').jarvismenu({
+                    accordion : true,
+                    speed : $.menu_speed,
+                    closedSign : '<em class="fa fa-expand-o"></em>',
+                    openedSign : '<em class="fa fa-collapse-o"></em>'
+                });            
+            }
+          };
+    
+       
+});
+
+app.directive('numbersonly', function () {
+    return {
+        restrict: 'A',
+        link: function (scope, elm, attrs, ctrl) {
+            elm.on('keydown', function (event) {
+                if (event.which == 64 || event.which == 16 && elm.val().length > 4) {
+                    return false;
+                } else if (event.which >= 48 && event.which <= 57) {
+                    return true;
+                } else if (event.which >= 96 && event.which <= 105) {
+                    return true;
+                } //else if ([8, 13, 27, 37, 38, 39, 40].indexOf(event.which) > -1 && elm.val().length > 4) {
+                else if ([8, 37, 39].indexOf(event.which) > -1) {
+                    return true;
+                } 
+                else if ([13, 27, 38, 40].indexOf(event.which) > -1 && elm.val().length > 4) {
+                    return true;    
+                }
+                else {
+                    event.preventDefault();
+                    return false;
+                }
+            });
+        }
+    }
+});
+
+app.directive('decimalsonly', function () {
+    return {
+        restrict: 'A',
+        link: function (scope, elm, attrs, ctrl) {
+            elm.on('keydown', function (event) {
+                if (event.which == 64 || event.which == 16 && elm.val().length > 4) {
+                    return false;
+                } else if (event.which >= 48 && event.which <= 57) {
+                    return true;
+                } else if (event.which >= 96 && event.which <= 105) {
+                    return true;
+                }
+                else if ([8, 37, 39].indexOf(event.which) > -1) {
+                    return true;
+                } 
+                else if ([190].indexOf(event.which) > -1) {
+                    if (elm.val().indexOf('.') >= 0){
+                        event.preventDefault();
+                        return false;
+                    }
+                    else {
+                        return true;
+                    }                    
+                } 
+                else if ([13, 27, 38, 40].indexOf(event.which) > -1 && elm.val().length > 4) {
+                    return true;    
+                }
+                else {
+                    event.preventDefault();
+                    return false;
+                }
+            });
+        }
+    }
+});
+
+app.directive('excelExport',function () {
+      return {
+        restrict: 'A',
+        scope: {
+        	fileName: "@",
+            data: "&exportData"
+        },
+        replace: true,
+        template: '<button class="btn btn-primary btn-ef btn-ef-3 btn-ef-3c mb-10" ng-click="download()">Exportar para Excel <i class="fa fa-download"></i></button>',
+        link: function (scope, element) {
+        	
+        	scope.download = function() {
+
+        		function datenum(v, date1904) {
+            		if(date1904) v+=1462;
+            		var epoch = Date.parse(v);
+            		return (epoch - new Date(Date.UTC(1899, 11, 30))) / (24 * 60 * 60 * 1000);
+            	};
+            	
+            	function getSheet(data, opts) {
+            		var ws = {};
+            		var range = {s: {c:10000000, r:10000000}, e: {c:0, r:0 }};
+            		for(var R = 0; R != data.length; ++R) {
+            			for(var C = 0; C != data[R].length; ++C) {
+            				if(range.s.r > R) range.s.r = R;
+            				if(range.s.c > C) range.s.c = C;
+            				if(range.e.r < R) range.e.r = R;
+            				if(range.e.c < C) range.e.c = C;
+            				var cell = {v: data[R][C] };
+            				if(cell.v == null) continue;
+            				var cell_ref = XLSX.utils.encode_cell({c:C,r:R});
+            				
+            				if(typeof cell.v === 'number') cell.t = 'n';
+            				else if(typeof cell.v === 'boolean') cell.t = 'b';
+            				else if(cell.v instanceof Date) {
+            					cell.t = 'n'; cell.z = XLSX.SSF._table[14];
+            					cell.v = datenum(cell.v);
+            				}
+            				else cell.t = 's';
+            				
+            				ws[cell_ref] = cell;
+            			}
+            		}
+            		if(range.s.c < 10000000) ws['!ref'] = XLSX.utils.encode_range(range);
+            		return ws;
+            	};
+            	
+            	function Workbook() {
+            		if(!(this instanceof Workbook)) return new Workbook();
+            		this.SheetNames = [];
+            		this.Sheets = {};
+            	}
+            	 
+            	var wb = new Workbook(), ws = getSheet(scope.data());
+            	/* add worksheet to workbook */
+            	wb.SheetNames.push(scope.fileName);
+            	wb.Sheets[scope.fileName] = ws;
+            	var wbout = XLSX.write(wb, {bookType:'xlsx', bookSST:true, type: 'binary'});
+
+            	function s2ab(s) {
+            		var buf = new ArrayBuffer(s.length);
+            		var view = new Uint8Array(buf);
+            		for (var i=0; i!=s.length; ++i) view[i] = s.charCodeAt(i) & 0xFF;
+            		return buf;
+            	}
+            	
+        		saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), scope.fileName+'.xlsx');
+        		
+        	};
+        
+        }
+      };
+});
+
+

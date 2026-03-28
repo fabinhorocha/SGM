@@ -1,0 +1,166 @@
+<form id="oilConfigForm"  name="oilConfigForm" class="smart-form"  ng-submit="">
+    <fieldset style="padding: 10px 14px 10px !important;">
+        <div class="row">
+            <section class="col col-10">
+                <!-- TERJDT -->
+                <!-- <label class="label">Nome Unidade Hidráulica</label> -->
+                <input type="text" id="txtName" 
+                style="width: 100%;" 
+                name="txtName" numbersonly 
+                ng-model="Component.Name"
+                ng-change="checkChange()"
+                ng-readonly="checkDisabledOption()"/>
+            </section>
+        </div>
+        <div class="row">
+            <section class="col col-2">
+                <label class="label">Capacidade (lts)</label>
+                <input type="text" id="txtCapacity" style="width: 100%;" name="txtCapacity" 
+                numbersonly 
+                ng-model="Component.Capacity" 
+                required
+                ng-change="checkChange()"
+                ng-readonly="checkDisabledOption()"/>
+            </section>
+            <section class="col col-10">
+                <label class="label">Tipo de Óleo</label>
+                <label class="select">
+                    <select id="selectedOilType" 
+                    name="selectedOilType"
+                    required
+                    chosen
+                    multiple                    
+                    ng-model="Component.EnabledOilTypes"
+                    ng-options="o.idOilType as o.Name for o in Component.OilTypes"
+                    required
+                    ng-change="checkChange()"
+                    ng-disabled="checkDisabledOption()">
+                    </select>                                                                                                                
+                </label>        
+            </section>
+        </div>
+        <div class="row">
+            <section class="col col-4">
+                <label class="label">Grau ISO dos Contaminantes</label>
+                <textarea id="txtOilGradeISO"  name="txtOilGradeISO" 
+                ng-model="Component.OilGradeISO" 
+                style="width:100%;height:70px;"
+                ng-change="checkChange()"
+                ng-readonly="checkDisabledOption()"></textarea>            
+            </section>
+            <section class="col col-2">
+                <label class="label">Código ISO Limite</label>
+                <input type="text" 
+                    name="txtISOLimitCode"
+                    ng-model="Component.ISOLimitCode"
+                    style="width:100%;"
+                    ng-change="checkChange()"
+                    ng-readonly="checkDisabledOption()"/>
+
+                <label class="label">Componente Crítico</label>
+                <input type="text" 
+                    name="txtCriticalComponent"
+                    ng-model="Component.CriticalComponent"
+                    style="width:100%;"
+                    ng-change="checkChange()"
+                    ng-readonly="checkDisabledOption()"/>
+            </section>
+            <section class="col col-6">
+                <label class="label">Equipamentos e Máquinas atendidas pela U.H.</label>
+                <textarea id="txtMachinesServed"  name="txtMachinesServed" 
+                ng-model="Component.MachinesServed" 
+                style="width:100%;height:70px;"
+                ng-change="checkChange()"
+                ng-readonly="checkDisabledOption()"></textarea>
+            </section>
+        </div>
+        <div class="row">
+            <section class="col col-4">
+                <label class="label">Vazão (lts/min)</label>
+                <input type="text" 
+                decimalsonly
+                name="txtFlowRate" 
+                placeholder="Decimal" 
+                ng-model="Component.FlowRate" 
+                ng-pattern="/^[0-9]+(\.[0-9]+)?$/" 
+                required 
+                ng-change="checkChange()"
+                ng-readonly="checkDisabledOption()"/>
+                <!-- <input type="text" name="txtFlowRate" 
+                    ng-model="Component.FlowRate" 
+                    ng-pattern="/^[0-9]+\.?[0-9]*$/"
+                    ng-change="checkChange()"/> -->
+                <!-- <input type="text" id="txtFlowRate" name="txtFlowRate" 
+                numbersonly 
+                ng-model="Component.FlowRate" 
+                required
+                ng-change="checkChange()"/> -->
+            </section>
+            <section class="col col-4">
+                <label class="label">Pressão (bar)</label>
+                <input type="text" id="txtPreassure" name="txtPreassure" 
+                numbersonly 
+                ng-model="Component.Preassure" 
+                required
+                ng-change="checkChange()"
+                ng-readonly="checkDisabledOption()" />
+            </section>
+            <section class="col col-2">                
+                <br />
+                <label class="toggle" style="font-size: 13px !important; line-height: 32px !important;">
+                        <input type="checkbox" 
+                        name="checkbox-toggle" 
+                        checked="checked" 
+                        ng-model="Component.Active" 
+                        ng-change="checkChange()" 
+                        ng-disabled="checkDisabledOption()" />
+                        <i data-swchon-text="SIM" data-swchoff-text="NÃO"></i>U.H. Ativa
+                </label>  
+            </section>
+        </div>
+        <footer style="padding: 0px 14px 0px !important;">
+            <button class="btn btn-default"  
+            ng-click="editComponent()"            
+            ng-disabled="saveDisabled" 
+            ng-style="{ 'background-color' : saveDisabled ? '#fff' : '#3276b1', 
+	                    'color' : saveDisabled ? '#333' : '#fff', 
+                        'border-color': saveDisabled ? '#ccc' : '#2c699d' }">
+                    <i class="fa fa-edit"></i> <span class="hidden-mobile">Salvar Alterações U.H.</span>
+            </button>
+        </footer>
+    </fieldset>
+    <footer style="padding: 0px 14px 0px !important;">
+        <button class="btn btn-default" ng-click="newOilSupply()">
+            <i class="fa fa-plus"></i> <span class="hidden-mobile">Novo Abastecimento</span>
+        </button>
+        <button class="btn btn-default" 
+        ng-disabled="stillHiddenOilSupplyEdit" 
+        ng-click="editOilSupply(idSelectedRow)"
+        ng-style="{ 'background-color' : idSelectedRow === null || idSelectedRow === undefined ? '#fff' : '#3276b1', 
+	                    'color' : idSelectedRow === null || idSelectedRow === undefined ? '#333' : '#fff', 
+                        'border-color': idSelectedRow === null || idSelectedRow === undefined ? '#ccc' : '#2c699d' }">
+            <i class="fa fa-edit"></i> <span class="hidden-mobile">Editar Abastecimento</span>
+        </button>
+    </footer>                                            
+    
+    <fieldset>
+            <legend style="font-family: 'Open Sans',Arial,Helvetica,Sans-Serif !important; font-size: 13px !important; margin-left: 5px !important;">Últimos Abastecimentos</legend>
+            <div class="dt-wrapper">            
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th class="text-center" ng-repeat="col in reports.cols" style="width: 120px;" ng-show="col != 'id'">
+                                <span>{{col}}</span>
+                            </th>                                                                      
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="row in reports.rows">
+                            <td class="text-center" ng-class="{customSelected: row[0] === idSelectedRow}" ng-repeat="col in reports.cols track by $index" ng-if="col != 'id'" ng-click="setSelectedRow(row[0])">
+                                {{row[$index]}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>                                                               
+        </fieldset>
+</form>

@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7E3FDAE1-4CFB-49C6-8C8F-409A93FC7AEA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tenaris.Confab.SGM.Services</RootNamespace>
+    <AssemblyName>Tenaris.Confab.SGM.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http">
+      <HintPath>..\packages\System.Net.Http.2.0.20126.16343\lib\net40\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <HintPath>..\packages\System.Net.Http.2.0.20126.16343\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BudgetPlantService.cs" />
+    <Compile Include="BudgetLocationService.cs" />
+    <Compile Include="ComponentService.cs" />
+    <Compile Include="Interfaces\INoteFailureService.cs" />
+    <Compile Include="Interfaces\IPlantGroupService.cs" />
+    <Compile Include="NoteFailureService.cs" />
+    <Compile Include="PlantGroupService.cs" />
+    <Compile Include="EquipmentPlantGroupService.cs" />
+    <Compile Include="Interfaces\IBudgetPlantService.cs" />
+    <Compile Include="Interfaces\IBudgetLocationService.cs" />
+    <Compile Include="Interfaces\IComponentService.cs" />
+    <Compile Include="Interfaces\IEquipmentDataService.cs" />
+    <Compile Include="Interfaces\IEquipmentPlantGroupService.cs" />
+    <Compile Include="Interfaces\INotificationService.cs" />
+    <Compile Include="Interfaces\IOilManagementAccessService.cs" />
+    <Compile Include="Interfaces\IOilManagementAlarmService.cs" />
+    <Compile Include="Interfaces\IOilManagementIndicatorService.cs" />
+    <Compile Include="Interfaces\IOilManagementReportService.cs" />
+    <Compile Include="Interfaces\IOilSupplyService.cs" />
+    <Compile Include="Interfaces\IOilSupplyTypeService.cs" />
+    <Compile Include="Interfaces\IOilTypeService.cs" />
+    <Compile Include="Interfaces\IFailureDataService.cs" />
+    <Compile Include="Interfaces\IPlantDataService.cs" />
+    <Compile Include="Interfaces\ILocationPlantService.cs" />
+    <Compile Include="Interfaces\ILocationLocalService.cs" />
+    <Compile Include="Interfaces\IStoppageTypeService.cs" />
+    <Compile Include="Interfaces\ITypeNoteService.cs" />
+    <Compile Include="Interfaces\ITypeDocService.cs" />
+    <Compile Include="Interfaces\IScheduledRangeService.cs" />
+    <Compile Include="EquipmentDataService.cs" />
+    <Compile Include="NotificationService .cs" />
+    <Compile Include="OilManagementAccessService.cs" />
+    <Compile Include="OilManagementAlarmService.cs" />
+    <Compile Include="OilManagementIndicatorService.cs" />
+    <Compile Include="OilManagementReportService.cs" />
+    <Compile Include="OilSupplyService.cs" />
+    <Compile Include="OilsupplyTypeService.cs" />
+    <Compile Include="OilTypeService.cs" />
+    <Compile Include="FailureDataService.cs" />
+    <Compile Include="PlantDataService.cs" />
+    <Compile Include="LocationPlantService.cs" />
+    <Compile Include="LocationLocalService.cs" />
+    <Compile Include="StoppageTypeService.cs" />
+    <Compile Include="TypeNoteService.cs" />
+    <Compile Include="TypeDocService.cs" />
+    <Compile Include="ScheduledRangeService.cs" />
+    <Compile Include="PlantService.cs" />
+    <Compile Include="Interfaces\IPlantService.cs" />
+    <Compile Include="Interfaces\IOrderHeadService.cs" />
+    <Compile Include="LocationDataService.cs" />
+    <Compile Include="Interfaces\ILocationDataService.cs" />
+    <Compile Include="Interfaces\ILocationService.cs" />
+    <Compile Include="LocationService.cs" />
+    <Compile Include="Interfaces\IBudgetService.cs" />
+    <Compile Include="PriorityService.cs" />
+    <Compile Include="EquipmentBackupService.cs" />
+    <Compile Include="Interfaces\IPriorityService.cs" />
+    <Compile Include="Interfaces\IReportFileService.cs" />
+    <Compile Include="ReportFileService.cs" />
+    <Compile Include="BudgetService.cs" />
+    <Compile Include="OrderHeadService.cs" />
+    <Compile Include="ReportService.cs" />
+    <Compile Include="EquipmentService.cs" />
+    <Compile Include="AreaService.cs" />
+    <Compile Include="Interfaces\IAreaService.cs" />
+    <Compile Include="Interfaces\IEquipmentBackupService.cs" />
+    <Compile Include="Interfaces\IReportService.cs" />
+    <Compile Include="Interfaces\IEquipmentService.cs" />
+    <Compile Include="Interfaces\IReportStatusService.cs" />
+    <Compile Include="Interfaces\IReportTypeService.cs" />
+    <Compile Include="Interfaces\ITypeService.cs" />
+    <Compile Include="Interfaces\IPartService.cs" />
+    <Compile Include="PartService.cs" />
+    <Compile Include="ReportStatusService.cs" />
+    <Compile Include="ReportTypeService.cs" />
+    <Compile Include="TypeService.cs" />
+    <Compile Include="NinjectConfig.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tenaris.Confab.SGM.Entities\Tenaris.Confab.SGM.Domain.csproj">
+      <Project>{1cb29571-e783-4484-81fe-22566eb53685}</Project>
+      <Name>Tenaris.Confab.SGM.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tenaris.Confab.SGM.Repositories\Tenaris.Confab.SGM.Repositories.csproj">
+      <Project>{16b344bd-abd6-45d5-b337-c87ff3e6207e}</Project>
+      <Name>Tenaris.Confab.SGM.Repositories</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

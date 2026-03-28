@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1CB29571-E783-4484-81FE-22566EB53685}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tenaris.Confab.SGM.Domain</RootNamespace>
+    <AssemblyName>Tenaris.Confab.SGM.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Custom\BusinessException.cs" />
+    <Compile Include="Custom\Impersonator.cs" />
+    <Compile Include="Entities\BudgetPlant.cs" />
+    <Compile Include="Entities\BudgetLocation.cs" />
+    <Compile Include="Entities\Component.cs" />
+    <Compile Include="Entities\EquipmentPlantGroup.cs" />
+    <Compile Include="Entities\EquipmentData.cs" />
+    <Compile Include="Entities\NoteFailure.cs" />
+    <Compile Include="Entities\OilManagementAccess.cs" />
+    <Compile Include="Entities\OilManagementAlarm.cs" />
+    <Compile Include="Entities\OilManagementAlarmAlertConfig.cs" />
+    <Compile Include="Entities\OilManagementAlarmGroup.cs" />
+    <Compile Include="Entities\OilManagementAlarmHistory.cs" />
+    <Compile Include="Entities\OilManagementAlarmHistorySetting.cs" />
+    <Compile Include="Entities\OilManagementAlarmSendStatus.cs" />
+    <Compile Include="Entities\OilManagementAlarmSetting.cs" />
+    <Compile Include="Entities\OilManagementAlarmType.cs" />
+    <Compile Include="Entities\OilManagementArea.cs" />
+    <Compile Include="Entities\OilManagementEquipment.cs" />
+    <Compile Include="Entities\OilManagementFactory.cs" />
+    <Compile Include="Entities\OilManagementUser.cs" />
+    <Compile Include="Entities\OilSupply.cs" />
+    <Compile Include="Entities\OilSupplyType.cs" />
+    <Compile Include="Entities\OilType.cs" />
+    <Compile Include="Entities\FailureData.cs" />
+    <Compile Include="Entities\PlantGroup.cs" />
+    <Compile Include="Entities\PlantData.cs" />
+    <Compile Include="Entities\LocationLocal.cs" />
+    <Compile Include="Entities\LocationPlant.cs" />
+    <Compile Include="Entities\Notification.cs" />
+    <Compile Include="Entities\ReportLayout.cs" />
+    <Compile Include="Entities\StoppageType.cs" />
+    <Compile Include="Entities\TypeStatus.cs" />
+    <Compile Include="Entities\TypeNote.cs" />
+    <Compile Include="Entities\ScheduledRangeType.cs" />
+    <Compile Include="Entities\Speciality.cs" />
+    <Compile Include="Entities\TypeDoc.cs" />
+    <Compile Include="Entities\ScheduledRangeStatus.cs" />
+    <Compile Include="Entities\Status.cs" />
+    <Compile Include="Entities\ScheduledRange.cs" />
+    <Compile Include="Entities\OrderHead.cs" />
+    <Compile Include="Entities\Budget.cs" />
+    <Compile Include="Entities\Location.cs" />
+    <Compile Include="Entities\LocationData.cs" />
+    <Compile Include="Entities\Plant.cs" />
+    <Compile Include="Entities\Indicator.cs" />
+    <Compile Include="Entities\Priority.cs" />
+    <Compile Include="Entities\EquipmentBackupDetails.cs" />
+    <Compile Include="Entities\EquipmentBackup.cs" />
+    <Compile Include="Entities\Area.cs" />
+    <Compile Include="Entities\CenterCost.cs" />
+    <Compile Include="Entities\Equipment.cs" />
+    <Compile Include="Entities\Local.cs" />
+    <Compile Include="Entities\NoteSAP.cs" />
+    <Compile Include="Entities\Part.cs" />
+    <Compile Include="Entities\Report.cs" />
+    <Compile Include="Entities\ReportFile.cs" />
+    <Compile Include="Entities\ReportStatus.cs" />
+    <Compile Include="Entities\ReportType.cs" />
+    <Compile Include="Entities\TypeEquipment.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

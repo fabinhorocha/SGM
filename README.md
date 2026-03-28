@@ -1,6 +1,6 @@
-# SQM - Maintenance Management System 🛠️
+# SGM - Maintenance Management System 🛠️
 
-**SQM** is a robust Full Stack solution developed to optimize industrial asset management. The system centralizes the control of predictive and preventive maintenance, offering a modern interface for KPI visualization and direct integration with ERP processes.
+**SGM** is a robust Full Stack solution developed to optimize industrial asset management. The system centralizes the control of predictive and preventive maintenance, offering a modern interface for KPI visualization and direct integration with ERP processes.
 
 ---
 
